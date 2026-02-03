@@ -1,0 +1,84 @@
+# Node
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Build outputs
+dist/
+build/
+out/
+lib/
+coverage/
+.nyc_output/
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts
+
+# Bundler/Tool caches
+.cache/
+.parcel-cache/
+/.turbo/
+
+# Environment files
+.env
+.env.*
+.local
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Misc
+*.tgz
+*.zip
+*.gzip
+
+# npm package lock - keep this in repo unless you intentionally want to ignore it
+# package-lock.json
+
+# Optional: IDE-specific
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ESLint / Prettier caches
+.eslintcache
+.prettiercache
+
+# Prevent accidental commits of credentials
+credentials.properties
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+
+# Coverage reports
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Node debug
+.vscode/launch.json
+
+# End of .gitignore
