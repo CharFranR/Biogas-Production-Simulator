@@ -1,7 +1,6 @@
-import { BasicParams } from "./models";
-import { EnvironmentalParams } from "./models";
-import { Biodigester } from "./models";
-import { Fill } from "./models";
+import { BasicParams } from "../models/BasicParams";
+import { EnvironmentalParams } from "../models/EnvironmentalParams";
+import { Fill } from "../models/Fill";
 
 export function calculateTotalSolids (fill: Fill): number {
     return fill.calculateTotalSolids();
@@ -19,8 +18,8 @@ export function calculateMuMaxima (env: EnvironmentalParams): number {
     return env.calculateMuMaxima();
 }
 
-export function calculateSolventVolume (addedWater: number, fillingMass: number, approxDensity: number): number {
-    throw new Error('calculateSolventVolume: use calculateSolventVolumeFromFill(fill, approxDensity) instead');
+export function calculateSolventVolume (env: Fill): number {
+    return env.calculateVolatileSolids();
 }
 
 export function calculateSolventVolumeFromFill(fill: Fill, approxDensity: number): number {
@@ -85,7 +84,7 @@ export function calculateTimeSimulation (
 
     potentialProduction = fill.calculatePotentialProduction();
 
-    initialConcentration = fill.calculateInitialConcentration(approxDensity);
+    initialConcentration = fill.calculateInitialConcentration(solventVolume);
 
     concentrationT = initialConcentration;
 
