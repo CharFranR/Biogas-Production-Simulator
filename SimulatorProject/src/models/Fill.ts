@@ -6,13 +6,15 @@ export class Fill {
     addedWater: number;
     typeOfMaterial: BasicParams;
     lagTime: number;
+    approxDensity: number;
 
-    constructor (fillingMass: number, moistureFilling: number, addedWater: number, typeOfMaterial: BasicParams, lagTime: number) {
+    constructor (fillingMass: number, moistureFilling: number, addedWater: number, typeOfMaterial: BasicParams, lagTime: number, approxDensity: number) {
         this.fillingMass = fillingMass;
         this.moistureFilling = moistureFilling;
         this.addedWater = addedWater;
         this.typeOfMaterial = typeOfMaterial;
         this.lagTime = lagTime;
+        this.approxDensity = approxDensity;
     }
     calculateTotalSolids(): number {
         if (this.moistureFilling !== 0) {
@@ -31,13 +33,13 @@ export class Fill {
         return vs * this.typeOfMaterial.potentialBiogasProduction;
     }
 
-    calculateSolventVolume(approxDensity: number): number {
-        return (this.fillingMass + this.addedWater) / approxDensity;
+    calculateSolventVolume(): number {
+        return (this.fillingMass + this.addedWater) / this.approxDensity;
     }
 
-    calculateInitialConcentration(approxDensity: number): number {
+    calculateInitialConcentration(): number {
         const vs = this.calculateVolatileSolids();
-        const vol = this.calculateSolventVolume(approxDensity);
+        const vol = this.calculateSolventVolume();
         return vs / vol;
     }
 

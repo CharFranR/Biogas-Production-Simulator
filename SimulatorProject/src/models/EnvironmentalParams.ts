@@ -6,7 +6,7 @@ export class EnvironmentalParams {
         this.temperature = temperature;
         this.sunlightHours = sunlightHours;
     }
-    calculateMuMaxima(): number {
+    calculateMaxMu(): number {
         return (0.012 * this.temperature) - 0.086;
     }
 }
