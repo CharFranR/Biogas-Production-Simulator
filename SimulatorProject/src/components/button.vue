@@ -7,7 +7,7 @@
 
 <template>
 
-<div class="flex items-center justify-center shadow-sm w-full max-w-2xs m-4 bg-[#4180ab]/80 rounded-2xl ">
+<div class="flex items-center justify-center shadow-sm w-full max-w-2xs  bg-[#4180ab]/80 rounded-2xl ">
     
     <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl">
       <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
