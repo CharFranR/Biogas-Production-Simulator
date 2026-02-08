@@ -1,9 +1,0 @@
-@import "tailwindcss";
-@source "./**/*.vue";
-@source "./**/*.ts";
-
-/* Force full-page background */
-html, body, #app {
-  min-height: 100vh;
-  background-color: #f8fafc;
-}
