@@ -22,15 +22,13 @@ const { inputs, runSimulation, seriesAccum, seriesDaily, formattedOutputs } = us
 
 
 <template>
-
   <Header></Header>
 
   <main class="px-4 py-6">
-    <div class="flex flex-col lg:flex-row gap-6">
+    <div class="flex flex-col lg:flex-row gap-2 justify-start items-start max-w-7xl mx-auto">
 
-      <!-- Left column: inputs -->
       <div class="w-full lg:w-1/3">
-        <Container label="Parámetros de Simulación" maxSize="max-w-xs">
+        <Container label="Parámetros de Simulación">
           <InputCard label="Nombre" type="text" v-model="inputs.name"/>
           <InputCard label="Densidad Aprox. (kg/L)" v-model="inputs.approxDensity"/>
           <InputCard label="Temperatura (°C)" v-model="inputs.temperature"/>
@@ -40,7 +38,7 @@ const { inputs, runSimulation, seriesAccum, seriesDaily, formattedOutputs } = us
           <InputCard label="Agua Agregada (kg)" v-model="inputs.addedWater"/>
           <InputCard label="Sólidos Totales " v-model="inputs.totalSolidsPercent"/>
           <InputCard label="Sólidos Volátiles " v-model="inputs.volatileSolidsPercent"/>
-          <InputCard label="Producción Potencial de Biogás (m³/kg SV)" v-model="inputs.potentialBiogas"/>
+          <InputCard label="Producción Potencial (m³/kg SV)" v-model="inputs.potentialBiogas"/>
 
           <div class="mt-4">
             <Button @click="runSimulation" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
@@ -48,9 +46,8 @@ const { inputs, runSimulation, seriesAccum, seriesDaily, formattedOutputs } = us
         </Container>
       </div>
 
-      <!-- Right column: chart above, cards below -->
-      <div class="w-full lg:w-2/3 flex flex-col ">
-        <Container maxSize="w-2xl">
+      <div class="w-full lg:w-2/3 flex flex-col max-w-2xl">
+        <Container>
           <AreaChart
             :series-a="seriesAccum"
             :series-b="seriesDaily"
@@ -62,7 +59,7 @@ const { inputs, runSimulation, seriesAccum, seriesDaily, formattedOutputs } = us
           />
         </Container>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 mt-2 max-w-2xl">
           <Cards label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></Cards>
           <Cards label="Crecimiento Monod" :value="formattedOutputs.monod" unit="día⁻¹" :iconPath="iconMonitoing"></Cards>
           <Cards label="Sólidos Totales" :value="formattedOutputs.TotalSolids" :iconPath="iconMoinsture"></Cards>
@@ -72,9 +69,6 @@ const { inputs, runSimulation, seriesAccum, seriesDaily, formattedOutputs } = us
 
     </div>
   </main>
-
 </template>
-
-
 <style scoped> 
 </style>

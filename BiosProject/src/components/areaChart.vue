@@ -89,7 +89,7 @@ const chartOptions = computed(() => ({
 </script>
 
 <template>
-  <div class="w-full bg-white rounded-lg p-2">
+  <div class="w-full bg-white rounded-lg p-2 ">
     <h3 v-if="title" class="text-lg font-bold mb-4 text-slate-700">{{ title }}</h3>
     
     <div v-if="seriesA.length > 0" class="h-[350px]">
