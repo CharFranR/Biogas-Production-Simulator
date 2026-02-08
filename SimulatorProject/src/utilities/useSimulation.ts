@@ -70,8 +70,9 @@ export function useSimulation() {
     // daily production = difference between cumulative values
     const daily: number[] = []
     for (let i = 0; i < ys.length; i++) {
-      const prev = i === 0 ? 0 : ys[i - 1]
-      daily.push(Number((ys[i] - prev).toFixed(6)))
+      const prev = i === 0 ? 0 : (ys[i - 1] ?? 0)
+      const curr = ys[i] ?? 0
+      daily.push(Number((curr - prev).toFixed(6)))
     }
     seriesDaily.value = daily
 
