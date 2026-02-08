@@ -1,180 +1,152 @@
-<template>
-  <div ref="chart" class="area-chart"></div>
-</template>
-
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
-import * as echarts from 'echarts'
+import { ref, computed } from 'vue';
+import VueApexCharts from 'vue3-apexcharts';
 
 const props = defineProps({
-  seriesA: { type: Array, default: () => [] }, // p.ej. [{x: '2026-01-01', y: 10}, ...] o [10,20,...]
-  seriesB: { type: Array, default: () => [] },
-  nameA: { type: String, default: 'Serie A' },
-  nameB: { type: String, default: 'Serie B' },
-  colorA: { type: String, default: '#5470c6' },
-  colorB: { type: String, default: '#91cc75' },
-  title: { type: String, default: '' }
-})
+  // Se esperan diccionarios con formato { "YYYY-MM-DD": valor }
+  desktopData: {
+    type: Object,
+    required: true,
+    default: () => ({})
+  },
+  mobileData: {
+    type: Object,
+    required: true,
+    default: () => ({})
+  }
+});
 
-const chart = ref(null)
-let instance = null
+const timeRange = ref('90d');
 
-function normalize(series) {
-  // acepta objetos tipo { label: value, ... }, arrays de objetos [{x,y}, ...], o arrays de valores [y, y, ...]
-  if (series && typeof series === 'object' && !Array.isArray(series)) {
-    const keys = Object.keys(series)
-    return {
-      xs: keys,
-      ys: keys.map(k => Number(series[k] ?? 0))
+// 1. Normalización y Unión de datos
+const combinedData = computed(() => {
+  const dates = Object.keys({ ...props.desktopData, ...props.mobileData }).sort();
+  
+  return dates.map(date => ({
+    date,
+    desktop: props.desktopData[date] || 0,
+    mobile: props.mobileData[date] || 0
+  }));
+});
+
+// 2. Filtrado por rango de tiempo
+const filteredData = computed(() => {
+  const referenceDate = new Date("2024-06-30"); // Fecha de referencia igual al original
+  let daysToSubtract = 90;
+  
+  if (timeRange.value === "30d") daysToSubtract = 30;
+  if (timeRange.value === "7d") daysToSubtract = 7;
+
+  const startDate = new Date(referenceDate);
+  startDate.setDate(startDate.getDate() - daysToSubtract);
+
+  return combinedData.value.filter(item => new Date(item.date) >= startDate);
+});
+
+// 3. Configuración de ApexCharts (Estilos Shadcn)
+const chartOptions = computed(() => ({
+  chart: {
+    type: 'area',
+    toolbar: { show: false },
+    zoom: { enabled: false },
+    fontFamily: 'Inter, sans-serif',
+  },
+  dataLabels: { enabled: false },
+  stroke: {
+    curve: 'smooth',
+    width: 2,
+    colors: ['#2563eb', '#60a5fa'] // Colores var(--chart-1) y var(--chart-2)
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shadeIntensity: 1,
+      opacityFrom: 0.45,
+      opacityTo: 0.05,
+      stops: [20, 100]
     }
-  }
-
-  if (!Array.isArray(series)) return { xs: [], ys: [] }
-  if (series.length === 0) return { xs: [], ys: [] }
-  if (typeof series[0] === 'object' && series[0] !== null && ('x' in series[0] || 'y' in series[0])) {
-    return {
-      xs: series.map(p => p.x ?? ''),
-      ys: series.map(p => p.y ?? 0)
-    }
-  }
-
-  // array de valores
-  return {
-    xs: series.map((_, i) => String(i)),
-    ys: series.map(v => Number(v ?? 0))
-  }
-}
-
-function buildOptions() {
-  const a = normalize(props.seriesA)
-  const b = normalize(props.seriesB)
-
-  // intentar tomar eje X de la serie A si existe, si no usar B, si no índices
-  const xs = (a.xs.length ? a.xs : (b.xs.length ? b.xs : a.ys.map((_, i) => String(i))))
-
-  return {
-    title: { text: props.title, left: 'center' },
-    tooltip: { trigger: 'axis' },
-    legend: { data: [props.nameA, props.nameB], top: 30 },
-    grid: { left: 16, right: 16, bottom: 40, containLabel: true },
-    xAxis: {
-      type: 'category',
-      data: xs,
-      boundaryGap: false,
-      axisLine: { lineStyle: { color: '#ccc' } },
-      axisLabel: { color: '#666' }
-    },
-    yAxis: {
-      type: 'value',
-      axisLine: { show: false },
-      splitLine: { lineStyle: { color: '#eee' } },
-      axisLabel: { color: '#666' }
-    },
-    series: [
-      {
-        name: props.nameA,
-        type: 'line',
-        smooth: true, // <-- suavizado
-        showSymbol: false,
-        sampling: 'lttb',
-        areaStyle: { color: props.colorA, opacity: 0.12 },
-        lineStyle: { color: props.colorA, width: 2 },
-        emphasis: { focus: 'series' },
-        data: a.ys
-      },
-      {
-        name: props.nameB,
-        type: 'line',
-        smooth: true, // <-- suavizado
-        showSymbol: false,
-        sampling: 'lttb',
-        areaStyle: { color: props.colorB, opacity: 0.12 },
-        lineStyle: { color: props.colorB, width: 2, type: 'dashed' },
-        emphasis: { focus: 'series' },
-        data: b.ys
+  },
+  grid: {
+    borderColor: '#e2e8f0',
+    strokeDashArray: 4,
+    xaxis: { lines: { show: false } },
+    yaxis: { lines: { show: true } },
+  },
+  xaxis: {
+    type: 'datetime',
+    categories: filteredData.value.map(d => d.date),
+    axisBorder: { show: false },
+    axisTicks: { show: false },
+    labels: {
+      style: { colors: '#64748b' },
+      formatter: (val) => {
+        return new Date(val).toLocaleDateString("en-US", { month: "short", day: "numeric" });
       }
-    ],
-    animation: true,
-    animationEasing: 'cubicOut'
-  }
-}
-
-function resize() { instance && instance.resize() }
-
-onMounted(async () => {
-  await nextTick()
-  if (!chart.value) {
-    console.error('areaChart: chart ref is null')
-    return
-  }
-
-  try {
-    console.log('areaChart: props', {
-      seriesA: props.seriesA?.length ?? 0,
-      seriesB: props.seriesB?.length ?? 0,
-      title: props.title
-    })
-
-    instance = echarts.init(chart.value)
-    instance.setOption(buildOptions())
-    window.addEventListener('resize', resize)
-  } catch (err) {
-    console.error('areaChart: echarts init/setOption fallo', err)
-    // fallback: mostrar mensaje simple
-    try {
-      chart.value.innerHTML = '<div class="no-data">Sin datos o error al dibujar la gráfica</div>'
-    } catch (e) {
-      /* ignore */
     }
-  }
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', resize)
-  instance && instance.dispose()
-})
-
-watch([
-  () => props.seriesA,
-  () => props.seriesB,
-  () => props.title,
-  () => props.colorA,
-  () => props.colorB,
-  () => props.nameA,
-  () => props.nameB
-], () => {
-  if (instance) {
-    try {
-      instance.setOption(buildOptions(), { notMerge: false })
-      instance.resize()
-    } catch (err) {
-      console.error('areaChart: error updating chart', err)
+  },
+  yaxis: { show: false },
+  tooltip: {
+    shared: true,
+    intersect: false,
+    x: {
+      formatter: (val) => new Date(val).toLocaleDateString("en-US", { month: "short", day: "numeric" })
     }
-  } else {
-    // si no hay instancia aún, intentar inicializar de nuevo
-    try {
-      if (chart.value) {
-        instance = echarts.init(chart.value)
-        instance.setOption(buildOptions())
-      }
-    } catch (err) {
-      console.error('areaChart: error inicializando en watch', err)
-    }
+  },
+  legend: {
+    position: 'bottom',
+    horizontalAlign: 'center',
+  },
+  colors: ['#2563eb', '#60a5fa']
+}));
+
+const series = computed(() => [
+  {
+    name: 'Desktop',
+    data: filteredData.value.map(d => d.desktop)
+  },
+  {
+    name: 'Mobile',
+    data: filteredData.value.map(d => d.mobile)
   }
-}, { deep: true })
+]);
 </script>
 
-<style scoped>
-.area-chart {
-  width: 100%;
-  height: 320px; /* ajusta según necesites */
-}
-.no-data {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 14px;
-}
-</style>
+<template>
+  <div class="w-full max-w-4xl mx-auto p-4">
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+      
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 border-b border-slate-100">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-slate-900">Area Chart - Interactive</h3>
+          <p class="text-sm text-slate-500">Showing total visitors for the last {{ timeRange === '90d' ? '3 months' : timeRange }}</p>
+        </div>
+
+        <div class="relative w-full sm:w-[160px]">
+          <select 
+            v-model="timeRange"
+            class="w-full appearance-none bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer"
+          >
+            <option value="90d">Last 3 months</option>
+            <option value="30d">Last 30 days</option>
+            <option value="7d">Last 7 days</option>
+          </select>
+          <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 sm:p-6">
+        <div class="h-[250px] w-full">
+          <VueApexCharts
+            type="area"
+            height="100%"
+            :options="chartOptions"
+            :series="series"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>
