@@ -2,6 +2,7 @@
 import Cards from './components/cards.vue'
 import Button from './components/Button.vue'
 import InputCard from './components/inputCard.vue'
+import Container from './components/container.vue'
 
 // SVG icons
 const iconTrending = "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
@@ -14,13 +15,19 @@ const iconPlay = "M5 3l14 9-14 9V3z"
 </script>
 
 <template>
-  <Cards label="Producción Potencial" value="20.00" unit="m3" :iconPath="iconTrending"/>
-  <Cards label="Producción Potencial" value="20.00" unit="m3" :iconPath="iconTrending"/>
-  <Cards label="Producción Potencial" value="20.00" unit="m3" :iconPath="iconTrending"/>
+  
   
   <Button buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
 
   <InputCard label="Nombre"/>
+
+  <Container label = "Parámetros de Simulación">
+   
+    <InputCard label="Nombre"/>
+    <InputCard label="Densidad Aprox. (kg/L)"/>
+    <InputCard label="Temperatura (°C)"/>
+
+  </Container>
 
 </template>
 
