@@ -4,6 +4,8 @@ import Button from './components/Button.vue'
 import InputCard from './components/inputCard.vue'
 import Container from './components/container.vue'
 import AreaChart from "./components/AreaChart.vue"
+import Header from "./components/header.vue"
+import Dashboard from "./template.vue"
 
 // SVG icons
 const iconTrending = "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
@@ -36,32 +38,9 @@ const mobile = {
 </script>
 
 <template>
-  
-  
-  <Button buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
 
-  <InputCard label="Nombre"/>
-
-  <Container label = "Parámetros de Simulación" maxSize = 'max-w-xs'>
-   
-    <InputCard label="Nombre"/>
-    <InputCard label="Densidad Aprox. (kg/L)"/>
-    <InputCard label="Temperatura (°C)"/>
-
-  </Container>
-
-  <Container maxSize = 'max-w-xl'>
-    <AreaChart
-      :series-a="desktop"
-      :series-b="mobile"
-      name-a="Producción acumulada"
-      name-b="Producción diaria"
-      color-a="#5470c6"
-      color-b="#91cc75"
-      title=""
-    />
-  </Container>
-
+  <Dashboard></Dashboard>
+ 
 </template>
 
 <style scoped></style>
