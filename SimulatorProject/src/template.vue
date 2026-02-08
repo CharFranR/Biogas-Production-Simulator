@@ -63,7 +63,7 @@ const mobile = {
       </div>
 
       <!-- Right column: chart above, cards below -->
-      <div class="w-full lg:w-2/3 flex flex-col gap-6">
+      <div class="w-full lg:w-2/3 flex flex-col ">
         <Container maxSize="w-2xl">
           <AreaChart
             :series-a="desktop"
@@ -76,7 +76,7 @@ const mobile = {
           />
         </Container>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2">
           <Cards label="Producción Potencial" value="20.00 m" unit="3" :iconPath="iconTrending"></Cards>
           <Cards label="Crecimiento Monod" value="0.0368 día" unit="-1" :iconPath="iconMonitoing"></Cards>
           <Cards label="Sólidos Totales" value="62.50" :iconPath="iconMoinsture"></Cards>
