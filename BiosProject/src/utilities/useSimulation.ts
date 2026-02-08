@@ -7,15 +7,15 @@ import { SimulationParams } from '../models/SimulationParams.ts'
 export function useSimulation() {
   const inputs = reactive({
     name: 'Material',
-    approxDensity: 1000, // kg/m3 ~ 1 kg/L
-    temperature: 30,
-    lagTime: 1,
-    fillingMass: 100,
-    moistureFilling: 50,
-    addedWater: 0,
+    approxDensity: 900, // kg/m3 ~ 1 kg/L
+    temperature: 28,
+    lagTime: 13,
+    fillingMass: 500,
+    moistureFilling: 60,
+    addedWater: 500,
     totalSolidsPercent: 20,
     volatileSolidsPercent: 0.79,
-    potentialBiogas: 0.5
+    potentialBiogas: 0.0158
   })
 
   const outputs = reactive({
