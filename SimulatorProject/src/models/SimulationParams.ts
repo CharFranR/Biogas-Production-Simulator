@@ -2,27 +2,30 @@ import { Fill } from "./Fill";
 import { EnvironmentalParams } from "./EnvironmentalParams";
 
 export class SimulationParams {
-
+    // input
     fill: Fill;
     env: EnvironmentalParams;
-        
     simulationTime: number;
-    simulationData: number[];
-
     specificMu: number;
     initialConcentration: number;
     concentrationT: number;
     cumulativeProduction: number;
-    potentialProduction: number;
     lagTime: number;
     solventVolume: number;
     maxMu: number;
 
+    // output
+    monod: number;
+    potentialProduction: number;
+    TotalSolids: number;
+    VolatileSolids: number;
+    simulationData: Record<number, number>;
+
     constructor (fill: Fill, env: EnvironmentalParams) {
+        // input
         this.fill = fill;
         this.env = env;
         this.simulationTime = 0;
-        this.simulationData = [];
         this.specificMu = 0;
         this.initialConcentration = 0;
         this.concentrationT = 0;
@@ -31,6 +34,13 @@ export class SimulationParams {
         this.lagTime = 0;
         this.solventVolume = 0;
         this.maxMu = 0;
+
+
+        // output
+        this.simulationData = [];
+        this.monod = 0
+        this.TotalSolids = 0
+        this.VolatileSolids = 0
     }
 
     static calculateSimulationTime (fill: Fill, simulationTime: number): number {
@@ -42,7 +52,7 @@ export class SimulationParams {
         return simulationTime;
     }
 
-    calculateSimulationData(fill: Fill, env: EnvironmentalParams, simulationData: number[]): number[] {
+    calculateSimulationData(fill: Fill, env: EnvironmentalParams, simulationData: number[]): { simulationData: number[]; monod: number; TotalSolids: number; VolatileSolids: number } {
         
         this.simulationTime = SimulationParams.calculateSimulationTime(fill, this.simulationTime);
         this.solventVolume = fill.calculateSolventVolume();
@@ -65,12 +75,24 @@ export class SimulationParams {
                 Math.E
             );
 
-            simulationData.push(this.cumulativeProduction);
+            simulationData.push(i, this.cumulativeProduction);
 
             // Actualiza concentración acumulativamente
             concentrationT = concentrationT - (this.cumulativeProduction - cumulativeProductionPrev);
             cumulativeProductionPrev = this.cumulativeProduction;
         }
-        return simulationData;
+
+
+        this.monod = this.maxMu;
+        this.TotalSolids = fill.calculateTotalSolids();
+        this.VolatileSolids = fill.calculateVolatileSolids();
+
+
+        return {
+            simulationData: simulationData,
+            monod: this.monod,
+            TotalSolids: this.TotalSolids,
+            VolatileSolids: this.VolatileSolids
+        };
     }
 }
