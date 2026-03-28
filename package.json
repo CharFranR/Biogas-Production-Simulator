@@ -1,8 +1,17 @@
 {
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+  "name": "biogas-production-simulator",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/simulator-vue",
+    "build": "npm run build --workspace=apps/simulator-vue",
+    "preview": "npm run preview --workspace=apps/simulator-vue",
+    "deploy": "npm run deploy --workspace=apps/simulator-vue",
+    "test": "npm run test --workspace=packages/core",
+    "lint": "npm run lint --workspaces"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
