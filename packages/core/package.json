@@ -1,0 +1,29 @@
+{
+  "name": "@biogas-simulator/core",
+  "version": "0.1.0",
+  "description": "Core simulation models and logic for biogas production simulator",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts"
+  },
+  "keywords": [
+    "biogas",
+    "simulation",
+    "gompertz",
+    "anaerobic-digestion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  }
+}
