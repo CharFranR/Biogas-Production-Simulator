@@ -90,7 +90,7 @@ export function exportToExcel(simulationData: SimulationData): ArrayBuffer {
     {
       Parámetro: 'Sólidos volátiles',
       Valor: inputs.volatileSolidsPercent,
-      Unidad: '%'
+      Unidad: 'fracción (VS/TS)'
     },
     {
       Parámetro: 'Producción potencial de biogás',

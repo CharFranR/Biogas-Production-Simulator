@@ -2,13 +2,13 @@ import { BasicParams } from "./BasicParams";
 
 export class Fill {
     fillingMass: number;
-    moistureFilling: number;
+    moistureFilling?: number | null;
     addedWater: number;
     typeOfMaterial: BasicParams;
     lagTime: number;
     approxDensity: number;
 
-    constructor (fillingMass: number, moistureFilling: number, addedWater: number, typeOfMaterial: BasicParams, lagTime: number, approxDensity: number) {
+    constructor (fillingMass: number, moistureFilling: number | null | undefined, addedWater: number, typeOfMaterial: BasicParams, lagTime: number, approxDensity: number) {
         this.fillingMass = fillingMass;
         this.moistureFilling = moistureFilling;
         this.addedWater = addedWater;
@@ -17,8 +17,9 @@ export class Fill {
         this.approxDensity = approxDensity;
     }
     calculateTotalSolids(): number {
-        if (this.moistureFilling !== 0) {
-            return this.fillingMass * (1 - (this.moistureFilling / 100));
+        const moisture = this.moistureFilling;
+        if (moisture !== null && moisture !== undefined && moisture !== 0) {
+            return this.fillingMass * (1 - (moisture / 100));
         }
         return this.typeOfMaterial.totalSolids * this.fillingMass;
     }

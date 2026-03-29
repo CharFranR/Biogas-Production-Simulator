@@ -1,6 +1,22 @@
-export interface BasicSimulationConfig {
-  /** Nombre del material/sustrato */
+import { getMaterialPreset, type MaterialId } from '../materials'
+
+export interface MaterialCustomConfig {
   name: string
+  /** Total Solids fraction (0-1). Example: 0.2 = 20% */
+  totalSolidsFraction: number
+  /** VS/TS fraction (0-1) */
+  volatileSolidsFraction: number
+  /** Potential biogas production (m³/kg SV) */
+  potentialBiogas: number
+}
+
+export type MaterialSelectionConfig =
+  | { mode: 'preset'; presetId: MaterialId }
+  | { mode: 'custom'; custom: MaterialCustomConfig }
+
+export interface BasicSimulationConfig {
+  /** Material de llenado seleccionado */
+  material: MaterialSelectionConfig
   /** Masa de llenado (kg) */
   fillingMass: number
 }
@@ -15,19 +31,16 @@ export interface PhysicalSimulationConfig {
   approxDensity: number
   /** Agua agregada (kg) */
   addedWater: number
-  /** Humedad del llenado (%) */
-  moistureFilling: number
+  /**
+   * Humedad del llenado (%). Si es 0/undefined/null, se estima usando TS del material.
+   * Si viene (por sensor/import), se usa para calcular TS: TS = mass * (1 - moisture/100)
+   */
+  moistureFilling?: number | null
 }
 
 export interface BiologicalSimulationConfig {
   /** Tiempo de retardo (días) */
   lagTime: number
-  /** Sólidos totales (%) */
-  totalSolidsPercent: number
-  /** Sólidos volátiles (%) o fracción VS/TS según convención actual */
-  volatileSolidsPercent: number
-  /** Producción potencial de biogás (m³/kg SV) */
-  potentialBiogas: number
 }
 
 export interface SimulationConfig {
@@ -47,7 +60,7 @@ export interface LegacySimulationInputs {
   temperature: number
   lagTime: number
   fillingMass: number
-  moistureFilling: number
+  moistureFilling?: number | null
   addedWater: number
   totalSolidsPercent: number
   volatileSolidsPercent: number
@@ -57,7 +70,7 @@ export interface LegacySimulationInputs {
 export function createDefaultSimulationConfig(): SimulationConfig {
   return {
     basic: {
-      name: 'Material',
+      material: { mode: 'preset', presetId: 'bovino' },
       fillingMass: 100
     },
     environmental: {
@@ -65,22 +78,42 @@ export function createDefaultSimulationConfig(): SimulationConfig {
     },
     physical: {
       approxDensity: 1000,
-      moistureFilling: 50,
+      moistureFilling: null,
       addedWater: 0
     },
     biological: {
       lagTime: 1,
-      totalSolidsPercent: 20,
-      volatileSolidsPercent: 0.79,
-      potentialBiogas: 0.5
+      
     }
   }
 }
 
+function normalizePercentToFraction(v: number): number {
+  // If user passes 20 (meaning 20%), convert to 0.2. If passes 0.2, keep.
+  return v > 1 ? v / 100 : v
+}
+
 export function configFromLegacyInputs(inputs: LegacySimulationInputs): SimulationConfig {
+  const tsFraction = normalizePercentToFraction(Number(inputs.totalSolidsPercent))
+  const vsFraction = normalizePercentToFraction(Number(inputs.volatileSolidsPercent))
+  const moistureFilling =
+    inputs.moistureFilling === null || inputs.moistureFilling === undefined
+      ? null
+      : Number(inputs.moistureFilling)
+
   return {
     basic: {
-      name: inputs.name,
+      // Legacy name used to be free text. Now it's material selector.
+      // If legacy includes explicit TS/VS/potential, map to custom material.
+      material: {
+        mode: 'custom',
+        custom: {
+          name: inputs.name || 'Material personalizado',
+          totalSolidsFraction: tsFraction,
+          volatileSolidsFraction: vsFraction,
+          potentialBiogas: Number(inputs.potentialBiogas)
+        }
+      },
       fillingMass: inputs.fillingMass
     },
     environmental: {
@@ -88,30 +121,36 @@ export function configFromLegacyInputs(inputs: LegacySimulationInputs): Simulati
     },
     physical: {
       approxDensity: inputs.approxDensity,
-      moistureFilling: inputs.moistureFilling,
+      moistureFilling,
       addedWater: inputs.addedWater
     },
     biological: {
-      lagTime: inputs.lagTime,
-      totalSolidsPercent: inputs.totalSolidsPercent,
-      volatileSolidsPercent: inputs.volatileSolidsPercent,
-      potentialBiogas: inputs.potentialBiogas
+      lagTime: inputs.lagTime
     }
   }
 }
 
 export function legacyInputsFromConfig(config: SimulationConfig): LegacySimulationInputs {
+  const material = config.basic.material
+  const resolvedMaterial =
+    material.mode === 'preset' ? getMaterialPreset(material.presetId) : material.custom
+  const name = resolvedMaterial.name
+  const tsFraction = resolvedMaterial.totalSolidsFraction
+  const vsFraction = resolvedMaterial.volatileSolidsFraction
+  const potential = resolvedMaterial.potentialBiogas
+
   return {
-    name: config.basic.name,
+    // For legacy exports we keep name as string
+    name,
     approxDensity: config.physical.approxDensity,
     temperature: config.environmental.temperature,
     lagTime: config.biological.lagTime,
     fillingMass: config.basic.fillingMass,
-    moistureFilling: config.physical.moistureFilling,
+    moistureFilling: Number(config.physical.moistureFilling ?? 0),
     addedWater: config.physical.addedWater,
-    totalSolidsPercent: config.biological.totalSolidsPercent,
-    volatileSolidsPercent: config.biological.volatileSolidsPercent,
-    potentialBiogas: config.biological.potentialBiogas
+    totalSolidsPercent: tsFraction * 100,
+    volatileSolidsPercent: vsFraction,
+    potentialBiogas: potential
   }
 }
 

@@ -10,7 +10,7 @@ import {
 describe('simulationConfig', () => {
   it('creates default config with expected values', () => {
     const cfg = createDefaultSimulationConfig()
-    expect(cfg.basic.name).toBe('Material')
+    expect(cfg.basic.material.mode).toBe('preset')
     expect(cfg.basic.fillingMass).toBe(100)
     expect(cfg.environmental.temperature).toBe(30)
   })
@@ -33,6 +33,20 @@ describe('simulationConfig', () => {
     expect(isSimulationConfig(cfg)).toBe(true)
 
     const roundTrip = legacyInputsFromConfig(cfg)
-    expect(roundTrip).toEqual(legacy)
+    // legacy TS is stored as percent when round-tripping
+    expect(roundTrip.name).toBe(legacy.name)
+    expect(roundTrip.totalSolidsPercent).toBe(legacy.totalSolidsPercent)
+    expect(roundTrip.volatileSolidsPercent).toBe(legacy.volatileSolidsPercent)
+    expect(roundTrip.potentialBiogas).toBe(legacy.potentialBiogas)
+  })
+
+  it('fills legacy material fields when preset is selected', () => {
+    const cfg = createDefaultSimulationConfig()
+    const legacy = legacyInputsFromConfig(cfg)
+
+    expect(legacy.name).toBe('Bovino')
+    expect(legacy.totalSolidsPercent).toBe(20)
+    expect(legacy.volatileSolidsPercent).toBe(0.79)
+    expect(legacy.potentialBiogas).toBe(0.0158)
   })
 })

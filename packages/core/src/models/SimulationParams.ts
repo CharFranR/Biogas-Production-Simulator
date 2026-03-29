@@ -44,8 +44,9 @@ export class SimulationParams {
     }
 
     static calculateSimulationTime (fill: Fill, simulationTime: number): number {
-        if (fill.moistureFilling != 0) {
-            return Math.ceil(3200 / fill.moistureFilling);
+        const moisture = fill.moistureFilling;
+        if (moisture !== null && moisture !== undefined && moisture !== 0) {
+            return Math.ceil(3200 / moisture);
         }
         else simulationTime = 40;
 
