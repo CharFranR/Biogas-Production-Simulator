@@ -1,6 +1,31 @@
 import { describe, expect, it } from 'vitest'
+import { DERIVED_FACT_IDS } from '../facts/derived'
+import type { FactId } from '../facts/types'
+import { RULES_V1 } from '../rules/rules.v1'
 import type { RuleV1 } from '../rules/schema.v1'
-import { assertValidRuleV1 } from '../rules/validate.v1'
+import { assertValidRuleV1, assertValidRulesV1 } from '../rules/validate.v1'
+
+const RESOLVABLE_PREFIXES = ['inputs', 'outputs', 'series'] as const
+
+function hasValidDotSegments(factId: string): boolean {
+  const segments = factId.split('.')
+  return segments.every(segment => {
+    if (segment.trim().length === 0) return false
+    if (segment.includes('/') || segment.includes('\\')) return false
+    return segment === segment.trim()
+  })
+}
+
+function isResolvableFactId(factId: FactId): boolean {
+  if (factId.startsWith('derived.')) {
+    return DERIVED_FACT_IDS.includes(factId as (typeof DERIVED_FACT_IDS)[number])
+  }
+
+  const prefix = RESOLVABLE_PREFIXES.find(candidate => factId.startsWith(`${candidate}.`))
+  if (!prefix) return false
+
+  return hasValidDotSegments(factId)
+}
 
 const baseRule: RuleV1 = {
   id: 'rule-1',
@@ -75,5 +100,22 @@ describe('assertValidRuleV1', () => {
     } as unknown as RuleV1
 
     expect(() => assertValidRuleV1(rule)).toThrow('requiresFacts')
+  })
+})
+
+describe('RULES_V1 validation', () => {
+  it('contains only valid rules', () => {
+    expect(() => assertValidRulesV1(RULES_V1)).not.toThrow()
+  })
+
+  it('uses resolvable fact IDs for active rules', () => {
+    const activeRules = RULES_V1.filter(rule => rule.status === 'active')
+
+    activeRules.forEach(rule => {
+      const factIds: FactId[] = [rule.when.fact, ...(rule.requiresFacts ?? [])]
+      factIds.forEach(factId => {
+        expect(isResolvableFactId(factId)).toBe(true)
+      })
+    })
   })
 })
