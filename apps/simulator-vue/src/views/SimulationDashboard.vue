@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ResultCard, Button, InputCard, Container, Header } from '@biogas-simulator/ui'
-import AreaChart from "./components/areaChart.vue"
-import { useSimulation } from './utilities/useSimulation'
+import { ResultCard, Button, InputCard, Container, Header, AreaChart } from '@biogas-simulator/ui'
+import { useSimulation } from '../utilities/useSimulation'
 import { exportToExcel, exportToCSV, createDownloadBlob, downloadFile, type SimulationData } from '@biogas-simulator/core'
 
 const iconTrending = "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
