@@ -1,0 +1,20 @@
+{
+  "name": "@biogas-simulator/advisor",
+  "version": "0.1.0",
+  "description": "Advisor knowledge base and rule evaluation for biogas simulator",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  }
+}

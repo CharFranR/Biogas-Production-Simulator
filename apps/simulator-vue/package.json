@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@biogas-simulator/core": "file:../../packages/core",
+    "@biogas-simulator/advisor": "file:../../packages/advisor",
     "@biogas-simulator/ui": "file:../../packages/ui",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
