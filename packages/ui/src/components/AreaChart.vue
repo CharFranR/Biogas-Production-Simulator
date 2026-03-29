@@ -9,10 +9,13 @@ import * as echarts from 'echarts'
 const props = defineProps({
   seriesA: { type: Array, default: () => [] }, // p.ej. [{x: '2026-01-01', y: 10}, ...] o [10,20,...]
   seriesB: { type: Array, default: () => [] },
+  seriesC: { type: [Array, Object], default: () => [] },
   nameA: { type: String, default: 'Serie A' },
   nameB: { type: String, default: 'Serie B' },
+  nameC: { type: String, default: 'Serie C' },
   colorA: { type: String, default: '#5470c6' },
   colorB: { type: String, default: '#91cc75' },
+  colorC: { type: String, default: '#fac858' },
   title: { type: String, default: '' }
 })
 
@@ -45,18 +48,142 @@ function normalize(series) {
   }
 }
 
+function formatNumber(value, decimals = 2) {
+  const num = Number(value)
+  if (!Number.isFinite(num)) return '-'
+  const fixed = num.toFixed(decimals)
+  return fixed.replace(/\.?0+$/, '')
+}
+
+function unitForSeries(seriesName) {
+  if (seriesName === props.nameA) return 'm³'
+  if (seriesName === props.nameB) return 'm³/d'
+  if (seriesName === props.nameC) return '%'
+  return ''
+}
+
+function formatValue(value, seriesName) {
+  const unit = unitForSeries(seriesName)
+  const decimals = unit === '%' ? 2 : 2
+  const formatted = formatNumber(value, decimals)
+  return unit ? `${formatted} ${unit}` : formatted
+}
+
 function buildOptions() {
   const a = normalize(props.seriesA)
   const b = normalize(props.seriesB)
+  const c = normalize(props.seriesC)
+  const hasC = c.ys.length > 0
 
   // intentar tomar eje X de la serie A si existe, si no usar B, si no índices
-  const xs = (a.xs.length ? a.xs : (b.xs.length ? b.xs : a.ys.map((_, i) => String(i))))
+  const fallbackLength = a.ys.length || b.ys.length || c.ys.length || 0
+  const xs = (
+    a.xs.length
+      ? a.xs
+      : b.xs.length
+          ? b.xs
+          : c.xs.length
+              ? c.xs
+              : Array.from({ length: fallbackLength }, (_, i) => String(i))
+  )
+
+  const legendData = [props.nameA, props.nameB]
+  if (hasC) legendData.push(props.nameC)
+
+  const yAxis = [
+    {
+      type: 'value',
+      name: `${props.nameA} (m³)`,
+      axisLine: { show: false },
+      splitLine: { lineStyle: { color: '#eee' } },
+      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)} m³` }
+    },
+    {
+      type: 'value',
+      name: `${props.nameB} (m³/d)`,
+      position: 'right',
+      axisLine: { show: false },
+      splitLine: { show: false },
+      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)} m³/d` }
+    }
+  ]
+
+  if (hasC) {
+    yAxis.push({
+      type: 'value',
+      name: `${props.nameC} (%)`,
+      position: 'right',
+      offset: 44,
+      min: 0,
+      max: 100,
+      axisLine: { show: false },
+      splitLine: { show: false },
+      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)}%` }
+    })
+  }
+
+  const series = [
+    {
+      name: props.nameA,
+      type: 'line',
+      smooth: true, // <-- suavizado
+      showSymbol: false,
+      sampling: 'lttb',
+      yAxisIndex: 0,
+      areaStyle: { color: props.colorA, opacity: 0.12 },
+      lineStyle: { color: props.colorA, width: 2 },
+      emphasis: { focus: 'series' },
+      data: a.ys
+    },
+    {
+      name: props.nameB,
+      type: 'line',
+      smooth: true, // <-- suavizado
+      showSymbol: false,
+      sampling: 'lttb',
+      yAxisIndex: 1,
+      areaStyle: { color: props.colorB, opacity: 0.12 },
+      lineStyle: { color: props.colorB, width: 2, type: 'dashed' },
+      emphasis: { focus: 'series' },
+      data: b.ys
+    }
+  ]
+
+  if (hasC) {
+    series.push({
+      name: props.nameC,
+      type: 'line',
+      smooth: true,
+      showSymbol: false,
+      sampling: 'lttb',
+      yAxisIndex: 2,
+      areaStyle: { color: props.colorC, opacity: 0.08 },
+      lineStyle: { color: props.colorC, width: 2, type: 'dotted' },
+      emphasis: { focus: 'series' },
+      data: c.ys
+    })
+  }
 
   return {
     title: { text: props.title, left: 'center' },
-    tooltip: { trigger: 'axis' },
-    legend: { data: [props.nameA, props.nameB], top: 30 },
-    grid: { left: 16, right: 16, bottom: 40, containLabel: true },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'cross' },
+      formatter: params => {
+        if (!Array.isArray(params) || params.length === 0) return ''
+        const axisLabel = params[0].axisValueLabel ?? params[0].axisValue ?? ''
+        const lines = [axisLabel]
+
+        params.forEach(param => {
+          const raw = Array.isArray(param.value) ? param.value[1] : (param.value ?? param.data)
+          lines.push(`${param.marker}${param.seriesName}: ${formatValue(raw, param.seriesName)}`)
+        })
+
+        return lines.join('<br/>')
+      }
+    },
+    legend: { data: legendData, top: 30 },
+    grid: { left: 16, right: hasC ? 72 : 48, bottom: 40, top: 56, containLabel: true },
     xAxis: {
       type: 'category',
       data: xs,
@@ -64,36 +191,8 @@ function buildOptions() {
       axisLine: { lineStyle: { color: '#ccc' } },
       axisLabel: { color: '#666' }
     },
-    yAxis: {
-      type: 'value',
-      axisLine: { show: false },
-      splitLine: { lineStyle: { color: '#eee' } },
-      axisLabel: { color: '#666' }
-    },
-    series: [
-      {
-        name: props.nameA,
-        type: 'line',
-        smooth: true, // <-- suavizado
-        showSymbol: false,
-        sampling: 'lttb',
-        areaStyle: { color: props.colorA, opacity: 0.12 },
-        lineStyle: { color: props.colorA, width: 2 },
-        emphasis: { focus: 'series' },
-        data: a.ys
-      },
-      {
-        name: props.nameB,
-        type: 'line',
-        smooth: true, // <-- suavizado
-        showSymbol: false,
-        sampling: 'lttb',
-        areaStyle: { color: props.colorB, opacity: 0.12 },
-        lineStyle: { color: props.colorB, width: 2, type: 'dashed' },
-        emphasis: { focus: 'series' },
-        data: b.ys
-      }
-    ],
+    yAxis,
+    series,
     animation: true,
     animationEasing: 'cubicOut'
   }
@@ -131,11 +230,14 @@ onBeforeUnmount(() => {
 watch([
   () => props.seriesA,
   () => props.seriesB,
+  () => props.seriesC,
   () => props.title,
   () => props.colorA,
   () => props.colorB,
+  () => props.colorC,
   () => props.nameA,
-  () => props.nameB
+  () => props.nameB,
+  () => props.nameC
 ], () => {
   if (instance) {
     try {
