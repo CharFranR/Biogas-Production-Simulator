@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ResultCard, Button, InputCard, Container, Header, AreaChart } from '@biogas-simulator/ui'
+import { ResultCard, Button, InputCard, Container, AreaChart } from '@biogas-simulator/ui'
 import { useSimulation } from '../utilities/useSimulation'
 import { exportToExcel, exportToCSV, createDownloadBlob, downloadFile, type SimulationData } from '@biogas-simulator/core'
 
@@ -111,10 +111,7 @@ function exportToCSVFile() {
 
 
 <template>
-  <Header></Header>
-
-  <main class="px-4 py-6">
-    <div class="flex flex-col lg:flex-row gap-6">
+  <div class="flex flex-col lg:flex-row gap-6">
 
       <!-- Left column: inputs -->
       <div class="w-full lg:w-1/3">
@@ -141,7 +138,7 @@ function exportToCSVFile() {
       </div>
 
       <!-- Right column: chart above, cards below -->
-      <div class="w-full lg:w-2/3 flex flex-col ">
+       <div class="w-full lg:w-2/3 flex flex-col ">
         <Container maxSize="w-2xl">
           <AreaChart
             :series-a="seriesAccum"
@@ -163,6 +160,4 @@ function exportToCSVFile() {
       </div>
 
     </div>
-  </main>
-
 </template>
