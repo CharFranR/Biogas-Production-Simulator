@@ -3,3 +3,5 @@ export * from './models/Fill'
 export * from './models/EnvironmentalParams'
 export * from './models/SimulationParams'
 export * from './models/Biodigester'
+
+export * from './export'
