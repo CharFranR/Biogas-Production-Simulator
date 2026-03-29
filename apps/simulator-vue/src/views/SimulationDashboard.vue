@@ -11,7 +11,45 @@ const iconPlay = "M5 3l14 9-14 9V3z"
 const iconExcel = "M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h12V10h-6V4H6zm8 0v4h4l-4-4z"
 const iconCSV = "M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 2h5a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2z"
 
-const { inputs, runSimulation, seriesAccum, seriesDaily, outputs, formattedOutputs } = useSimulation()
+const {
+  config,
+  resolvedMaterial,
+  moistureDefault,
+  moistureModel,
+  moistureManuallyOverridden,
+  runSimulation,
+  seriesAccum,
+  seriesDaily,
+  outputs,
+  formattedOutputs
+} = useSimulation()
+
+function setMaterialMode(mode: 'preset' | 'custom') {
+  if (mode === 'preset') {
+    ;(config.basic as unknown as { material: unknown }).material = { mode: 'preset', presetId: 'bovino' }
+    return
+  }
+
+  // Initialize custom values from current resolved material (useful when switching from preset)
+  const current = resolvedMaterial.value
+  ;(config.basic as unknown as { material: unknown }).material = {
+    mode: 'custom',
+    custom: {
+      name: 'Personalizado',
+      totalSolidsFraction: Number(current.totalSolidsFraction),
+      volatileSolidsFraction: Number(current.volatileSolidsFraction),
+      potentialBiogas: Number(current.potentialBiogas)
+    }
+  }
+}
+
+function setPresetId(presetId: 'bovino') {
+  ;(config.basic as unknown as { material: unknown }).material = { mode: 'preset', presetId }
+}
+
+function resetMoistureToDefault() {
+  moistureModel.value = null
+}
 
 function exportToExcelFile() {
   if (seriesAccum.value.length === 0) {
@@ -20,18 +58,7 @@ function exportToExcelFile() {
   }
 
   const simulationData: SimulationData = {
-    inputs: {
-      name: inputs.name,
-      approxDensity: inputs.approxDensity,
-      temperature: inputs.temperature,
-      lagTime: inputs.lagTime,
-      fillingMass: inputs.fillingMass,
-      moistureFilling: inputs.moistureFilling,
-      addedWater: inputs.addedWater,
-      totalSolidsPercent: inputs.totalSolidsPercent,
-      volatileSolidsPercent: inputs.volatileSolidsPercent,
-      potentialBiogas: inputs.potentialBiogas
-    },
+    inputs: config,
     outputs: {
       monod: outputs.monod,
       potentialProduction: outputs.potentialProduction,
@@ -44,7 +71,7 @@ function exportToExcelFile() {
       daily: seriesDaily.value
     },
     metadata: {
-      simulationName: inputs.name || 'Simulación Biogás',
+      simulationName: resolvedMaterial.value.name || 'Simulación Biogás',
       createdAt: new Date().toISOString(),
       version: '1.0'
     }
@@ -67,18 +94,7 @@ function exportToCSVFile() {
   }
 
   const simulationData: SimulationData = {
-    inputs: {
-      name: inputs.name,
-      approxDensity: inputs.approxDensity,
-      temperature: inputs.temperature,
-      lagTime: inputs.lagTime,
-      fillingMass: inputs.fillingMass,
-      moistureFilling: inputs.moistureFilling,
-      addedWater: inputs.addedWater,
-      totalSolidsPercent: inputs.totalSolidsPercent,
-      volatileSolidsPercent: inputs.volatileSolidsPercent,
-      potentialBiogas: inputs.potentialBiogas
-    },
+    inputs: config,
     outputs: {
       monod: outputs.monod,
       potentialProduction: outputs.potentialProduction,
@@ -91,7 +107,7 @@ function exportToCSVFile() {
       daily: seriesDaily.value
     },
     metadata: {
-      simulationName: inputs.name || 'Simulación Biogás',
+      simulationName: resolvedMaterial.value.name || 'Simulación Biogás',
       createdAt: new Date().toISOString(),
       version: '1.0'
     }
@@ -116,16 +132,109 @@ function exportToCSVFile() {
       <!-- Left column: inputs -->
       <div class="w-full lg:w-1/3">
         <Container label="Parámetros de Simulación" maxSize="max-w-xs">
-          <InputCard label="Nombre" type="text" v-model="inputs.name"/>
-          <InputCard label="Densidad Aprox. (kg/L)" v-model="inputs.approxDensity"/>
-          <InputCard label="Temperatura (°C)" v-model="inputs.temperature"/>
-          <InputCard label="Tiempo de Retardo (días)" v-model="inputs.lagTime"/>
-          <InputCard label="Masa de Llenado (kg)" v-model="inputs.fillingMass"/>
-          <InputCard label="Humedad del Llenado (%)" v-model="inputs.moistureFilling"/>
-          <InputCard label="Agua Agregada (kg)" v-model="inputs.addedWater"/>
-          <InputCard label="Sólidos Totales " v-model="inputs.totalSolidsPercent"/>
-          <InputCard label="Sólidos Volátiles " v-model="inputs.volatileSolidsPercent"/>
-          <InputCard label="Producción Potencial de Biogás (m³/kg SV)" v-model="inputs.potentialBiogas"/>
+          <div class="mt-2">
+            <h4 class="text-[#4180ab] text-sm">Material</h4>
+
+            <div class="mt-2 flex gap-2">
+              <button
+                type="button"
+                class="px-3 py-1 rounded-md text-sm border border-[#4180ab]/40"
+                :class="(config.basic as any).material?.mode === 'preset' ? 'bg-[#4180ab]/15 font-semibold' : 'bg-white'"
+                @click="setMaterialMode('preset')"
+              >
+                Preset
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1 rounded-md text-sm border border-[#4180ab]/40"
+                :class="(config.basic as any).material?.mode === 'custom' ? 'bg-[#4180ab]/15 font-semibold' : 'bg-white'"
+                @click="setMaterialMode('custom')"
+              >
+                Custom
+              </button>
+            </div>
+
+            <div v-if="(config.basic as any).material?.mode === 'preset'" class="mt-3">
+              <label class="text-sm text-gray-700">Preset</label>
+              <select
+                class="mt-1 w-full border border-[#4180ab]/50 p-2 rounded-md"
+                :value="(config.basic as any).material?.presetId"
+                @change="setPresetId(($event.target as HTMLSelectElement).value as 'bovino')"
+              >
+                <option value="bovino">Bovino</option>
+              </select>
+            </div>
+
+            <div v-if="(config.basic as any).material?.mode === 'custom'" class="mt-3">
+              <InputCard
+                label="Nombre (custom)"
+                type="text"
+                :model-value="(config.basic as any).material.custom.name"
+                @update:model-value="v => ((config.basic as any).material.mode === 'custom' ? ((config.basic as any).material.custom.name = String(v ?? '')) : null)"
+              />
+            </div>
+          </div>
+
+          <InputCard
+            label="Fracción Sólidos Totales (0-1)"
+            :disabled="(config.basic as any).material?.mode === 'preset'"
+            :min="0"
+            :max="1"
+            :step="0.01"
+            :model-value="resolvedMaterial.totalSolidsFraction"
+            @update:model-value="v => {
+              if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.totalSolidsFraction = Number(v)
+            }"
+          />
+          <InputCard
+            label="Fracción VS/TS (0-1)"
+            :disabled="(config.basic as any).material?.mode === 'preset'"
+            :min="0"
+            :max="1"
+            :step="0.01"
+            :model-value="resolvedMaterial.volatileSolidsFraction"
+            @update:model-value="v => {
+              if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.volatileSolidsFraction = Number(v)
+            }"
+          />
+          <InputCard
+            label="Potencial (m³/kg SV)"
+            :disabled="(config.basic as any).material?.mode === 'preset'"
+            :step="0.0001"
+            :model-value="resolvedMaterial.potentialBiogas"
+            @update:model-value="v => {
+              if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.potentialBiogas = Number(v)
+            }"
+          />
+
+          <InputCard label="Densidad Aprox. (kg/m³)" v-model="config.physical.approxDensity" />
+          <InputCard label="Temperatura (°C)" v-model="config.environmental.temperature" />
+          <InputCard label="Tiempo de Retardo (días)" v-model="config.biological.lagTime" />
+          <InputCard label="Masa de Llenado (kg)" v-model="config.basic.fillingMass" />
+
+          <div class="mt-2">
+            <InputCard
+              label="Humedad del Llenado (%)"
+              :min="0"
+              :max="100"
+              :step="0.1"
+              v-model="moistureModel"
+              :placeholder="String(moistureDefault)"
+            />
+            <p class="mt-1 text-xs text-gray-600">
+              Default por TS: {{ moistureDefault }}%. <span v-if="moistureManuallyOverridden">(override manual)</span>
+            </p>
+            <button
+              v-if="moistureManuallyOverridden"
+              type="button"
+              class="mt-2 text-sm text-[#4180ab] underline"
+              @click="resetMoistureToDefault"
+            >
+              Volver al default
+            </button>
+          </div>
+
+          <InputCard label="Agua Agregada (kg)" v-model="config.physical.addedWater" />
 
           <div class="mt-4 space-y-2">
             <Button @click="runSimulation" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
