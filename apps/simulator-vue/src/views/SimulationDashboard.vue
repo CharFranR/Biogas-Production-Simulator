@@ -24,6 +24,19 @@ const {
   formattedOutputs
 } = useSimulation()
 
+function deriveAccumPct(accum: number[]) {
+  if (!Array.isArray(accum) || accum.length === 0) return []
+  const lastValue = accum[accum.length - 1]
+  const maxValue = Math.max(...accum.filter(value => Number.isFinite(value)))
+  const total = Number.isFinite(lastValue) ? lastValue : maxValue
+  if (!Number.isFinite(total) || total <= 0) return accum.map(() => 0)
+
+  return accum.map(value => {
+    if (!Number.isFinite(value)) return 0
+    return Number(((value / total) * 100).toFixed(2))
+  })
+}
+
 function setMaterialMode(mode: 'preset' | 'custom') {
   if (mode === 'preset') {
     ;(config.basic as unknown as { material: unknown }).material = { mode: 'preset', presetId: 'bovino' }
@@ -260,10 +273,13 @@ function exportToCSVFile() {
               <AreaChart
                 :series-a="seriesAccum"
                 :series-b="seriesDaily"
+                :series-c="deriveAccumPct(seriesAccum)"
                 name-a="Producción acumulada"
                 name-b="Producción diaria"
+                name-c="Acumulada (%)"
                 color-a="#5470c6"
                 color-b="#91cc75"
+                color-c="#fac858"
                 title=""
               />
             </Container>
