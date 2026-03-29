@@ -28,8 +28,9 @@ function deriveAccumPct(accum: number[]) {
   if (!Array.isArray(accum) || accum.length === 0) return []
   const lastValue = accum[accum.length - 1]
   const maxValue = Math.max(...accum.filter(value => Number.isFinite(value)))
-  const total = Number.isFinite(lastValue) ? lastValue : maxValue
-  if (!Number.isFinite(total) || total <= 0) return accum.map(() => 0)
+  const totalCandidate = Number.isFinite(lastValue) ? lastValue : maxValue
+  const total = Number.isFinite(totalCandidate) ? totalCandidate : 0
+  if (total <= 0) return accum.map(() => 0)
 
   return accum.map(value => {
     if (!Number.isFinite(value)) return 0
