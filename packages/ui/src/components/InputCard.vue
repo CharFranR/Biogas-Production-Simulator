@@ -26,7 +26,7 @@ function onInput(e: Event) {
 
 <template>
  
-<div class="flex flex-col gap-1 justify-center max-w-2xs mt-2 ">
+<div class="flex flex-col gap-1 justify-center">
         <h4 class="text-[#4180ab] text-sm">{{label}}</h4>
         <input
             :type="type"
