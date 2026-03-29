@@ -7,8 +7,8 @@
   This app consumes UI components from the monorepo package `packages/ui`.
   Include those sources so utility classes used inside the UI package are generated.
 */
-@source "../../packages/ui/src/**/*.vue";
-@source "../../packages/ui/src/**/*.ts";
+@source "../../../packages/ui/src/**/*.vue";
+@source "../../../packages/ui/src/**/*.ts";
 
 /* Force full-page background */
 html, body, #app {
