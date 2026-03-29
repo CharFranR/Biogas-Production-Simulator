@@ -6,6 +6,7 @@ import {
   SimulationParams,
   createDefaultSimulationConfig,
   getMaterialPreset,
+  type SimulationData,
   type MaterialCustomConfig,
   type MaterialSelectionConfig,
   type SimulationConfig
@@ -82,6 +83,7 @@ export function useSimulation() {
 
   const seriesAccum = ref<Array<number>>([])
   const seriesDaily = ref<Array<number>>([])
+  const simulationData = ref<SimulationData | null>(null)
 
   function runSimulation() {
     const material = resolvedMaterial.value
@@ -135,6 +137,29 @@ export function useSimulation() {
     outputs.potentialProduction = sim.potentialProduction
     outputs.TotalSolids = result.TotalSolids
     outputs.VolatileSolids = result.VolatileSolids
+
+    const data: SimulationData = {
+      inputs: config,
+      outputs: {
+        monod: outputs.monod,
+        potentialProduction: outputs.potentialProduction,
+        TotalSolids: outputs.TotalSolids,
+        VolatileSolids: outputs.VolatileSolids
+      },
+      timeSeries: {
+        time: xs,
+        accumulated: ys,
+        daily
+      },
+      metadata: {
+        simulationName: material.name || 'Simulación Biogás',
+        createdAt: new Date().toISOString(),
+        version: '1.0'
+      }
+    }
+
+    simulationData.value = data
+    return data
   }
 
   const formattedOutputs = computed(() => ({
@@ -153,6 +178,7 @@ export function useSimulation() {
     runSimulation,
     seriesAccum,
     seriesDaily,
+    simulationData,
     outputs,
     formattedOutputs
   }
