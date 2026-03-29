@@ -109,12 +109,6 @@ onMounted(async () => {
   }
 
   try {
-    console.log('areaChart: props', {
-      seriesA: props.seriesA?.length ?? 0,
-      seriesB: props.seriesB?.length ?? 0,
-      title: props.title
-    })
-
     instance = echarts.init(chart.value)
     instance.setOption(buildOptions())
     window.addEventListener('resize', resize)
