@@ -5,3 +5,5 @@ export * from './models/SimulationParams'
 export * from './models/Biodigester'
 
 export * from './export'
+
+export * from './config/simulationConfig'
