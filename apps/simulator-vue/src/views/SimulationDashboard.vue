@@ -130,9 +130,10 @@ function exportToCSVFile() {
   <div class="grid grid-cols-12 gap-6 h-full">
 
       <!-- Left column: inputs -->
-      <div class="col-span-12 lg:col-span-4">
-        <Container label="Parámetros de Simulación">
-          <div class="mt-2">
+      <div class="col-span-12 lg:col-span-4 h-full overflow-hidden">
+        <div class="h-full overflow-y-auto">
+          <Container label="Parámetros de Simulación">
+            <div class="mt-2">
             <h4 class="text-[#4180ab] text-sm">Material</h4>
 
             <div class="mt-2 flex gap-2">
@@ -240,35 +241,40 @@ function exportToCSVFile() {
             <InputCard label="Agua Agregada (kg)" v-model="config.physical.addedWater" />
           </div>
 
-          <div class="mt-6 space-y-2">
-            <Button @click="runSimulation" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
-            <div class="grid grid-cols-2 gap-2">
-              <Button @click="exportToExcelFile" buttonName="Exportar Excel" :iconPath="iconExcel"></Button>
-              <Button @click="exportToCSVFile" buttonName="Exportar CSV" :iconPath="iconCSV"></Button>
+            <div class="mt-6 space-y-2">
+              <Button @click="runSimulation" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
+              <div class="grid grid-cols-2 gap-2">
+                <Button @click="exportToExcelFile" buttonName="Exportar Excel" :iconPath="iconExcel"></Button>
+                <Button @click="exportToCSVFile" buttonName="Exportar CSV" :iconPath="iconCSV"></Button>
+              </div>
             </div>
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
 
       <!-- Right column: chart above, cards below -->
-      <div class="col-span-12 lg:col-span-8 flex flex-col">
-        <Container>
-          <AreaChart
-            :series-a="seriesAccum"
-            :series-b="seriesDaily"
-            name-a="Producción acumulada"
-            name-b="Producción diaria"
-            color-a="#5470c6"
-            color-b="#91cc75"
-            title=""
-          />
-        </Container>
+      <div class="col-span-12 lg:col-span-8 h-full overflow-hidden">
+        <div class="h-full overflow-y-auto space-y-6">
+          <div class="sticky top-0 z-10 bg-white">
+            <Container>
+              <AreaChart
+                :series-a="seriesAccum"
+                :series-b="seriesDaily"
+                name-a="Producción acumulada"
+                name-b="Producción diaria"
+                color-a="#5470c6"
+                color-b="#91cc75"
+                title=""
+              />
+            </Container>
+          </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <ResultCard label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></ResultCard>
-          <ResultCard label="Crecimiento Monod" :value="formattedOutputs.monod" unit="día⁻¹" :iconPath="iconMonitoing"></ResultCard>
-          <ResultCard label="Sólidos Totales" :value="formattedOutputs.TotalSolids" :iconPath="iconMoinsture"></ResultCard>
-          <ResultCard label="Sólidos Volátiles" :value="formattedOutputs.VolatileSolids" :iconPath="iconWind"></ResultCard>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ResultCard label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></ResultCard>
+            <ResultCard label="Crecimiento Monod" :value="formattedOutputs.monod" unit="día⁻¹" :iconPath="iconMonitoing"></ResultCard>
+            <ResultCard label="Sólidos Totales" :value="formattedOutputs.TotalSolids" :iconPath="iconMoinsture"></ResultCard>
+            <ResultCard label="Sólidos Volátiles" :value="formattedOutputs.VolatileSolids" :iconPath="iconWind"></ResultCard>
+          </div>
         </div>
       </div>
 
