@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import Cards from './components/cards.vue'
-import Button from './components/button.vue'
-import InputCard from './components/inputCard.vue'
-import Container from './components/container.vue'
+import { ResultCard, Button, InputCard, Container, Header } from '@biogas-simulator/ui'
 import AreaChart from "./components/areaChart.vue"
-import Header from "./components/header.vue"
 import { useSimulation } from './utilities/useSimulation'
 
 const iconTrending = "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
@@ -59,10 +55,10 @@ const { inputs, runSimulation, seriesAccum, seriesDaily, formattedOutputs } = us
         </Container>
 
         <div class="grid grid-cols-1 sm:grid-cols-2">
-          <Cards label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></Cards>
-          <Cards label="Crecimiento Monod" :value="formattedOutputs.monod" unit="día⁻¹" :iconPath="iconMonitoing"></Cards>
-          <Cards label="Sólidos Totales" :value="formattedOutputs.TotalSolids" :iconPath="iconMoinsture"></Cards>
-          <Cards label="Sólidos Volátiles" :value="formattedOutputs.VolatileSolids" :iconPath="iconWind"></Cards>
+          <ResultCard label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></ResultCard>
+          <ResultCard label="Crecimiento Monod" :value="formattedOutputs.monod" unit="día⁻¹" :iconPath="iconMonitoing"></ResultCard>
+          <ResultCard label="Sólidos Totales" :value="formattedOutputs.TotalSolids" :iconPath="iconMoinsture"></ResultCard>
+          <ResultCard label="Sólidos Volátiles" :value="formattedOutputs.VolatileSolids" :iconPath="iconWind"></ResultCard>
         </div>
       </div>
 
