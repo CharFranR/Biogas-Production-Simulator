@@ -6,10 +6,15 @@ import path from 'node:path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
+  define: {
+    // Some deps (e.g. xlsx) may reference process.env in browser builds
+    'process.env': {}
+  },
   resolve: {
     alias: {
       // Use core source directly (monorepo) so app can consume new domain APIs
-      '@biogas-simulator/core': path.resolve(__dirname, '../../packages/core/src')
+      '@biogas-simulator/core': path.resolve(__dirname, '../../packages/core/src'),
+      buffer: 'buffer'
     }
   },
   optimizeDeps: {
