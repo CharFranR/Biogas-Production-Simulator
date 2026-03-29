@@ -93,32 +93,32 @@ function buildOptions() {
   const yAxis = [
     {
       type: 'value',
-      name: `${props.nameA} (m³)`,
+      name: 'm³',
       axisLine: { show: false },
       splitLine: { lineStyle: { color: '#eee' } },
-      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)} m³` }
+      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)}` }
     },
     {
       type: 'value',
-      name: `${props.nameB} (m³/d)`,
+      name: 'm³/d',
       position: 'right',
       axisLine: { show: false },
       splitLine: { show: false },
-      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)} m³/d` }
+      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)}` }
     }
   ]
 
   if (hasC) {
     yAxis.push({
       type: 'value',
-      name: `${props.nameC} (%)`,
+      name: '%',
       position: 'right',
       offset: 44,
       min: 0,
       max: 100,
       axisLine: { show: false },
       splitLine: { show: false },
-      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)}%` }
+      axisLabel: { color: '#666', formatter: value => `${formatNumber(value, 2)}` }
     })
   }
 
