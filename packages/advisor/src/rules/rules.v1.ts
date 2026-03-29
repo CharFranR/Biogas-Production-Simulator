@@ -5,7 +5,7 @@ export const RULES_V1: RuleV1[] = [
     id: 'low-daily-production',
     title: 'Producción diaria baja',
     when: {
-      fact: 'series.dailyAvg',
+      fact: 'derived.dailyMeanLastNDays_m3',
       op: 'lt',
       value: 0.5
     },
@@ -26,7 +26,7 @@ export const RULES_V1: RuleV1[] = [
     id: 'slow-startup',
     title: 'Arranque lento del proceso',
     when: {
-      fact: 'derived.reachPctDay',
+      fact: 'derived.timeToReachPctOfPotential_days',
       op: 'gt',
       value: 30
     },
@@ -47,14 +47,14 @@ export const RULES_V1: RuleV1[] = [
     id: 'high-volatility',
     title: 'Alta volatilidad en producción diaria',
     when: {
-      fact: 'derived.volatilityDailyPct',
+      fact: 'derived.dailyDropPct_lastN_vs_firstN_pct',
       op: 'gte',
-      value: 20
+      value: 25
     },
     then: {
       kind: 'recommendation',
       message:
-        'Se observa alta variabilidad diaria. Estabilizá la alimentación y evitá cambios bruscos de sustrato.',
+        'La producción diaria cayó en el último tramo. Ajustá la alimentación y revisá la estabilidad del sustrato.',
       severity: 'warn'
     },
     evidence: {
