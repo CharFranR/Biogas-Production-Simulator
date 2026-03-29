@@ -1,19 +1,77 @@
-import { ref, reactive, computed } from 'vue'
-import { BasicParams, Fill, EnvironmentalParams, SimulationParams } from '@biogas-simulator/core'
+import { ref, reactive, computed, watch } from 'vue'
+import {
+  BasicParams,
+  Fill,
+  EnvironmentalParams,
+  SimulationParams,
+  createDefaultSimulationConfig,
+  getMaterialPreset,
+  type MaterialCustomConfig,
+  type MaterialSelectionConfig,
+  type SimulationConfig
+} from '@biogas-simulator/core'
 
 export function useSimulation() {
-  const inputs = reactive({
-    name: 'Material',
-    approxDensity: 1000, // kg/m3 ~ 1 kg/L
-    temperature: 30,
-    lagTime: 1,
-    fillingMass: 100,
-    moistureFilling: 50,
-    addedWater: 0,
-    totalSolidsPercent: 20,
-    volatileSolidsPercent: 0.79,
-    potentialBiogas: 0.5
+  const config = reactive<SimulationConfig>(createDefaultSimulationConfig())
+
+  // Force new-domain config shape (material selection) even if core returns legacy defaults
+  if (!(config.basic as unknown as { material?: unknown }).material) {
+    ;(config.basic as unknown as { material: MaterialSelectionConfig }).material = {
+      mode: 'preset',
+      presetId: 'bovino'
+    }
+  }
+
+  if (config.physical.moistureFilling === undefined) {
+    config.physical.moistureFilling = null
+  }
+
+  // UX state: moisture defaults to material TS unless user overrides
+  const moistureManuallyOverridden = ref(false)
+
+  const resolvedMaterial = computed<MaterialCustomConfig>(() => {
+    const sel: MaterialSelectionConfig = (config.basic as unknown as { material: MaterialSelectionConfig }).material
+    if (sel.mode === 'preset') {
+      return getMaterialPreset(sel.presetId)
+    }
+    return sel.custom
   })
+
+  const totalSolidsFraction = computed(() => Number(resolvedMaterial.value.totalSolidsFraction))
+  const moistureDefault = computed(() => {
+    const ts = totalSolidsFraction.value
+    const moisture = (1 - ts) * 100
+    if (Number.isNaN(moisture)) return 0
+    return Math.min(100, Math.max(0, moisture))
+  })
+
+  const moistureDefaultRounded = computed(() => Number(moistureDefault.value.toFixed(2)))
+
+  const moistureModel = computed<number | null>({
+    get() {
+      const v = config.physical.moistureFilling
+      return v === undefined || v === null ? null : Number(v)
+    },
+    set(v) {
+      if (v === null) {
+        moistureManuallyOverridden.value = false
+        config.physical.moistureFilling = moistureDefaultRounded.value
+        return
+      }
+      moistureManuallyOverridden.value = true
+      config.physical.moistureFilling = Number(v)
+    }
+  })
+
+  watch(
+    totalSolidsFraction,
+    () => {
+      if (!moistureManuallyOverridden.value) {
+        config.physical.moistureFilling = moistureDefaultRounded.value
+      }
+    },
+    { immediate: true }
+  )
 
   const outputs = reactive({
     monod: 0,
@@ -26,24 +84,24 @@ export function useSimulation() {
   const seriesDaily = ref<Array<number>>([])
 
   function runSimulation() {
-    // build model instances
+    const material = resolvedMaterial.value
     const basic = new BasicParams(
-      inputs.name,
-      Number(inputs.totalSolidsPercent),
-      Number(inputs.volatileSolidsPercent),
-      Number(inputs.potentialBiogas)
+      material.name,
+      Number(material.totalSolidsFraction),
+      Number(material.volatileSolidsFraction),
+      Number(material.potentialBiogas)
     )
 
     const fill = new Fill(
-      Number(inputs.fillingMass),
-      Number(inputs.moistureFilling),
-      Number(inputs.addedWater),
+      Number(config.basic.fillingMass),
+      config.physical.moistureFilling,
+      Number(config.physical.addedWater),
       basic,
-      Number(inputs.lagTime),
-      Number(inputs.approxDensity)
+      Number(config.biological.lagTime),
+      Number(config.physical.approxDensity)
     )
 
-    const env = new EnvironmentalParams(Number(inputs.temperature), 0)
+    const env = new EnvironmentalParams(Number(config.environmental.temperature), 0)
 
     const sim = new SimulationParams(fill, env)
 
@@ -87,7 +145,11 @@ export function useSimulation() {
   }))
 
   return {
-    inputs,
+    config,
+    resolvedMaterial,
+    moistureDefault: moistureDefaultRounded,
+    moistureModel,
+    moistureManuallyOverridden,
     runSimulation,
     seriesAccum,
     seriesDaily,

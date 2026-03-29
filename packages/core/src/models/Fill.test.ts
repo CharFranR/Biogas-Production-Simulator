@@ -3,7 +3,7 @@ import { BasicParams } from './BasicParams'
 import { Fill } from './Fill'
 
 describe('Fill', () => {
-  const basic = new BasicParams('Maize', 20, 0.79, 0.5)
+  const basic = new BasicParams('Maize', 0.2, 0.79, 0.5)
   
   it('creates instance with correct values', () => {
     const fill = new Fill(100, 50, 0, basic, 1, 1000)
@@ -20,6 +20,14 @@ describe('Fill', () => {
     const fill = new Fill(100, 50, 0, basic, 1, 1000)
     // total solids = fillingMass * (1 - moistureFilling/100)
     expect(fill.calculateTotalSolids()).toBe(100 * (1 - 50/100)) // 50
+  })
+
+  it('uses material TS when moisture is undefined or zero', () => {
+    const fillUndefined = new Fill(100, undefined, 0, basic, 1, 1000)
+    expect(fillUndefined.calculateTotalSolids()).toBe(basic.totalSolids * 100)
+
+    const fillZero = new Fill(100, 0, 0, basic, 1, 1000)
+    expect(fillZero.calculateTotalSolids()).toBe(basic.totalSolids * 100)
   })
   
   it('calculates volatile solids correctly', () => {

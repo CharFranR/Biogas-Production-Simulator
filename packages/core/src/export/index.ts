@@ -1,18 +1,13 @@
 import * as XLSX from 'xlsx'
 import { stringify } from 'csv-stringify/sync'
+import {
+  isSimulationConfig,
+  legacyInputsFromConfig,
+  type LegacySimulationInputs,
+  type SimulationConfig
+} from '../config/simulationConfig'
 
-export interface SimulationInputs {
-  name: string
-  approxDensity: number
-  temperature: number
-  lagTime: number
-  fillingMass: number
-  moistureFilling: number
-  addedWater: number
-  totalSolidsPercent: number
-  volatileSolidsPercent: number
-  potentialBiogas: number
-}
+export type SimulationInputs = LegacySimulationInputs
 
 export interface SimulationOutputs {
   monod: number
@@ -28,7 +23,11 @@ export interface TimeSeriesData {
 }
 
 export interface SimulationData {
-  inputs: SimulationInputs
+  /**
+   * inputs puede ser el shape legacy (plano) o el nuevo SimulationConfig.
+   * Esto permite migrar la UI por fases sin romper exportación.
+   */
+  inputs: SimulationInputs | SimulationConfig
   outputs: SimulationOutputs
   timeSeries: TimeSeriesData
   metadata?: {
@@ -38,59 +37,64 @@ export interface SimulationData {
   }
 }
 
+function normalizeInputs(inputs: SimulationInputs | SimulationConfig): SimulationInputs {
+  return isSimulationConfig(inputs) ? legacyInputsFromConfig(inputs) : inputs
+}
+
 export function exportToExcel(simulationData: SimulationData): ArrayBuffer {
   const workbook = XLSX.utils.book_new()
+  const inputs = normalizeInputs(simulationData.inputs)
   
   // Hoja 1: Parámetros de entrada
   const inputsSheet = XLSX.utils.json_to_sheet([
     {
       Parámetro: 'Nombre del material',
-      Valor: simulationData.inputs.name,
+      Valor: inputs.name,
       Unidad: ''
     },
     {
       Parámetro: 'Densidad aproximada',
-      Valor: simulationData.inputs.approxDensity,
+      Valor: inputs.approxDensity,
       Unidad: 'kg/m³'
     },
     {
       Parámetro: 'Temperatura',
-      Valor: simulationData.inputs.temperature,
+      Valor: inputs.temperature,
       Unidad: '°C'
     },
     {
       Parámetro: 'Tiempo de retardo',
-      Valor: simulationData.inputs.lagTime,
+      Valor: inputs.lagTime,
       Unidad: 'días'
     },
     {
       Parámetro: 'Masa de llenado',
-      Valor: simulationData.inputs.fillingMass,
+      Valor: inputs.fillingMass,
       Unidad: 'kg'
     },
     {
       Parámetro: 'Humedad del llenado',
-      Valor: simulationData.inputs.moistureFilling,
+      Valor: inputs.moistureFilling,
       Unidad: '%'
     },
     {
       Parámetro: 'Agua agregada',
-      Valor: simulationData.inputs.addedWater,
+      Valor: inputs.addedWater,
       Unidad: 'kg'
     },
     {
       Parámetro: 'Sólidos totales',
-      Valor: simulationData.inputs.totalSolidsPercent,
+      Valor: inputs.totalSolidsPercent,
       Unidad: '%'
     },
     {
       Parámetro: 'Sólidos volátiles',
-      Valor: simulationData.inputs.volatileSolidsPercent,
-      Unidad: '%'
+      Valor: inputs.volatileSolidsPercent,
+      Unidad: 'fracción (VS/TS)'
     },
     {
       Parámetro: 'Producción potencial de biogás',
-      Valor: simulationData.inputs.potentialBiogas,
+      Valor: inputs.potentialBiogas,
       Unidad: 'm³/kg SV'
     }
   ])
@@ -155,20 +159,21 @@ export function exportToExcel(simulationData: SimulationData): ArrayBuffer {
 
 export function exportToCSV(simulationData: SimulationData): string {
   const sections: string[] = []
+  const inputs = normalizeInputs(simulationData.inputs)
   
   // Sección 1: Parámetros
   sections.push('# PARÁMETROS DE ENTRADA')
   sections.push('Parámetro,Valor,Unidad')
-  sections.push(`Nombre del material,${simulationData.inputs.name},`)
-  sections.push(`Densidad aproximada,${simulationData.inputs.approxDensity},kg/m³`)
-  sections.push(`Temperatura,${simulationData.inputs.temperature},°C`)
-  sections.push(`Tiempo de retardo,${simulationData.inputs.lagTime},días`)
-  sections.push(`Masa de llenado,${simulationData.inputs.fillingMass},kg`)
-  sections.push(`Humedad del llenado,${simulationData.inputs.moistureFilling},%`)
-  sections.push(`Agua agregada,${simulationData.inputs.addedWater},kg`)
-  sections.push(`Sólidos totales,${simulationData.inputs.totalSolidsPercent},%`)
-  sections.push(`Sólidos volátiles,${simulationData.inputs.volatileSolidsPercent},%`)
-  sections.push(`Producción potencial de biogás,${simulationData.inputs.potentialBiogas},m³/kg SV`)
+  sections.push(`Nombre del material,${inputs.name},`)
+  sections.push(`Densidad aproximada,${inputs.approxDensity},kg/m³`)
+  sections.push(`Temperatura,${inputs.temperature},°C`)
+  sections.push(`Tiempo de retardo,${inputs.lagTime},días`)
+  sections.push(`Masa de llenado,${inputs.fillingMass},kg`)
+  sections.push(`Humedad del llenado,${inputs.moistureFilling},%`)
+  sections.push(`Agua agregada,${inputs.addedWater},kg`)
+  sections.push(`Sólidos totales,${inputs.totalSolidsPercent},%`)
+  sections.push(`Sólidos volátiles,${inputs.volatileSolidsPercent},%`)
+  sections.push(`Producción potencial de biogás,${inputs.potentialBiogas},m³/kg SV`)
   sections.push('')
   
   // Sección 2: Resultados
