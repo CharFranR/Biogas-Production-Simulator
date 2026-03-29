@@ -4,9 +4,11 @@ import SimulationDashboard from '../views/SimulationDashboard.vue'
 </script>
 
 <template>
-  <Header />
+  <div class="min-h-dvh flex flex-col">
+    <Header />
 
-  <main class="px-4 py-6">
-    <SimulationDashboard />
-  </main>
+    <main class="flex-1 overflow-hidden px-4 py-6">
+      <SimulationDashboard />
+    </main>
+  </div>
 </template>
