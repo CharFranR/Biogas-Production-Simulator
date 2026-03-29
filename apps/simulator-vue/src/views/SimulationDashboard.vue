@@ -127,11 +127,11 @@ function exportToCSVFile() {
 
 
 <template>
-  <div class="flex flex-col lg:flex-row gap-6">
+  <div class="grid grid-cols-12 gap-6 h-full">
 
       <!-- Left column: inputs -->
-      <div class="w-full lg:w-1/3">
-        <Container label="Parámetros de Simulación" maxSize="max-w-xs">
+      <div class="col-span-12 lg:col-span-4">
+        <Container label="Parámetros de Simulación">
           <div class="mt-2">
             <h4 class="text-[#4180ab] text-sm">Material</h4>
 
@@ -175,44 +175,46 @@ function exportToCSVFile() {
             </div>
           </div>
 
-          <InputCard
-            label="Fracción Sólidos Totales (0-1)"
-            :disabled="(config.basic as any).material?.mode === 'preset'"
-            :min="0"
-            :max="1"
-            :step="0.01"
-            :model-value="resolvedMaterial.totalSolidsFraction"
-            @update:model-value="v => {
-              if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.totalSolidsFraction = Number(v)
-            }"
-          />
-          <InputCard
-            label="Fracción VS/TS (0-1)"
-            :disabled="(config.basic as any).material?.mode === 'preset'"
-            :min="0"
-            :max="1"
-            :step="0.01"
-            :model-value="resolvedMaterial.volatileSolidsFraction"
-            @update:model-value="v => {
-              if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.volatileSolidsFraction = Number(v)
-            }"
-          />
-          <InputCard
-            label="Potencial (m³/kg SV)"
-            :disabled="(config.basic as any).material?.mode === 'preset'"
-            :step="0.0001"
-            :model-value="resolvedMaterial.potentialBiogas"
-            @update:model-value="v => {
-              if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.potentialBiogas = Number(v)
-            }"
-          />
+          <div class="mt-3 space-y-3">
+            <InputCard
+              label="Fracción Sólidos Totales (0-1)"
+              :disabled="(config.basic as any).material?.mode === 'preset'"
+              :min="0"
+              :max="1"
+              :step="0.01"
+              :model-value="resolvedMaterial.totalSolidsFraction"
+              @update:model-value="v => {
+                if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.totalSolidsFraction = Number(v)
+              }"
+            />
+            <InputCard
+              label="Fracción VS/TS (0-1)"
+              :disabled="(config.basic as any).material?.mode === 'preset'"
+              :min="0"
+              :max="1"
+              :step="0.01"
+              :model-value="resolvedMaterial.volatileSolidsFraction"
+              @update:model-value="v => {
+                if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.volatileSolidsFraction = Number(v)
+              }"
+            />
+            <InputCard
+              label="Potencial (m³/kg SV)"
+              :disabled="(config.basic as any).material?.mode === 'preset'"
+              :step="0.0001"
+              :model-value="resolvedMaterial.potentialBiogas"
+              @update:model-value="v => {
+                if ((config.basic as any).material.mode === 'custom') (config.basic as any).material.custom.potentialBiogas = Number(v)
+              }"
+            />
 
-          <InputCard label="Densidad Aprox. (kg/m³)" v-model="config.physical.approxDensity" />
-          <InputCard label="Temperatura (°C)" v-model="config.environmental.temperature" />
-          <InputCard label="Tiempo de Retardo (días)" v-model="config.biological.lagTime" />
-          <InputCard label="Masa de Llenado (kg)" v-model="config.basic.fillingMass" />
+            <InputCard label="Densidad Aprox. (kg/m³)" v-model="config.physical.approxDensity" />
+            <InputCard label="Temperatura (°C)" v-model="config.environmental.temperature" />
+            <InputCard label="Tiempo de Retardo (días)" v-model="config.biological.lagTime" />
+            <InputCard label="Masa de Llenado (kg)" v-model="config.basic.fillingMass" />
+          </div>
 
-          <div class="mt-2">
+          <div class="mt-4">
             <InputCard
               label="Humedad del Llenado (%)"
               :min="0"
@@ -234,9 +236,11 @@ function exportToCSVFile() {
             </button>
           </div>
 
-          <InputCard label="Agua Agregada (kg)" v-model="config.physical.addedWater" />
+          <div class="mt-3">
+            <InputCard label="Agua Agregada (kg)" v-model="config.physical.addedWater" />
+          </div>
 
-          <div class="mt-4 space-y-2">
+          <div class="mt-6 space-y-2">
             <Button @click="runSimulation" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
             <div class="grid grid-cols-2 gap-2">
               <Button @click="exportToExcelFile" buttonName="Exportar Excel" :iconPath="iconExcel"></Button>
@@ -247,8 +251,8 @@ function exportToCSVFile() {
       </div>
 
       <!-- Right column: chart above, cards below -->
-       <div class="w-full lg:w-2/3 flex flex-col ">
-        <Container maxSize="w-2xl">
+      <div class="col-span-12 lg:col-span-8 flex flex-col">
+        <Container>
           <AreaChart
             :series-a="seriesAccum"
             :series-b="seriesDaily"
@@ -260,7 +264,7 @@ function exportToCSVFile() {
           />
         </Container>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <ResultCard label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></ResultCard>
           <ResultCard label="Crecimiento Monod" :value="formattedOutputs.monod" unit="día⁻¹" :iconPath="iconMonitoing"></ResultCard>
           <ResultCard label="Sólidos Totales" :value="formattedOutputs.TotalSolids" :iconPath="iconMoinsture"></ResultCard>
