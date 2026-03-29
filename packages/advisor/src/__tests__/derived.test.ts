@@ -3,13 +3,21 @@ import { computeDerivedFacts, DERIVED_FACT_IDS } from '../facts/derived'
 import type { SimulationData } from '../simulation'
 
 describe('computeDerivedFacts', () => {
-  it('returns exactly 10 derived fact keys', () => {
+  it('returns exactly derived fact keys', () => {
     const simulationData: SimulationData = {
       inputs: {
+        basic: {
+          fillingMass: 1000
+        },
+        physical: {
+          addedWater: 0
+        },
         temperature: 35
       },
       outputs: {
-        potentialProduction: 100
+        potentialProduction: 100,
+        TotalSolids: 100,
+        VolatileSolids: 80
       },
       timeSeries: {
         time: [1, 2, 3, 4, 5],
@@ -24,6 +32,49 @@ describe('computeDerivedFacts', () => {
     DERIVED_FACT_IDS.forEach(id => {
       expect(facts).toHaveProperty(id)
     })
+  })
+
+  it('computes wet-basis TS percentage with missing addedWater', () => {
+    const simulationData: SimulationData = {
+      inputs: {
+        basic: {
+          fillingMass: 1000
+        },
+        physical: {}
+      },
+      outputs: {
+        TotalSolids: 100,
+        VolatileSolids: 80
+      }
+    }
+
+    const facts = computeDerivedFacts(simulationData)
+
+    expect(facts['derived.ts_pct']).toBe(10)
+    expect(facts['derived.vs_pct']).toBe(8)
+    expect(facts['derived.vs_of_ts_pct']).toBe(80)
+  })
+
+  it('returns null for wet-basis percentages when mix mass is zero', () => {
+    const simulationData: SimulationData = {
+      inputs: {
+        basic: {
+          fillingMass: 0
+        },
+        physical: {
+          addedWater: 0
+        }
+      },
+      outputs: {
+        TotalSolids: 50,
+        VolatileSolids: 25
+      }
+    }
+
+    const facts = computeDerivedFacts(simulationData)
+
+    expect(facts['derived.ts_pct']).toBeNull()
+    expect(facts['derived.vs_pct']).toBeNull()
   })
 
   it('uses advisor defaults for N, plateauPct, and reachPct', () => {

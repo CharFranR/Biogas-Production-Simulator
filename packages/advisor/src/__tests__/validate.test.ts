@@ -58,4 +58,22 @@ describe('assertValidRuleV1', () => {
 
     expect(() => assertValidRuleV1(rule)).toThrow('evidence.pdf')
   })
+
+  it('throws when status is invalid', () => {
+    const rule = {
+      ...baseRule,
+      status: 'pending'
+    } as unknown as RuleV1
+
+    expect(() => assertValidRuleV1(rule)).toThrow('status')
+  })
+
+  it('throws when requiresFacts is not an array', () => {
+    const rule = {
+      ...baseRule,
+      requiresFacts: 'inputs.temperature'
+    } as unknown as RuleV1
+
+    expect(() => assertValidRuleV1(rule)).toThrow('requiresFacts')
+  })
 })

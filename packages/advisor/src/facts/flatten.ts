@@ -50,6 +50,7 @@ export function deepFlattenFacts(
     addValue(path, null)
   }
 
+  // Limits prevent keyspace explosion on deeply nested or huge payloads.
   const traverse = (current: unknown, path: string, depth: number): void => {
     if (!path) return
     if (depth >= maxDepth) {

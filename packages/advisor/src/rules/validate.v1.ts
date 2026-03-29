@@ -2,6 +2,7 @@ import type { FactValue } from '../facts/types'
 import type { RuleOperatorV1, RuleV1 } from './schema.v1'
 
 const ALLOWED_OPERATORS: RuleOperatorV1[] = ['gt', 'gte', 'lt', 'lte', 'eq', 'neq']
+const ALLOWED_STATUSES: Array<NonNullable<RuleV1['status']>> = ['active', 'requires_new_fact']
 
 function isFactValue(value: unknown): value is FactValue {
   return (
@@ -30,6 +31,19 @@ export function assertValidRuleV1(rule: RuleV1): void {
   }
   if (!isFactValue(rule.when.value)) {
     throw new Error(`RuleV1(${rule.id}): when.value must be a FactValue`)
+  }
+  if (rule.status && !ALLOWED_STATUSES.includes(rule.status)) {
+    throw new Error(`RuleV1(${rule.id}): status is invalid`)
+  }
+  if (rule.requiresFacts) {
+    if (!Array.isArray(rule.requiresFacts)) {
+      throw new Error(`RuleV1(${rule.id}): requiresFacts must be an array`)
+    }
+    rule.requiresFacts.forEach(fact => {
+      if (!fact || typeof fact !== 'string') {
+        throw new Error(`RuleV1(${rule.id}): requiresFacts entries must be non-empty strings`)
+      }
+    })
   }
   if (!rule.then) {
     throw new Error(`RuleV1(${rule.id}): then is required`)

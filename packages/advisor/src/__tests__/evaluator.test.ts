@@ -62,6 +62,21 @@ describe('evaluateRulesV1', () => {
     expect(matches).toHaveLength(0)
   })
 
+  it('skips rules that require new facts', () => {
+    const facts: Facts = {
+      'derived.finalAccumulated_m3': 20
+    }
+
+    const rule: RuleV1 = {
+      ...baseRule,
+      status: 'requires_new_fact'
+    }
+
+    const matches = evaluateRulesV1([rule], facts)
+
+    expect(matches).toHaveLength(0)
+  })
+
   it('preserves evidence in the match output', () => {
     const facts: Facts = {
       'derived.finalAccumulated_m3': 20

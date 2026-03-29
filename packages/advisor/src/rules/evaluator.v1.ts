@@ -36,6 +36,11 @@ function compareValues(op: RuleOperatorV1, left: FactValue, right: FactValue): b
 
 export function evaluateRulesV1(rules: RuleV1[], facts: Facts): AdvisorMatch[] {
   return rules.flatMap(rule => {
+    if (rule.status === 'requires_new_fact') return []
+    if (rule.requiresFacts?.length) {
+      const hasAllFacts = rule.requiresFacts.every(factId => facts[factId] !== undefined)
+      if (!hasAllFacts) return []
+    }
     const factValue = facts[rule.when.fact]
     if (factValue === undefined) return []
 

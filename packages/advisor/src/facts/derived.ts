@@ -11,7 +11,10 @@ export const DERIVED_FACT_IDS = [
   'derived.timeToReachPctOfPotential_days',
   'derived.finalAccumulated_m3',
   'derived.finalVsPotential_ratio',
-  'derived.isMonotonicAccumulated_bool'
+  'derived.isMonotonicAccumulated_bool',
+  'derived.ts_pct',
+  'derived.vs_pct',
+  'derived.vs_of_ts_pct'
 ] as const
 
 export type DerivedFactId = typeof DERIVED_FACT_IDS[number]
@@ -25,6 +28,11 @@ const DEFAULT_PARAMS: AdvisorParams = {
 
 function isFiniteNumber(value: unknown): value is number {
   return typeof value === 'number' && Number.isFinite(value)
+}
+
+function clampPercent(value: number): number {
+  if (!Number.isFinite(value)) return 0
+  return Math.min(100, Math.max(0, value))
 }
 
 function mean(values: number[]): number {
@@ -125,6 +133,12 @@ export function computeDerivedFacts(
   simData: SimulationData,
   params?: Partial<AdvisorParams>
 ): DerivedFacts {
+  const inputs = simData.inputs as
+    | {
+        basic?: { fillingMass?: number | null }
+        physical?: { addedWater?: number | null }
+      }
+    | undefined
   const resolvedParams = { ...DEFAULT_PARAMS, ...params }
   const daily = Array.isArray(simData.timeSeries?.daily) ? simData.timeSeries.daily : []
   const accumulated = Array.isArray(simData.timeSeries?.accumulated)
@@ -163,6 +177,28 @@ export function computeDerivedFacts(
 
   const monotonicAccumulated = isMonotonicNonDecreasing(accumulated)
 
+  const fillingMass = isFiniteNumber(inputs?.basic?.fillingMass)
+    ? Number(inputs?.basic?.fillingMass)
+    : 0
+  const addedWaterRaw = inputs?.physical?.addedWater
+  const addedWater = isFiniteNumber(addedWaterRaw) ? Number(addedWaterRaw) : 0
+  const mixMass = fillingMass + addedWater
+
+  const totalSolids = isFiniteNumber(simData.outputs?.TotalSolids)
+    ? Number(simData.outputs?.TotalSolids)
+    : null
+  const volatileSolids = isFiniteNumber(simData.outputs?.VolatileSolids)
+    ? Number(simData.outputs?.VolatileSolids)
+    : null
+  const tsPct =
+    mixMass > 0 && totalSolids !== null ? clampPercent((totalSolids / mixMass) * 100) : null
+  const vsPct = mixMass > 0 && volatileSolids !== null
+    ? clampPercent((volatileSolids / mixMass) * 100)
+    : null
+  const vsOfTsPct = totalSolids !== null && totalSolids > 0 && volatileSolids !== null
+    ? clampPercent((volatileSolids / totalSolids) * 100)
+    : null
+
   const facts: DerivedFacts = {
     'derived.dailyPeak_m3': Number.isFinite(dailyPeakValue) ? dailyPeakValue : 0,
     'derived.dayOfDailyPeak_day': dayOfDailyPeak,
@@ -175,7 +211,11 @@ export function computeDerivedFacts(
     'derived.finalVsPotential_ratio': Number.isFinite(finalVsPotentialRatio)
       ? finalVsPotentialRatio
       : 0,
-    'derived.isMonotonicAccumulated_bool': monotonicAccumulated
+    'derived.isMonotonicAccumulated_bool': monotonicAccumulated,
+    // Wet basis percentages: % of total wet mix mass (fillingMass + addedWater).
+    'derived.ts_pct': tsPct,
+    'derived.vs_pct': vsPct,
+    'derived.vs_of_ts_pct': vsOfTsPct
   }
 
   if (Object.keys(facts).length !== DERIVED_FACT_IDS.length) {
