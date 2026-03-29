@@ -1,13 +1,10 @@
-<script setup>
-
-defineProps({
-  label: String,
-  value: String,
-  unit: String,
-  iconPath: String
-})
-
-
+<script setup lang="ts">
+defineProps<{
+  label: string
+  value: string
+  unit?: string
+  iconPath: string
+}>()
 </script>
 
 <template>
@@ -23,10 +20,9 @@ defineProps({
       <p class="text-sm font-medium text-[#4180ab]/70">{{ label }}</p>
       
       <h3 class="text-2xl font-semibold text-[#4180ab] tracking-tight">
-        {{ value }} <span class="text-base align-top ml-0.5 font-bold">{{ unit }}</span>
+        {{ value }} <span v-if="unit" class="text-base align-top ml-0.5 font-bold">{{ unit }}</span>
       </h3>
     </div>
 
   </div>
 </template>
-

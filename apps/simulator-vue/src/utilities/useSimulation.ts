@@ -1,8 +1,5 @@
 import { ref, reactive, computed } from 'vue'
-import { BasicParams } from '../models/BasicParams'
-import { Fill } from '../models/Fill'
-import { EnvironmentalParams } from '../models/EnvironmentalParams'
-import { SimulationParams } from '../models/SimulationParams'
+import { BasicParams, Fill, EnvironmentalParams, SimulationParams } from '@biogas-simulator/core'
 
 export function useSimulation() {
   const inputs = reactive({

@@ -10,6 +10,8 @@
     "deploy": "node scripts/deploy.cjs"
   },
   "dependencies": {
+    "@biogas-simulator/core": "file:../../packages/core",
+    "@biogas-simulator/ui": "file:../../packages/ui",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
     "echarts": "^6.0.0",

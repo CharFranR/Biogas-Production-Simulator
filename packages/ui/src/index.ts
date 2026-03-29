@@ -1,0 +1,5 @@
+export { default as InputCard } from './components/InputCard.vue'
+export { default as ResultCard } from './components/ResultCard.vue'
+export { default as Button } from './components/Button.vue'
+export { default as Container } from './components/Container.vue'
+export { default as Header } from './components/Header.vue'
