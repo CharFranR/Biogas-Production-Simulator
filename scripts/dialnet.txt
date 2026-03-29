@@ -1,0 +1,788 @@
+Rivas Solano, Olga; Faith Vargas, Margie; Guillén Watson, Rossy.
+Biodigestores: factores químicos, físicos y biológicos relacionados con su productividad
+Tecnología en Marcha, Vol. 23, N.° 1, Enero-Marzo 2010, P. 39-46
+
+Biodigestores: factores químicos,
+físicos y biológicos relacionados con
+su productividad
+Fecha de recepción: 01/04/2009
+Fecha de aceptación: 20/06/2009
+
+Los biodigestores son
+sistemas diseñados para
+optimizar la producción
+de biogás por medio
+de desechos orgánicos,
+lo que permite obtener
+energía limpia,
+renovable y de bajo
+costo.
+
+Palabras clave
+Biogás, biodigestor, productividad de
+metano, sustratos, bacterias metanogénicas.
+
+Key words
+Biogas, Biodigestor, methane productivity,
+substrates, methanogenic bacteria.
+
+Resumen
+Los biodigestores son sistemas diseñados
+para optimizar la producción de biogás
+por medio de desechos orgánicos, lo que
+permite obtener energía limpia, renovable
+y de bajo costo. En el ITCR se efectuó,
+durante el año 2008, una actividad de
+fortalecimiento de la investigación con
+el propósito de desarrollar un sistema
+electrónico e inalámbrico de control y
+protección para la producción de biogás.
+Como parte de los objetivos específicos se
+1.
+2.
+3.
+
+Olga Rivas Solano1
+Margie Faith Vargas2
+Rossy Guillén Watson3
+
+planteó investigar sobre los métodos que
+existen para acelerar la descomposición de
+la materia prima durante la producción del
+gas. Para elaborar el presente artículo se
+hizo una revisión con el fin de establecer
+los parámetros matemáticos implicados
+en la estimación de la productividad de
+un biodigestor. Posteriormente, se indagó
+la influencia de los factores químicos
+en la producción del mismo, entre ellos
+la composición de los sustratos y sus
+combinaciones, la adición de grasas y la
+presencia de inhibidores. Luego se estudió
+el efecto de factores físicos como la
+temperatura, la remoción de los sólidos y
+de las proteínas de los lodos y la separación
+de las fases de la digestión anaerobia
+de la materia orgánica. Finalmente, se
+investigó el papel de factores biológicos
+como la adición de bacterias termofílicas y
+la importancia de los metanógenos.
+
+Centro de Investigación en Biotecnología. Escuela de Biología. Instituto Tecnológico de Costa Rica.
+Correo electrónico: orivas@itcr.ac.cr
+Estudiante de Ingeniería en Biotecnología. Escuela de Biología. Instituto Tecnológico de Costa Rica.
+Correo electrónico: margiefaith@gmail.com
+Estudiante de Ingeniería en Biotecnología. Escuela de Biología. Instituto Tecnológico de Costa Rica.
+Correo electrónico: gosy16@gmail.com
+
+Enero - Marzo 2010
+
+39
+
+Abstract
+
+En la presente revisión
+se describen los
+parámetros matemáticos
+relacionados con
+la productividad de
+un biodigestor y se
+comentan algunos de
+los factores químicos,
+físicos y biológicos
+que intervienen en el
+proceso.
+
+Biodigestors are designed to optimize
+biogas production using organic wastes,
+which permits to obtain clean, low-cost
+renewable energy. During 2008 a group
+of researchers of the ITCR worked in
+the development of a wireless electronic
+system for control and protection of biogas
+production. One of the specific objectives
+consisted in finding information about
+methods to augment biogas production. In
+this review we established the mathematic
+parameters related to biogas estimation
+of productivity. Then we focused in
+the influence of chemical factors such
+as substrate composition, substrate
+combinations, addition of fat and presence
+of inhibitors. We also studied the effect
+of physical factors like temperature, solid
+removal, protein exclusion and phase
+separation during anaerobic digestion
+of organic matter. Finally we tried to
+determine the role of biological factors such
+as the addition of thermophilic bacteria
+and the importance of methanogens.
+
+Introducción
+La producción de biogás es un proceso
+natural que ocurre en forma espontánea
+en un entorno anaerobio, es decir, carente
+de oxígeno. Dicho proceso lo realizan
+microorganismos como parte del ciclo
+biológico de la materia orgánica, el cual
+involucra la fermentación o digestión
+de materiales orgánicos para obtener el
+biogás.
+Los biodigestores, por su parte, son sistemas
+diseñados para optimizar la producción
+de biogás a partir de desechos agrícolas,
+estiércol o efluentes industriales, entre
+otros, los cuales permiten así la obtención
+de energía limpia y de bajo costo a partir
+de una fuente renovable. El uso de esta
+tecnología no es nuevo, pero en los últimos
+años ha cobrado gran interés debido a
+la actual crisis energética producto del
+agotamiento de los combustibles fósiles.
+
+40
+
+Vol. 23, N.° 1 2010
+
+Además, el aprovechamiento del biogás
+impulsa la reducción de emisiones de gases
+de efecto invernadero como el metano
+(CH4), cuyo potencial de calentamiento
+global es 23 veces mayor que el del
+dióxido de carbono (CO2) (Campero,
+Kristine, Cuppens, Mizme, 2008).
+En algunos países como Alemania y Francia,
+el biogás se emplea como combustible para
+automotores, sin embargo, en Costa Rica y
+en otros países en vías de desarrollo, el uso
+del biogás se ha visto limitado al sitio donde
+se produce, en el cual se puede emplear de
+forma directa para combustión con fines
+de cocción e iluminación, o bien se puede
+utilizar indirectamente, para alimentar
+motores de combustión interna que generan
+fuerza motriz o eléctrica (Kapdi, Vijay,
+Rajesh, Prasad 2004; Ilyas, 2006).
+En el Instituto Tecnológico de Costa Rica
+(ITCR), se desarrolló, durante el año 2008,
+una actividad de fortalecimiento financiada
+por la Vicerrectoría de Investigación (VIE)
+con el propósito de desarrollar un sistema
+electrónico e inalámbrico de control y
+protección para monitorear la producción,
+compresión y almacenamiento del biogás
+proveniente de un biodigestor. Como parte
+de los objetivos específicos se planteó
+investigar sobre métodos para acelerar
+la descomposición de la materia prima y
+aumentar la producción del gas.
+En la presente revisión se describen los
+parámetros matemáticos relacionados con
+la productividad de un biodigestor y se
+comentan algunos de los factores químicos,
+físicos y biológicos que intervienen en el
+proceso.
+Parámetros matemáticos
+relacionados con la productividad
+de un biodigestor
+Uno de los parámetros que permite
+estimar la producción de biogás en un
+biodigestor es la productividad de metano o
+productividad metanoica, la cual se define
+como la cantidad de metano generado en la
+unidad de tiempo con respecto a la materia
+
+dispuesta en el reactor. De esta manera,
+la expresión matemática que permite
+calcular la productividad de metano de un
+determinado resto orgánico en un tiempo
+dado, es la siguiente (Sogari, 2003):
+
+Donde VCH4 es el volumen de metano
+generado; Vreactor es el volumen de materia
+dispuesta en el recinto fermentador y t es
+el tiempo considerado.
+
+Lo ideal es por el
+contrario, combinar
+materiales ricos en
+nitrógeno con materiales
+abundantes en carbono
+para obtener un buen
+balance de nutrientes
+que promueva el
+adecuado crecimiento
+de los microorganismos
+que degradan la materia
+orgánica dentro del
+biodigestor y, de esta
+manera, aumentar la
+productividad del mismo
+(Guevara, 1996).
+
+La producción de metano, tiene un límite
+que depende fundamentalmente de la
+naturaleza de la materia dispuesta en el
+sistema digestor. La fórmula que permite
+estimar la máxima generación de metano
+para un producto determinado, es la
+siguiente (Sogari, 2003):
+
+Donde VCH4 es el volumen de metano
+generado y Sorg total es la cantidad de
+materia orgánica total utilizada en todo el
+proceso.
+Seguidamente se profundiza acerca de
+la influencia, en la productividad de los
+biodigestores, de factores químicos como
+la composición y las combinaciones de
+sustratos, la adición de grasas y la presencia
+de inhibidores.
+Factores químicos
+Composición química del sustrato
+
+Los sustratos ideales para la digestión
+anaerobia en biodigestores son los desechos
+orgánicos húmedos de origen agrícola,
+industrial, doméstico y municipal, así como
+las excretas de origen humano y animal.
+Los residuos de la industria alimentaria y
+de las actividades agrícolas en particular,
+son excelentes como sustratos para la
+
+Enero - Marzo 2010
+
+digestión anaerobia, ya que no contienen
+contaminantes, patógenos, ni metales
+pesados.
+La presencia de nutrientes como carbono,
+nitrógeno y azufre, así como algunos
+elementos traza, es necesaria para el
+desarrollo de las comunidades microbianas
+encargadas de la producción de biogás. La
+relación carbono-nitrógeno debe estar en
+una proporción de entre 20 y 30 partes
+del primer elemento por cada parte del
+segundo. Si la proporción de nitrógeno
+aumenta la producción de biogás puede
+disminuir debido a la formación de amonio,
+el cual se genera durante la degradación
+anaeróbica de urea o proteínas. El
+amonio libre puede ser inhibitorio para la
+fermentación anaeróbica y tóxico para las
+bacterias metanogénicas (Guevara, 1996;
+Gallert y Winter, 1997; Cui y Jahng,
+2006).
+En este sentido no se recomienda utilizar
+un solo tipo de sustrato. Lo ideal es por
+el contrario, combinar materiales ricos
+en nitrógeno con materiales abundantes
+en carbono para obtener un buen balance
+de nutrientes que promueva el adecuado
+crecimiento de los microorganismos que
+degradan la materia orgánica dentro del
+biodigestor y, de esta manera, aumentar
+la productividad del mismo (Guevara,
+1996).
+Combinaciones de sustratos
+
+Desde 1999, las plantas alemanas
+productoras de biogás mezclan las excretas
+animales con residuos industriales de
+alimentos, de la agricultura, de mercados,
+de restaurantes y del sector municipal.
+El rendimiento de las excretas vacunas
+y porcinas al utilizarlas como biomasa
+oscila entre 25 y 36 m3/t de masa fresca,
+debido a que el contenido de materia
+seca orgánica de las mismas es bajo (2%
+a 10%). Además, su relación carbono
+nitrógeno es inferior a 25:1, es decir,
+son ricos en nitrógeno. Por otra parte, la
+producción de biogás a partir de cosechas
+
+41
+
+como remolachas de forraje, maíz, sorgo
+dulce y cebada, se encuentra entre 600 y
+1000m3 por tonelada de masa orgánica
+seca. La relación carbono-nitrógeno de
+estos sustratos es superior a 30:1, por lo
+que son ricos en carbono. La co-digestión
+de estas cosechas da como resultado no sólo
+un fuerte incremento de la productividad
+del biogás, sino también una disminución
+del contenido de oligoelementos de los
+residuos digeridos (Martínez, Böttinger,
+Oechsnr, Kanswohl, Schlegel, 2008;
+Gleixner, 2007; Weiland, 2000; Guevara,
+1996).
+Por otra parte, Rodríguez y colaboradores
+(1997) analizaron la productividad de una
+combinación de estiércol con la planta
+Eichornia crassipes y también de ambos
+sustratos por separado, y se encontró que
+los digestores cargados con E. crassipes
+presentaron el mayor rendimiento,
+mientras que los de menor productividad
+fueron aquellos que contenían estiércol.
+En cuanto a la mezcla de ambos sustratos,
+los autores encontraron que la adición de
+E. crassipes mejoró el rendimiento del
+estiércol.
+Estos estudios refuerzan la recomendación
+anterior con respecto a la combinación de
+diferentes tipos de sustratos para balancear
+la proporción de nutrientes disponibles para
+las comunidades microbianas encargadas
+de la producción de biogás.
+Adición de grasas
+
+Las grasas vegetales poseen un alto potencial
+energético debido a su composición
+química y elevado contenido de lípidos
+degradables por bacterias anaeróbicas.
+Cuando se agregan a los biodigestores
+pueden aumentar en hasta un 2400% la
+productividad de biogás. En un estudio
+realizado en Costa Rica por investigadores
+de la EARTH, se probaron tres tratamientos
+que consistieron en la adición de 0%, 2,5%
+y 5% de aceite a un biodigestor alimentado
+con excreta porcina y vacuna, y se obtuvo
+un incremento directo de la producción
+
+42
+
+Vol. 23, N.° 1 2010
+
+conforme aumentó el porcentaje de aceite.
+El tratamiento con 0% de aceite presentó
+un volumen de 244 litros de biogás, el
+tratamiento con 2,5% de aceite presentó
+un volumen de 342 litros, y el tratamiento
+con 5 % de aceite agregado presentó un
+volumen de 477 litros (Dias, Kreling,
+Botero y Murillo, 2007).
+Martínez (2008) advierte que el empleo de
+grasas de origen animal podría aumentar
+el riesgo de transmitir enfermedades.
+Además, sugiere realizar un pretratamiento
+a los residuos provenientes de restaurantes,
+mercados y el área municipal para reducir
+el tamaño de partícula, separar los posibles
+contaminantes del proceso de digestión y
+facilitar la aplicación al suelo de los residuos
+tratados anaeróbicamente. Con respecto a
+esto último, recomienda un tratamiento de
+pasteurización a 70ºC durante una hora,
+para eliminar los gérmenes patógenos.
+De esta manera, la utilización de grasas
+vegetales junto con la combinación de
+sustratos ricos en nitrógeno y abundantes
+en carbono permite elevar la productividad
+de los biodigestores.
+Inhibidores de la producción de
+biogás
+
+Además del amonio libre, según García
+y sus colaboradores (2006), el sulfonato
+linear del alquilbenceno (LAS) es el
+surfactante aniónico más importante en
+agentes limpiadores de hogares e industrias.
+En la mayoría de los digestores, la adición
+de surfactantes causa una disminución de
+la tasa de producción de biogás.
+Esto debe ser tomado en cuenta a la hora de
+adicionar residuos domésticos e industriales
+a un biodigestor en funcionamiento, ya
+que la productividad, lejos de aumentar se
+podría ver afectada.
+Factores físicos
+Temperatura
+
+La biodigestión anaerobia puede ocurrir
+en un amplio rango de temperaturas
+
+que van desde los 5°C hasta los 60°C.
+Las bacterias metanogénicas son más
+sensibles a la temperatura que los demás
+microorganismos de un biodigestor, debido
+a que su velocidad de crecimiento es más
+lenta. El proceso de digestión anaerobio no
+se ve afectado si la temperatura aumenta
+en unos pocos grados; sin embargo, un
+decrecimiento podría retardar la producción
+de metano, sin perjudicar la actividad de
+las bacterias acidificantes, lo cual permite
+una excesiva acumulación de ácidos y
+una posible falla en el biodigestor. En
+este sentido, se debe procurar mantener
+un microclima cálido en el biodigestor
+para conservar una tasa de producción de
+biogás alta (Bidlingmaie, 2006; Osorio,
+Ciro y González, 2007).
+Una estrategia para
+aumentar la temperatura
+del biodigestor y, a la
+vez, mantenerla más
+constante consiste en
+la construcción de
+una estructura liviana
+forrada con plástico
+de invernadero, la cual
+también contribuye a
+restringir el acceso de
+animales que puedan
+dañarlo.
+
+la subsecuente remoción de proteínas,
+la generación de biogás mejoró
+significativamente y el contenido de
+metano en el biogás producido a partir de
+lodos desproteinizados también aumentó
+de 55,6% (v/v) (control) a 74,8%. Esto se
+debe a que entre el 40% y el 50% del peso
+seco de una célula microbiana corresponde
+a las proteínas que generan amonio. Como
+se indicó anteriormente el amonio libre
+inhibe la producción de biogás ya que es
+tóxico para las bacterias metanogénicas.
+Por este motivo la eliminación de proteínas
+de los lodos puede optimizar tanto la
+producción como la calidad del biogás.
+
+Una estrategia para aumentar la temperatura
+del biodigestor y, a la vez, mantenerla más
+constante consiste en la construcción de
+una estructura liviana forrada con plástico
+de invernadero, la cual también contribuye
+a restringir el acceso de animales que
+puedan dañarlo.
+
+Los autores de este estudio efectuaron
+la desproteinización de los lodos
+mediante tratamientos térmicos a
+121 ºC, por sonicación (aplicación de
+ondas ultrasónicas) y también por
+desnaturalización a pH alcalino. De todas
+estas alternativas la menos factible de
+aplicar en nuestro país es la sonicación ya
+que implica la adquisición de un equipo
+costoso.
+
+Separación de sólidos
+
+Separación de fases
+
+Las impurezas como plásticos o arena
+se deben separar mediante técnicas de
+flotación y sedimentación. Además, una
+reducción de tamaño de los desechos sólidos
+a partículas de 10 a 40 mm es necesaria para
+lograr una mejor accesibilidad biológica y
+con mejor flujo de sustrato en el proceso
+(Weiland, 2000). De acuerdo con Kasapgi
+y sus colaboradores (2001), el uso de
+membranas tubulares sin soporte para la
+ultrafiltración, acopladas al biodigestor
+como una unidad externa, permite lograr
+un incremento significativo en la cantidad
+de biogás con valor energético.
+
+El porcentaje de biomasa que es convertido
+a metano (CH4) y dióxido de carbono (CO2)
+es de, aproximadamente, 70%. Para que éste
+aumente, se requiere una separación de las
+fases que componen la digestión anaerobia
+de la materia orgánica, a saber la hidrólisis
+(degradación de compuestos orgánicos
+complejos en compuestos simples), la
+acidogénesis (obtención de ácidos grasos),
+la acetogénesis (producción de acetato) y
+la metanogénesis (generación de metano).
+De esta manera se puede optimizar las
+condiciones del pH y de la temperatura
+en cada proceso (Gleixner, 2007; Antoni,
+Zyerlov y Schwarz 2007; Park, Hong,
+Cheon, Hidaka y Tsuno 2008).
+
+Esta es una medida de bajo costo que se
+puede implementar fácilmente a la entrada
+de cualquier biodigestor.
+Remoción de proteínas de los lodos
+
+Cui y Jahng (2006), encontraron que
+mediante la desintegración de lodos y
+
+Enero - Marzo 2010
+
+Kon y colaboradores (2006) desarrollaron
+un sistema modificado de tres etapas de
+fermentación de metano. En la primera
+se concentraron los procesos de hidrólisis
+y acidogénesis semianaeróbica, en
+
+43
+
+El rendimiento de
+un biodigestor está
+ligado principalmente
+a la estructura de la
+comunidad microbiana
+presente en el mismo.
+
+la segunda se realizó la acidogénesis
+estrictamente anaeróbica y, por último,
+en la tercera se efectuó la metanogénesis
+estricamente anaeróbica. El fluido ácido
+emanado del fermentador acidogénico
+secundario fue utilizado como sustrato
+y el fluido metanogénico emanado del
+fermentador metanogénico fue empleado
+como inóculo. Los microorganismos
+usados en la fermentación acidogénica
+fueron especies de Clostridium. En la
+fermentación metanogénica se utilizó una
+mezcla de bacterias aisladas de suelo y
+abono de vaca. En la reacción se colocaron
+8 litros de la mezcla de sustrato con inóculos
+(1:1) dentro del reactor metanogénico.
+Cada reactor se operó a temperaturas
+crecientes de 30 a 55 °C a intervalos
+de 5 °C. Se monitorearon los cambios
+en el pH, la DQOs y la producción de
+gas. Como resultado se incrementaron
+las tasas de hidrólisis, acidogénesis y
+metanogénesis sin afectar el pH, y se dio
+una alta producción de metano.
+Sin embargo, a pesar de las ventajas
+mencionadas en otros estudios, la mayoría
+de las plantas agrícolas de biogás utilizan
+la tecnología de una sola fase debido a que
+su instalación y mantenimiento son más
+económicos.
+Factores biológicos
+Adición de bacterias termofílicas
+
+El rendimiento de un sistema de digestión
+anaeróbico está ligado, principalmente, a
+la estructura de la comunidad microbiana
+presente en el digestor. Los parámetros
+ambientales y de operación del proceso
+afectan el comportamiento, rendimiento y,
+eventualmente, el destino de la comunidad
+microbiana en los digestores anaeróbicos.
+Es más, la naturaleza e influencia de los
+lodos usados para la inoculación también
+deben ser tomadas en cuenta (Demirel y
+Scherer, 2008). Por ejemplo, de acuerdo
+con Miah y sus colaboradores (2005),
+la adición de una pequeña cantidad de
+bacterias termofílicas aeróbicas (TA) tiene
+
+44
+
+Vol. 23, N.° 1 2010
+
+un gran potencial como tratamiento rentable
+para acelerar la digestión anaeróbica de
+desechos biológicos. La adición de 5%
+(v/v) de lodos TA al lodo metanogénico
+aumentó la producción de biogás con una
+concentración de metano de 50-67%. Esto
+se debe a que, durante la solubilización
+de lodos, las enzimas de bacterias TA
+excretadas influenciaron la hidrólisis de
+los lodos durante la digestión anaeróbica.
+No obstante para trabajar con TA, se
+necesita una temperatura de operación
+cercana a los 65 ºC, lo cual eleva el costo
+del proceso.
+Importancia de los metanógenos
+
+Según Demirel y Scherer (2008), las
+diferencias en las condiciones ambientales
+y de operación afectan el comportamiento
+de los metanógenos acetotróficos e
+hidrogenotróficos presentes en un digestor
+de biogás. Los metanógenos acetotróficos
+son anaerobios obligados que convierten
+el acetato en metano (CH4) y dióxido
+de carbono (CO2). Su actividad y
+funcionamiento son de gran importancia
+durante la conversión anaeróbica del
+acetato. La actividad de los metanógenos
+hidrogenotróficos, por su parte, es crucial
+para un funcionamiento estable y eficiente
+del biodigestor, aunque la disponibilidad
+de hidrógeno puede ser un factor limitante
+para estos microorganismos.
+Para promover un aumento en la
+productividad de los biodigestores es
+posible inocularlos con fuentes conocidas
+de microorganismos metanógenos como
+el rumen de vaca, lo cual representa una
+alternativa eficiente y de bajo costo.
+
+Conclusión
+El rendimiento de un biodigestor está
+ligado principalmente a la estructura de
+la comunidad microbiana presente en el
+mismo. Además, la producción de metano
+tiene un límite que depende también de la
+
+naturaleza de la materia dispuesta en el
+sistema digestor.
+
+biomass to methane: A review. Rev Environ
+Sci Biotechnol. 7,173–190.
+
+Sin embargo, mediante la manipulación de
+los factores químicos, físicos y biológicos
+presentados en esta revisión, se puede
+adaptar, de un modo sencillo, la producción
+de biogás a la demanda actual de energía.
+Entre estos factores cabe resaltar los que
+resultan de bajo costo, como por ejemplo
+la combinación de sustratos, la adición
+de grasas, la separación de los sólidos y
+la inoculación de los biodigestores con
+microorganismos metanogénicos.
+
+Dias E.D., Kreling J.C., Botero R., Murillo J.V.
+(2007). Evaluación de la productividad y
+del efluente de biodigestores suplementados
+con grasas residuales. Tierra Tropical 3(2),
+149-160.
+
+Actualmente en el ITCR se continúa
+investigando sobre este tema por medio de
+un proyecto multidisciplinario financiado
+por la VIE, el cual pretende darle continuidad
+a la actividad de fortalecimiento. Para ello
+se tiene planeado, en una primera etapa,
+construir un biodigestor de polietileno
+para poder efectuar pruebas de campo.
+Más adelante se planea investigar acerca
+de métodos para la purificación del biogás
+con el fin de obtener metano de alta pureza
+que pueda ser envasado y transportado.
+
+Bibliografía
+
+Gallert C., J. Winter. (1997). Mesophilic and
+thermophilic anaerobic digestion of sourcesorted organic wastes: effect of ammonia on
+glucose degradation and methane production.
+Appl Microbiol Biotechnol. 48, 405-410.
+Garcia M.T., Campos, E., Dalmau, M., Illa´
+n, P., Sánchez-Leal, J. (2006). Inhibition
+of biogas production by alkyl benzene
+sulfonates (LAS) in a screening test for
+anaerobic biodegradability. Biodegradation.
+17, 39–46.
+Gleixner A. (2007). Fermentation of Distiller’s
+Wash in a Biogas Plant. Utilization of
+By-Products and Treatment of Waste in the
+Food Industry. Springer, 99-108.
+Guevara A. (1996). Fundamentos básicos
+para el diseño de biodigestores anaeróbicos
+rurales. Producción de gas y saneamiento de
+efluentes. Centro Panamericano de Ingeniería
+Sanitaria y Ciencias del Ambiente. División
+de Salud y Ambiente. Oficina Regional de
+la Organización Panamericana de la Salud.
+Lima, Perú. 80.
+
+Antoni D., V. Zverlov, V. Schwarz. W.H. (2007).
+Biofuels from microbes. Appl Microbiol
+Biotechnol. 77, 23–35.
+
+Ilyas S.Z. 2006. A case study to bottle the biogas
+in cylinders as a source of power for rural
+industries development in Pakistan. World
+Applied Sciences Journal. 1(2), 127-130.
+
+Bidlingmaier W. (2006). Fifth ORBIT Conference
+Probes Anaerobic Digestion. BioCycle Journal
+of Composting and Organics Recycling.
+47(9), 42-49.
+
+Kapdi S.S., Vijay, V.K., Rajesh, S.K., Prasad,
+R. (2004). Biogas scrubbing, compression
+and storage: perspective and prospectus in
+Indian context. Renewable Energy 20, 1-8.
+
+Campero, O., Kristinc, G., Cuppens, T., Mizme,
+P. (2008). Implementación del programa de
+mitigación de los efectos negativos del gas
+metano CH4, con la ejecución de acciones
+integrales de energías renovables y medio
+ambiente en el área rural de La Paz,
+Cochabamba y Santa Cruz.(Tecnologías en
+Desarrollo. 1-36.
+
+Kasapgil, B., Ince, O., Anderson, G., Arayici,
+S. (2001). Assessment of biogas use as an
+energy source from anaerobic digestion of
+brewery wastewater. Water, Air, and Soil
+Pollution 126, 239–251.
+
+Cui R., D. J. (2006). Enhanced methane
+production from anaerobic digestion of
+disintegrated and deproteinized excess
+sludge. Biotechnology Letters. 28, 531–538.
+Demirel, B., Scherer, P. (2008). The roles
+of acetotrophic and hydrogenotrophic
+methanogens during anaerobic conversion of
+
+Enero - Marzo 2010
+
+Kon, J., Rock, B., Nam, Y., Wouk, S. (2006).
+Effects of temperature and hydraulic retention
+time on anaerobic digestion of food waste.
+Journal of Bioscience and Bioengineering.
+102 (4), 328-332.
+Martínez C.M., Böttinger, S., Oechsnr, H.,
+Kanswohl, N., Schlegel, M. (2008).
+Instalaciones de biogas a mediana y gran
+escala en Alemania. Publicado el 08 de
+Enero 2008. Fuente: www.engormix.com.
+
+45
+
+Miah, M., Tada, C., Yang, Y., Sawayama,
+S. (2005). Aerobic thermophilic bacteria
+enhance biogas production. J Mater Cycles
+Waste Manag. 7:48-54
+Park, Y., Hong, F., Cheon, J., Hidaka, T.,
+Tsuno, H. (2008). Comparison of thermophilic
+anaerobic digestion characteristics between
+single-phase and two-phase systems
+for kitchen garbage treatment. Journal of
+Bioscience and Bioengineering. 105 (1),
+48-54.
+Osorio, J., Ciro, H., González, H. (2007).
+Evaluación de un sistema de biodigestión
+en serie para clima frío. Rev. Fac. Nal. Agr.
+Medellín. 60 (2).
+
+46
+
+Vol. 23, N.° 1 2010
+
+Rodríguez J.C., El Atrach, K., Rumbos,
+E., Delepiani, A.G. (1997). Resultados
+experimentales sobre la produccion de biogas
+a traves de la bora y el estiércol de ganado.
+Agronomía Trop. 47(4), 441-455.
+Sogari, N. (2003). Cálculo de la producción
+de metano generado por distintos restos
+orgánicos. Universidad Nacional Del Nordeste,
+Argentina. Comunicaciones Científicas y
+Tecnológicas. Resumen T-027.
+Weiland P. (2000). Anaerobic waste digestion in
+Germany – Status and recent developments.
+Biodegradation 11, 415-421.
+
+
