@@ -29,5 +29,7 @@ export interface RuleV1 {
   title: string
   when: ConditionV1
   then: ActionV1
+  status?: 'active' | 'requires_new_fact'
+  requiresFacts?: FactId[]
   evidence: EvidenceCitation
 }
