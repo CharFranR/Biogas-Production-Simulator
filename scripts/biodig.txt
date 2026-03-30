@@ -1,0 +1,1907 @@
+Índice
+Introducción
+
+1
+
+Capítulo 1. Generalidades
+1.1. El biogás
+
+2
+
+1.1.1. Breve historia y perspectivas
+
+3
+
+1.1.2. El biogás en México
+
+5
+
+1.1.3. El biogás en el ámbito mundial
+
+8
+
+1.2. Biomasa
+
+10
+
+1.2.1. Tipos de biomasa
+
+10
+
+a) Biomasa Natural
+
+10
+
+b) Biomasa residual (seca y húmeda)
+
+11
+
+1.2.2. Procesos de conversión de la biomasa en energía
+
+12
+
+a) Métodos termoquímicos
+
+12
+
+1.3. ¿Cómo se forma el biogás?
+
+14
+
+1.3.1. Digestión anaeróbica
+
+15
+
+1.3.2. Los tres pasos de la producción de biogás
+
+16
+
+a) Hidrólisis
+
+16
+
+b) Acidificación
+
+17
+
+c) Formación de metano
+
+17
+
+1.3.3. Composición de Biogás
+
+18
+
+Capítulo 2. Biodigestores
+2.1. El biodigestor
+
+20
+
+2.2. Tipos de Digestores
+
+20
+
+2.2.1. Plantas de globo
+
+21
+
+2.2.2. Plantas de Domo Fijo
+
+24
+
+2.2.3. Plantas de tambor flotante (Tipo Hindú).
+
+26
+
+2.3. Partes de un Digestor.
+
+27
+
+2.3.1. Tanques de carga
+
+27
+
+2.3.2. Tanque de descarga.
+
+28
+
+2.3.3. Tanque de Almacenamiento de gas.
+
+28
+
+2.3.4. Línea de conducción.
+
+29
+
+2.3.5. Válvulas.
+
+29
+
+2.3.6. Trampas.
+
+30
+
+2.4. Ventajas y desventajas de los biodigestores.
+
+32
+
+2.4.1. Ventajas de los biodigestores
+
+32
+
+2.4.2. Dificultades técnicas de los biodigestores.
+
+33
+
+2.5. Planificación de un biodigestor.
+
+34
+
+2.5.1. Factores humanos
+
+34
+
+2.5.2. Factores biológicos
+
+35
+
+2.5.3. Factores físicos
+
+35
+
+2.5.4. Factores utilitarios
+
+35
+
+2.6. Proceso de construcción
+
+37
+
+2.6.1. Selección del lugar, trazado y excavación
+
+37
+
+2.6.2. Construcción del digestor
+
+39
+
+2.6.3. Construcción de los tanques de carga y descarga
+
+40
+
+2.6.4. Sellado e impermeabilizado del tanque.
+
+43
+
+2.6.5. Construcción y colocación de la campana
+
+44
+
+CAPITULO 3. Operación de un biodigestor y usos del biogas
+
+3.1. Descripción del proceso
+3.1.1. Molienda
+
+45
+45
+
+3.1.2. Acondicionamiento.
+
+45
+
+3.1.3. Carga del digestor.
+
+46
+
+3.1.4. Descarga
+
+46
+
+3.2. Operación propuesta del sistema de digestión.
+
+46
+
+3.3. Modo de operación.
+
+48
+
+3.3.1. Producción de gas y composición
+3.4. Usos del biogás
+
+48
+49
+
+3.4.1. Producción de Energía Térmica
+
+50
+
+3.4.2. Producción de Energía Eléctrica
+
+50
+
+3.4.3. Producción de Biocombustibles
+
+52
+
+3.4.4. Producción de gases combustibles
+
+52
+
+3.5. Producción de abono orgánico
+
+53
+
+3.5.1. Sustancias orgánicas en los fertilizantes
+
+55
+
+3.5.2. Nutrientes y Organismos del Suelo
+
+55
+
+3.5.3. Reducción de la Erosión del Suelo
+
+56
+
+3.5.4. Reducción del deslave de Nitrógeno
+
+56
+
+3.5.5. Efectos sobre los cultivos.
+
+56
+
+CONCLUSIONES
+
+59
+
+RECOMENDACIONES
+
+59
+
+INDICE DE FIGURAS
+Fig. 1.1.2. (1). Manejo del estiércol en establos.
+
+6
+
+Fig. 1.1.2. (2). Acomodo estiércol en terreno.
+
+7
+
+Fig. 1.1.2. (3). Secado al sol del estiércol.
+
+7
+
+Fig. 1.1.2.(4). Planta de captación de gas metano en Monterrey.
+
+8
+
+Fig. 1.2.1.(1). Productores de biomasa.
+
+11
+
+Fig. 2.2.1.(1). Biodigestor de globo.
+
+20
+
+Fig. 2.2.1. (2). Biodigestor de globo.
+
+21
+
+Fig. 2.2.1.(3). Biodigestor de plástico de bajo costo.
+
+22
+
+Fig. 2.2.2.(1). Esquema de un biodigestor de domo fijo.
+
+24
+
+Fig. 2.2.2.(2). Biodigestor fijo en construcción
+
+24
+
+Fig. 2.2.3.(1). Biodigestor de Domo flotante en paralelo
+
+25
+
+Fig. 2.2.3.(2) Esquema de domo Flotante.
+
+26
+
+Fig. 2.6.1. (1). Trazado de un biodigestor.
+
+37
+
+Fig. 2.6.1. (2). Excavación.
+
+37
+
+Fig. 2.6.2. (1). Armado de parrilla.
+
+38
+
+Fig. 2.6.2. (2). Detalle de construcción de los muros de tabique.
+
+39
+
+Fig. 2.6.3. (1) Tanques de carga y descarga.
+
+39
+
+Fig. 2.6.3. (2). Construcción de la cámara.
+
+40
+
+Fig. 2.6.3. (3). Construcción de la cámara, revocando las paredes.
+
+40
+
+Fig. 2.6.3. (4). Construcción del tanque de alimentación.
+
+41
+
+Fig. 2.6.3. (5). Construcción de biodigestor.
+
+41
+
+Fig. 2.6.4. (1). Sellado del tanque.
+
+42
+
+Fig. 2.6.4. (2). Impermeabilizado del tanque.
+
+43
+
+Fig. 2.6.5. (1). Pintado de campana.
+
+43
+
+Fig. 3.2. (1). Operación del sistema de digestión.
+
+46
+
+Fig. 3.3. (1). Usos del Biogas.
+
+48
+
+Fig. 3.4. (1). Usos del biogas.
+
+49
+
+BIOGÁS
+
+Introducción
+Una de las grandes preocupaciones mundiales es el agotamiento de los hidrocarburos
+como fuente de energía de ahí la necesidad y ocupación de las naciones de explorar
+opciones alternas, una de ellas son los biocombustibles. En el presente trabajo se trata
+de explicar los grandes beneficios económicos y ecológicos a partir de la generación de
+biogás (gas metano) debido a la descomposición de materia orgánica en condiciones
+anaeróbicas; así como la construcción de la planta generadora (biodigestor), y su
+ubicación de acuerdo con la disposición de la materia prima y las necesidades rurales
+de electrificación; así como la sustitución del combustible tradicional que es la leña por
+el gas.
+
+En el capítulo uno se aborda la definición y composición del biogás, sus antecedentes
+históricos, sus condiciones de generación; así como el proceso de conversión de la
+biomasa en energía.
+
+En el capítulo dos se analizan los diferentes tipos de biodigestores, su proceso de
+construcción y las partes que lo conforman.
+
+En el capítulo tres se explican detalladamente el principio de operación del digestor,
+además de las aplicaciones y beneficios que trae consigo la generación y utilización del
+biogás, tales como: su uso para cocinar en combustión directa en estufas simples y su
+aplicación en la generación de: iluminación, calefacción y como reemplazo de la
+gasolina en motores de combustión interna.
+
+1
+
+BIOGÁS
+
+Capítulo 1. Biogás
+
+1.1. El biogás
+
+Se da este nombre a la mezcla gaseosa producida por la descomposición de la materia
+orgánica en condiciones anaeróbicas.
+
+La composición típica del biogás en una alta proporción corresponde al metano (CH4),
+un gas combustible que permite la utilización de este producto con fines energéticos.
+En este sentido, el biogás puede ser de gran utilidad en el campo ya que por su poder
+calorífico puede reemplazar con cierta ventaja a combustibles tradicionales que
+cumplen la misma función.1
+
+Las áreas rurales se caracterizan por disponer de grandes cantidades de desechos
+provenientes de las actividades agrícolas y pecuarias que ahí se desarrollan. El
+estiércol de los animales, las cáscaras de las frutas, las hojas, los residuos de la cocina
+y los demás materiales orgánicos similares pueden, teóricamente, ser convertidos en
+energía y en abono que retorna a la tierra de donde fue tomado por las plantas.
+
+1
+
+http://www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+
+2
+
+BIOGÁS
+
+1.1.1. Breve historia y perspectivas
+
+Actualmente la tecnología del biogás se usa prácticamente en todo el mundo,
+especialmente en aquellas zonas donde no hay reservas considerables de combustibles
+fósiles. En los países en vías en vías de desarrollo, la preocupación por el aspecto
+energético se ha manifestado mediante la proliferación de esquemas de biodificasión.
+Junto con la propuesta de diferentes diseños de biodigestores han aparecido un sin
+número de plantas de biogás, aunque todavía no las suficientes como para prescindir
+de los combustibles a base de petróleo. A continuación se reseña la evolución del
+mundo en el descubrimiento y uso del biogás:
+
+1770 El italiano Volta colecta gas de pantano e investiga su comportamiento.
+1821 Avogadro identifica el Metano (CH4).
+1875 Propoff establece que la formación del biogás se lleva a cabo bajo condiciones
+anaeróbicas.
+1884 Investigaciones de Pasteur sobre la información del biogás a partir de los
+desechos de animales. El propone la producción del biogás para su uso en las linternas
+de las calles.
+1906 En Alemania se contribuye la primera planta de tratamiento anaeróbico de aguas
+residuales.
+1913 Primer digestor anaeróbico con uso de calentamiento.
+
+3
+
+BIOGÁS
+
+1920
+
+Primera planta de depuración de aguas residuales en Alemania que provee el
+
+biogás recolectado en un servicio de gas público.
+1940 Adición del uso de residuos orgánicos a la depuración de aguas residuales para
+aumentar la producción del biogás.
+1947 Investigaciones demuestran que los desechos de una vaca pueden proporcionar
+cien veces más biogás que las heces fecales de una pequeña comunidad urbana.
+1950 Instalación de la primera gran planta agrícola del biogás.
+1950´s Se construyen alrededor de 50 plantas productoras de biogás, alimentadas de
+una mezcla de aguas residuales y desechos fecales. Problemas técnicos llevan al cierre
+de todas las plantas excepto dos.
+1974
+
+Después de la primera crisis energética aumenta el desarrollo y la
+
+implementación de nuevas tecnologías en la producción del biogás.
+1985 Se instalan alrededor de 75 plantas productoras de biogás. La demanda de este
+nuevo recurso aumenta.
+1990 Gracias a la estabilidad del precio para la formación del biogás y el desarrollo de
+tecnología se comienza a usar para la generación de energía eléctrica. Gracias al
+avance tecnológico se comienza a experimentar con diferentes tipos sustratos para la
+generación de biogás.
+1990 Se funda la asociación de biogás alemana (Fachvertand Biogás).
+1997 Existen en Alemania más de 400 plantas agrícolas para la generación del biogás.
+
+4
+
+BIOGÁS
+
+1.1.2. El biogás en México
+
+La forma de aprovechar la biomasa como energético puede ser por medio de la
+combustión directa, como tradicionalmente se han aprovechado en México la leña y el
+bagazo de caña, o bien mediante la conversión de la biomasa en diferentes
+hidrocarburos a través de diferentes procesos.
+
+Buscando aplicaciones para la fermentación anaeróbica, el instituto de investigaciones
+eléctricas empezó trabajando con residuos animales; por un lado, el proceso produce
+fertilizantes o un abono orgánico, que más que un fertilizante es un acondicionador de
+suelos y en muchos casos se han hecho experimentos para emplearlos como un
+complemento alimenticio y por el otro tenemos un combustible, el conocido como
+biogás. Hay una gran variedad de residuos que pueden aprovecharse: agrícolas,
+animales, algas que se generan en grandes cantidades en las costas, el lirio acuático
+que es una plaga en las empresas de México y la basura que se genera todos los días.
+
+En México se comienza a tener una mayor conciencia del potencial que ofrece el
+aprovechamiento de residuos, principalmente urbanos, dado los volúmenes que se
+manejan en las grandes ciudades del país. Estos residuos y desechos de animales,
+desde hace tiempo se han venido utilizando en instalaciones a nivel prototipo en el
+Instituto de Investigaciones Eléctricas y en el Instituto de Ingeniería de la UNAM.
+
+5
+
+BIOGÁS
+Una muestra del uso inteligente de la biomasa es el proyecto propuesto en el municipio
+de Tizayuca en el Estado de Hidalgo, donde existe un crecimiento industrial desmedido
+requiriendo un consumo energético de igual magnitud; al mismo tiempo el deterioro del
+medio ambiente, la salud pública; la contaminación del agua, aire y tierra se deja notar
+considerablemente; Tizayuca contaba con la cuenca lechera más grande del estado
+desde hace más de 30 años con una población de 30,000 vacas y 1,500 toneladas
+diarias de estiércol, por lo que los objetivos del proyecto en Tizayuca son:
+a) Tratar los residuos sólidos y líquidos que permitieran reducir significativamente el
+problema de contaminación.
+b) Generar energía eléctrica con base en el biogás generado por la biodigestión del
+estiércol.2
+Fig. 1.1.2. (1). Manejo del estiércol en establos.
+
+Fuente: www.conae.gob.mx
+
+2
+
+http://www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+
+6
+
+BIOGÁS
+Fig. 1.1.2. (2). Acomodo estiércol en terreno.
+
+Fuente: www.conae.gob.mx
+Fig. 1.1.2. (3). Secado al sol del estiércol.
+
+Fuente: www.conae.gob.mx
+
+7
+
+BIOGÁS
+Pero no sólo en el estado de Hidalgo se está haciendo algo con el tratamiento de
+desechos, de igual manera en Monterrey se está implementando un sistema que
+capture y utilice el biogás de rellenos sanitarios como combustible alterno a los
+combustibles fósiles; en la planta de Monterrey se espera que se capturen 214 millones
+de metros cúbicos de metano.3
+Fig. 1.1.2.(4). Planta de captación de gas metano en Monterrey.
+
+Fuente: www.conae.gob.mx
+
+1.1.3. El biogás en el ámbito mundial
+
+Actualmente la tecnología del biogás se usa prácticamente en todo el mundo,
+especialmente en aquellas zonas en donde no hay reservas fósiles considerables. En
+los países en vías de desarrollo, la preocupación por el aspecto energético se ha
+3
+
+http://web.worldbank.org/WBSITE/EXTERNAL/BANCOMUNDIAL/EXTSPPAISES/LACINSPANISHEXT/
+MEXICOINSPANISHEXT/0,,contentMDK:20899871~pagePK:141137~piPK:141127~theSitePK:500870,00
+.html
+
+8
+
+BIOGÁS
+manifestado mediante la proliferación de esquemas de biogasificación –particularmente
+en los países deficientes en fuentes de energía. Junto a la proliferación de diseños
+propuestos, se ha dado una escalada en el número de instalaciones para
+biogasificación que se suponen en operación en varios países en desarrollo. Aunque es
+verdad que el número de instalaciones construidas no es pequeño, hay poca evidencia
+que respalde la magnitud de los números reportados. Desgraciadamente los reportes
+normalmente no mencionan el número significativamente de aventuras sin éxito dentro
+de la biogasificación4.
+
+Es bien sabido que la biogasificación ha sido un elemento clave del tratamiento de
+aguas residuales en los países desarrollados casi desde los principios del tratamiento
+de las aguas residuales. Y mantiene ese status en la mayoría de los sistemas modernos
+del tratamiento de aguas. El rol es principalmente como un medio para tratar los sólidos
+suspendidos en la corriente y los sólidos producidos en el tratamiento secundario y
+terciario de aguas residuales. En años resientes se ha convertido en medio para tratar
+muchos desechos industriales.
+
+4
+
+http://web.worldbank.org/WBSITE/EXTERNAL/BANCOMUNDIAL/EXTSPPAISES/LACINSPANISHEXT/
+
+MEXICOINSPANISHEXT/0,,contentMDK:html
+
+9
+
+BIOGÁS
+1.2. Biomasa
+
+La biomasa es toda sustancia orgánica renovable de origen tanto animal como vegetal.
+La energía de la biomasa proviene de la energía que almacenan los seres vivos. En
+primer lugar los vegetales, al realizar la fotosíntesis, utilizan la energía del sol para
+formar sustancias orgánicas. Después los animales incorporan y transforman esa
+energía al alimentarse de las plantas. Los productos de dicha transformación que se
+consideran residuos, pueden ser utilizados como recurso energético.
+
+1.2.1. Tipos de biomasa
+
+Existen diferentes tipos de biomasa que pueden ser utilizados como recurso energético.
+Aunque se pueden hacer multitud de clasificaciones, en esta monografía se ha
+escogido la clasificación más aceptada, la cual divide la biomasa en cuatro tipos
+diferentes: biomasa natural, residual seca y húmeda y los cultivos energéticos.
+
+a) Biomasa Natural
+
+Es la que se produce en la naturaleza sin ninguna intervención humana. El problema
+que presenta este tipo de biomasa es la necesaria gestión de la adquisición y transporte
+del recurso al lugar de utilización. Esto puede provocar que la explotación de esta
+biomasa sea inviable económicamente.
+
+10
+
+BIOGÁS
+
+b) Biomasa residual (seca y húmeda)
+Son los residuos que se generan en las actividades de agricultura (leñosos y
+herbáceos), y ganadería en las forestales, en la industria maderera y agroalimentaria,
+entre otras y que todavía pueden ser utilizados y considerados subproductos. Como
+ejemplo podemos considerar el aserrín, la cáscara de almendra, el orujillo, las podas de
+frutales, etc.
+Se denomina biomasa residual húmeda a los vertidos llamados biodegradables, es
+decir, las aguas residuales urbanas e industriales y los residuos ganaderos
+(principalmente purines).
+
+Fig. 1.2.1.(1). Productores de biomasa.
+
+Fuente: www2.udec.cl/jhuenuma/galeon/ingenieros.htm
+
+11
+
+BIOGÁS
+1.2.2. Procesos de conversión de la biomasa en energía
+
+Existen diferentes métodos que transforman la biomasa en energía aprovechable,
+expondremos los dos métodos más utilizados en este momento, los termoquímicos y
+los biológicos.
+
+a) Métodos termoquímicos: Estos métodos se basan en la utilización del calor como
+fuente de transformación de la biomasa. Están muy desarrollados para la biomasa seca,
+sobre todo para la paja y la madera.
+
+Se utilizan los procesos de:
+
+I.- Combustión
+
+Es la oxidación de la biomasa por el oxígeno del aire, en esta reacción se libera agua y
+gas carbónico, y puede ser utilizado para la calefacción doméstica y para la producción
+de calor industrial.
+
+II.- Pirólisis
+
+Se trata de una combustión incompleta a alta temperatura (500ºC) de la biomasa en
+condiciones anaerobias. Se utiliza desde hace mucho tiempo para producir carbón
+vegetal. Este método libera también un gas pobre, mezcla de monóxido (CO) y dióxido
+de carbono (CO2), de hidrógeno (H2) y de hidrocarburos ligeros. Este gas, de poco
+poder calórico, puede servir para accionar motores diesel, para producir electricidad, o
+
+12
+
+BIOGÁS
+para mover vehículos. Una variante de la pirólisis, es la pirólisis flash. Esta se realiza a
+una temperatura mayor, alrededor de 1,000º C, y tiene la ventaja de asegurar una
+gasificación casi total de la biomasa. Se optimiza de esta forma el "gas pobre". Las
+instalaciones en la que se realizan la pirólisis y la gasificación de la biomasa se llaman
+gasógenos. El gas pobre producido puede utilizarse directamente o puede servir como
+base para la síntesis de metanol, el cual podría sustituir a las gasolinas para la
+alimentación de los motores de explosión (carburol).5
+
+La gasificación tiene ventajas con respecto a la biomasa original:
+
+1. El gas producido es más versátil y se puede usar para los mismos propósitos que el
+gas natural;
+
+2. Puede quemarse para producir calor y vapor y puede alimentar motores de
+combustión interna y turbinas de gas para generar electricidad;
+
+3. Produce un combustible relativamente libre de impurezas y causa menores
+problemas de contaminación al quemarse.
+
+b) Métodos biológicos
+
+I.- Fermentación alcohólica
+
+Se trata de una fermentación alcohólica que transforma la biomasa en etanol
+(biocombustible). Este alcohol se produce por la fermentación de azúcares
+5
+
+Manilla Pérez, Efraín. Diseño de un biorreactor para la producción de biogás a partir de desechos
+agrícolas. México, 2000.
+
+13
+
+BIOGÁS
+II.- Fermentación metánica
+
+Otro método biológico es la fermentación metánica, que es la digestión anaerobia de
+la biomasa por bacterias. Se suele utilizar para la transformación de la biomasa
+húmeda. En los fermentadores, o digestores. La celulosa es la sustancia que se
+degrada en un gas, el cual contiene alrededor de 60% de metano y 40% de gas
+carbónico. Para este proceso se requiere una temperatura entre 30-35 º C. Estos
+digestores por su gran autonomía presentan una opción favorable para las
+explotaciones de ganadería intensiva.6
+
+1.3. ¿Cómo se forma el biogás?
+
+La biogasificación se puede designar alternativamente como fermentación de metano,
+producción de metano o digestión anaeróbica.7 El termino fermentación de metano se
+puede entender como la destrucción del gas mediante la fermentación microbiana; en la
+digestión anaeróbica, no siempre hay formación de metano, sin embargo los términos
+se usan indistintamente.
+
+6
+
+Manilla Pérez, Efraín. Diseño de un biorreactor para la producción de biogás a partir de desechos
+agrícolas. México, 2000.
+7
+López Villanueva, Berenice. Proyecto para la construcción de una planta de biogás a partir de desechos
+orgánicos en el Distrito Federal. México, 2001.
+
+14
+
+BIOGÁS
+
+Para los propósitos de este escrito, “Biogasificación” se define como la descomposición
+biológica de la materia orgánica de origen biológico en condiciones anaeróbicas, con la
+formación principalmente de metano (CH4) y bióxido de carbono (CO2 ). Hay dos
+características que distinguen al proceso de otras descomposiciones biológicas, que
+son: ‘en condiciones anaeróbicas’ y ‘producción de metano’
+
+1.3.1. Digestión anaeróbica
+
+En la naturaleza existen microorganismos (las bacterias) que se alimentan de residuos
+como los antes mencionados. Si estos se desarrollan en ausencia de aire (condición
+anaeróbica), al alimentarse con materia orgánica la transforman en gas y en un lodo
+rico en nutrientes que puede ser utilizado como abono.
+Las bacterias requieren de un ambiente propicio, primero para sobrevivir y luego para
+multiplicarse hasta alcanzar una población suficiente para que su acción sea apreciable.
+Dichas condiciones son:
+a) La ausencia de aire, para cumplir con el requisito de condición anaeróbica que
+permite la supervivencia de los microorganismos.
+b) Las características del medio (llamado también el sustrato) donde crecen y se
+multiplican las bacterias. Aquí es importante destacar las siguientes:
+La temperatura, que experimentalmente se ha determinado, debe ser mayor a los 20°C
+para lograr una buena producción.
+
+15
+
+BIOGÁS
+El grado de acidez (conocido como pH). Si el ambiente es muy ácido, o lo contrario,
+puede causar la muerte de los microorganismos.8
+
+Los beneficios de la digestión anaeróbica desde un triple punto de vista: El gas, que
+puede utilizarse para producir energía; el fertilizante que, por sus características,
+constituye un abono orgánico de calidad comparable a los tradicionalmente empleados
+en el campo, como la gallinaza o el estiércol de res, y el control de la contaminación que
+se origina por la descomposición espontánea e incontrolada de la materia orgánica.
+
+1.3.2. Los tres pasos de la producción de biogás
+
+El proceso completo de formación de biogás se puede dividir en tres pasos: hidrólisis,
+acidificación y formación del metano. Están involucrados tres tipos de bacterias:
+Bacterias de fermentación
+Bacterias acetogénicas
+Bacterias metanógenas
+a) Hidrólisis
+En el primer paso (hidrólisis), la materia orgánica es externamente enzimolizada por
+enzimas extracelulares (celulosa, amilasa, proteasa y lipasa) de los microorganismos.
+Las bacterias descomponen las largas cadenas de los complejos carbohidratos,
+proteínas y lípidos, en partes cortas.
+
+8
+
+López Villanueva, Berenice. Proyecto para la construcción de una planta de biogás a partir de desechos
+orgánicos en el Distrito Federal. México, 2001.
+
+16
+
+BIOGÁS
+
+b) Acidificación
+Las bacterias productoras de ácidos, involucradas en el segundo paso, convierten los
+intermediarios de las bacterias de fermentación de ácido acético (CH3COOH),
+hidrogeno (H2) y bióxido de carbono (CO2). Estas bacterias son facultativamente
+anaeróbicas y pueden crecer en condiciones ácidas. Para producir ácido acético,
+necesitan oxígeno y carbono; para esto utilizan el oxigeno disuelto en la solución u
+oxígeno enlazado. Debido a esto, las bacterias productoras de ácido crean una
+condición anaeróbica que es esencial para los microorganismos productores de
+metano. Además reducen los compuestos de bajo peso molecular a alcoholes, ácidos
+orgánicos, aminoácidos, bióxido de carbono, sulfuro de hidrógeno, y tazas de metano.9
+
+c) Formación de metano
+Las bacterias productoras de metano, que participan en el tercer paso, descomponen
+compuestos con bajo peso molecular. Por ejemplo, utilizan hidrógeno, dióxido de
+carbono y ácido acético para formar metano y bióxido de carbono.
+
+En condiciones naturales, las bacterias que producen metano ocurren en la medida en
+que se proporcionen condiciones anaeróbicas, por ejemplo, bajo el agua (como en
+sedimentos marinos), en estómagos de rumiantes y en pantanos. Son obligatoriamente
+anaeróbicas y muy sensibles a cambios ambientales. Las bacterias metanógenas
+
+9
+
+López Villanueva, Berenice. Proyecto para la construcción de una planta de biogás a partir de desechos
+orgánicos en el Distrito Federal. México, 2001.
+
+17
+
+BIOGÁS
+pertenecen al género archaebacter, o grupo de bacterias con una morfología muy
+heterogénea.
+La diferencia principal con las bacterias acetogénicas, yace en la estructura de las
+paredes celulares de las bacterias.
+
+1.3.3. Composición de Biogás
+
+El biogás, es un gas combustible que se genera artificialmente, en dispositivos
+específicos, mediante la acción de unos seres vivos (bacterias metanogénicas), en
+ausencia de aire (esto es, en un ambiente anaeróbico). Cuando la materia orgánica se
+descompone en ausencia de oxígeno, actúa este tipo de bacterias, generando biogás.
+
+De modo natural se produce en la putrefacción de la materia orgánica y se llama gas de
+los pantanos o gas natural. Su composición es variable pero en líneas generales sería:
+
+a) Metano (CH4) = 45 a 55 %
+b) Anhídrido carbónico (CO2)= 50 a 40%
+c) Nitrógeno (N2) = 2 % a 3%
+d) Ácido sulfhídrico (SH2) = 1,5 a 2 % 10
+
+10
+
+http://es.wikipedia.org/wiki/Biogas
+
+18
+
+BIOGÁS
+
+Capítulo 2. Biodigestores
+
+2.1. El biodigestor
+Es un tanque cerrado de cualquier forma, tamaño y material; en el cual se almacena
+basura orgánica mezclada con agua que al descomponerse en ausencia de aire
+generan biogás. Definido por el diseño de la planta en función de las variables del
+proceso, ambientales y de utilización del sistema.
+
+Al especificar que se puede tomar cualquier forma se está indiciando que se utilizan
+tanques cilíndricos, rectangulares, esféricos o semiesféricos, dependiendo de las
+preferencias del usuario y de las facilidades que se tengan para su construcción. Sin
+embargo, desde el punto de vista físico y del proceso no se recomienda emplear
+tanques rectangulares: Requieren mayor cantidad de materiales de construcción y
+crean dentro de la masa en digestión zonas de diferente composición y temperatura que
+impiden obtener mayor provecho del sistema.
+
+2.2. Tipos de Digestores.
+Una primera revisión de la apariencia física de los diferentes tipos de plantas de biogás
+describe los tres tipos principales de plantas simples de biogás: plantas de globo,
+plantas de domo fijo y plantas de tambor flotante.
+
+19
+
+BIOGÁS
+2.2.1. Plantas de globo.
+
+Este tipo de plantas tiene en la parte superior un digestor de bolsa en el cual se
+almacena el gas, la entrada y la salida se encuentran en la misma superficie de la
+bolsa. Sus ventajas son bajo costo, fácil transportación, poca sofisticación de
+construcción, altas temperaturas de digestión, fácil limpieza, mantenimiento y vaciado.
+Sus desventajas son su corto tiempo de vida, alta susceptibilidad a ser dañado, baja
+generación de empleo y por lo tanto limitado potencial de autoayuda.11
+Fig. 2.2.1.(1). Biodigestor de globo.
+
+1.- Válvula de salida
+2.-Almacenamiento de biogás
+3.-Nivel de agua con materia orgánica
+Fuente: www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+
+11
+
+www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+
+20
+
+BIOGÁS
+Fig. 2.2.1. (2). Biodigestor de globo.
+
+Fuente:www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+
+a) Mantenimiento: estos biodigestores pueden tener una durabilidad de 20 años,12 en el
+caso de presentarse rupturas de éste pueden ser fácilmente reparadas del mismo
+material del biodigestor usando un adhesivo fuerte, la parte reparada debe permanecer
+seca hasta su endurecimiento por completo. Cuando se necesita el metano sólo se
+ejerce una pequeña presión sobre la bolsa de almacenamiento moviendo de esta forma
+el biogás a donde se necesita.
+
+12
+
+Plantas de biogás. Diseño, construcción y operación. Instituto de Investigaciones Tecnológicas. Bogotá,
+Colombia, 1972.
+
+21
+
+BIOGÁS
+
+Fig. 2.2.1.(3). Biodigestor de plástico de bajo costo.
+
+Fuente: Energías renovables, de Francisco Jarabo Friedrich, España, 2000.
+
+b) Ventajas de los biodigestores de plástico, económicos:
+
+I.-Este tipo de digestor es muy económico y fácil de transportar por su bajo peso, en
+especial en aquellos sitios de difícil acceso.
+II.-Al ser hermético se reducen las pérdidas
+
+Este tipo de instalación es muy económica, el costo de un biodigestor es de $500 por
+cada cuatro personas. Entre sus desventajas se halla su bajo tiempo de vida útil, lo que
+hace necesario montar una nueva instalación cada tres años. También es muy
+vulnerable a sufrir roturas por condiciones climáticas adversas, por las acciones del
+hombre y los animales.13
+
+13
+
+Plantas de biogás. Diseño, construcción y operación. Instituto de Investigaciones Tecnológicas. Bogotá,
+Colombia, 1972.
+
+22
+
+BIOGÁS
+
+2.2.2. Plantas de Domo Fijo.
+
+Las plantas de domo fijo consisten en un recipiente fijo e inmóvil para gas, que se
+coloca en la parte superior del digestor. Cuando comienza la producción de gas, la
+mezcla se desplaza hacia el tanque de compensación. La presión del gas aumenta, el
+aumento de volumen del gas almacenado y con la diferencia de altura entre el nivel de
+la mezcla en el digestor y el nivel de la mezcla en el tanque de compensación.
+
+a) Ventajas: costos de construcción relativamente bajos, larga vida útil. La construcción
+subterránea ahorra espacio y protege al digestor de cambios de temperatura; además
+su construcción implica la creación de fuentes de empleo.
+
+Las principales desventajas son los frecuentes problemas con la permeabilidad para
+gases del recipiente de ladrillos para el gas (una pequeña fractura en el recipiente
+superior puede causar altas pérdidas de biogás). Por lo tanto, las plantas de domo fijo,
+sólo son recomendables cuando la construcción puede ser supervisada por técnicos
+experimentados de biogás. La presión del gas fluctúa dependiendo sustancialmente del
+volumen del gas almacenado.
+
+23
+
+BIOGÁS
+
+BIODIGESTOR DE DOMO FIJO.
+Fig. 2.2.2.(1). Esquema de un biodigestor de domo fijo.
+
+Fuente: http://www.energianatural.com.ar/biogas02.html
+
+Fig. 2.2.2.(2). Biodigestor fijo en construcción.
+
+Fuente: http://www.energianatural.com.ar/biogas02.html
+
+24
+
+BIOGÁS
+
+2.2.3. Plantas de tambor flotante (Tipo Hindú).
+
+Las plantas de tambor flotante consisten en un digestor subterráneo y un recipiente
+móvil para gas. El recipiente para gas flota, ya sea directamente sobre la mezcla de
+fermentación o en una chaqueta de agua. El gas se recolecta en el tambor de gas, que
+se levanta o baja, de acuerdo con la cantidad de gas almacenado.
+
+a) Sus ventajas son su operación simple y fácil de entender: el volumen almacenado de
+gas es visible directamente. La presión del gas es constante, determinada por el peso
+del recipiente de gas. La construcción es relativamente fácil; los errores en la
+construcción no llevan a problemas mayores en la operación y la producción de gas.
+b) Sus desventajas son los altos costos de los materiales para el tambor de acero, la
+susceptibilidad a la corrosión de las partes de acero, por lo que la vida útil de la planta
+es más corta; además se tienen costos fijos de mantenimiento para pintar el tambor.
+Fig. 2.2.3.(1). Biodigestor de Domo flotante en paralelo.
+
+Fuente: www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+
+25
+
+BIOGÁS
+
+BIODIGESTOR DE DOMO FLOTANTE TIPO HINDÚ
+Fig. 2.2.3.(2) Esquema de domo Flotante.
+
+Fuente: http://www.energianatural.com.ar/biogas02.html
+
+2.3. Partes de un Digestor.
+
+2.3.1. Tanques de carga.
+
+Es el ducto por el cual va a ser alimentado el digestor y está construido de ladrillo
+común y su superficie interna lleva un aplanado de cemento. La alimentación se
+prepara en el tanque de carga y se introduce al digestor por la parte inferior a través de
+un tubo de PVC dirigido hacia la línea central del tanque.
+
+26
+
+BIOGÁS
+
+2.3.2. Tanque de descarga:
+
+Es el dúcto por medio del cual se extraen los lodos residuales producto de la digestión
+anaeróbica y esta elaborado con los mismos materiales y de la misma forma que el
+tanque de carga. La descarga se efectúa por el efecto de vasos comunicantes: Al
+cargar el digestor, la presión del material que entra expulsa por el tubo de descarga una
+cantidad igual de material ya procesado (o agotado).
+
+2.3.3. Tanque de Almacenamiento de gas.
+
+Para los digestores de domo fijo y de domo flotante el tanque de almacenamiento
+consiste en una construcción circular o cuadrada de ladrillo con un acabado por adentro
+de cemento pulido y para los digestores de globo consistirá en una bolsa de material
+plástico resistente a la corrosión y al medio agresivo. El gas producido por el digestor se
+almacena con el fin de tener disponible una cantidad suficiente en el momento que se
+requiera, utilizando cualquier recipiente hermético.
+En algunos tipos de digestores el almacenamiento está directamente sobre la boca, en
+esos casos es conveniente utilizar campanas flotantes metálicas que permiten disponer
+del gas a una presión constante.
+
+27
+
+BIOGÁS
+
+2.3.4. Línea de conducción
+
+La línea de conducción para una instalación típica, sus dimensiones van a depender de:
+a).-Del flujo de gas que se desea transportar y
+b).-De la distancia existente entre la planta y el lugar de uso.
+
+Vale la pena mencionar que las plantas de Biogás utilizan casi siempre manguera de
+PVC, debido a que este material no es afectado por la acción del ácido sulfhídrico. La
+manguera de PVC irá preferiblemente enterrada o recubierta para evitar el deterioro
+(cristalización) por la luz solar. De lo contrario, se colocará elevada para evitar daños
+físicos causados por personas o animales.
+
+2.3.5. Válvulas
+
+Se utilizan mínimo dos válvulas para gas, la primera o principal irá instalada
+inmediatamente al comienzo de la conducción y sobre el niple de salida. La segunda se
+monta al final de la línea, en el lugar de uso.
+Estas válvulas, cuyo tamaño debe ser compatible con el diámetro de la tubería, deberán
+estar construidas en acero inoxidable o en PVC para evitar la corrosión por el ácido
+sulfhídrico.
+
+28
+
+BIOGÁS
+
+2.3.6. Trampas
+
+El gas debe ser purificado antes del uso. La purificación, en los casos en que el uso se
+reduce a calefacción, alumbrado o cocción de alimentos, tiene por objeto eliminar o
+disminuir el contenido de ácido sulfhídrico para proteger de la corrosión los equipos, y a
+la reducción del contenido de agua presente en el gas como resultado del proceso de
+digestión.
+
+a) Trampas de ácido sulfhídrico
+Están constituidas por un recipiente relleno con material de hierro finamente dividido
+formando un lecho poroso a través del cual debe circular el gas para que reaccione con
+el metal y se deposite en el lecho.
+La condición de porosidad se alcanza utilizando como relleno virutas de hierro o
+esponjillas de cocina de marca comercial. Estos materiales tienen la ventaja de ser da
+bajo costo y de oponer poca resistencia al flujo de gas, aspecto importante en razón de
+las bajas presiones que se manejan en este tipo de sistemas.
+
+La forma del recipiente y las características del material utilizado para su construcción
+dependen del gusto del propietario de la planta. El único requisito es el de que sean
+completamente herméticos para evitar fugas de gas. Así, es posible encontrar, en
+plantas en operación trampas:
+
+29
+
+BIOGÁS
+Rectangulares construidas en hierro o en acero, pintadas con el mismo material
+empleado en el enlucimiento y protección de la campana.
+
+Cilíndricas en acero. Estas se construyen a partir de secciones de tubería estándar de 2
+pulgadas o más. Al igual que las anteriores, requieren de pintura interior y exterior para
+protegerlas de la corrosión.
+
+Cilíndricas en PVC: Se construyen también a partir de tuberías estándar, o se arman
+utilizando accesorios (en Y) de PVC disponibles en el mercado. No requieren pintura
+protectora pero deben en lo posible no exponerse a los rayos del sol.
+
+La trampa de sulfhídrico actúa también como trampa de llama no sólo por la presencia
+del relleno sino por el mayor diámetro del recipiente con relación a la línea de
+conducción.
+
+b) Trampas de agua
+El agua arrastrada por el agua se separa cuando la corriente encuentra en su
+trayectoria una exención brusca y una contracción posterior. Para lograr este propósito
+será suficiente instalar sobre la línea un accesorio idéntico a las trampas de sulfhídrico,
+con la diferencia de que no se necesitará el relleno de material de hierro.
+Las trampas están provistas de un grifo de purga por donde se debe evacuar
+periódicamente el agua depositada en el fondo.
+
+30
+
+BIOGÁS
+2.4. Ventajas y desventajas de los biodigestores
+
+2.4.1. Ventajas de los biodigestores
+
+a) Permite disminuir la tala de los bosques al no ser necesario el uso de la leña para
+cocinar.
+b) Humaniza el trabajo de los campesinos, que antes debían buscar la leña en lugares
+cada vez más lejanos.
+c) Diversidad de usos (alumbrado, cocción de alimentos, producción de energía
+eléctrica, transporte automotor y otros).
+d) Produce biofertilizante rico en nitrógeno, fósforo y potasio, capaz de competir con los
+fertilizantes químicos, que son más caros y dañan el medio ambiente.
+e) Elimina los desechos orgánicos, por ejemplo, la excreta animal, contaminante del
+medio ambiente y fuente de enfermedades para el hombre y los animales.
+
+La utilización de los biodigestores además de permitir la producción de biogás ofrece
+enormes ventajas para la transformación de desechos:
+I) Mejora la capacidad fertilizante del estiércol. Todos los nutrientes tales como
+nitrógeno, fósforo, potasio, magnesio así como los elementos menores son
+conservados en el efluente. En el caso del nitrógeno, buena parte del mismo, presente
+en el estiércol en forma de macromoléculas es convertido a formas más simples como
+amonio (NH4+), las cuales pueden ser aprovechadas directamente por la planta. Debe
+
+31
+
+BIOGÁS
+notarse que en los casos en que el estiércol es secado al medio ambiente, se pierde
+alrededor de un 50% del nitrógeno.14
+II) El efluente es mucho menos oloroso que el afluente.
+III) Control de patógenos. Aunque el nivel de destrucción de patógenos variará de
+acuerdo a factores como temperatura y tiempo de retención, se ha demostrado
+experimentalmente que alrededor del 85% de los patógenos no sobrevive el proceso de
+biodigestión. En condiciones de laboratorio con temperaturas de 35º C, los coliformes
+fecales fueron reducidos entre el 50 y el 70%, y los hongos en 95% en 24 horas.15
+
+2.4.2. Dificultades técnicas de los biodigestores
+
+La construcción de biodigestores conlleva una serie de dificultades técnicas:
+a) El digestor debe encontrarse cercano a la zona donde se recoge el sustrato de
+partida y a la zona de consumo.
+b) Debe mantenerse una temperatura constante y cercana a los 35ºC. Esto puede
+encarecer el proceso de obtención en climas fríos.
+c) Es posible que, como subproducto, se obtenga SH2, el cual es tóxico y corrosivo,
+dependiendo del sustrato de partida y de la presencia o no de bacterias
+sulfatorreductoras. La presencia de SH2 hace que se genere menos CH4,
+
+14
+
+Lucena Bonny, Antonio. Energías alternativas y tradicionales: sus problemas ambientales. España,
+1998.
+15
+Manilla Pérez, Efraín. Diseño de un biorreactor para la producción de biogás a partir de desechos
+agrícolas. México, 2000.
+
+32
+
+BIOGÁS
+disminuyendo la capacidad calorífica del biogás y encarece el proceso por la necesidad
+de depurarlo.
+d) Necesita acumular los desechos orgánicos cerca del biodigestor.
+e) Riesgo de explosión, en caso de no cumplirse las normas de seguridad para gases
+combustibles
+
+2.5. Planificación de un biodigestor.
+
+Los siguientes son los aspectos a tener en cuenta en el
+
+diseño, planificación
+
+y
+
+construcción de un biodigestor:
+A continuación se describirá el proceso de construcción de un biodigestor de domo fijo
+ya que se considera que es el más seguro y el más fácil de construir. Será circular
+considerando que las características de este nos permiten un mejor aprovechamiento
+de la biomasa al no quedarse esta estancada en ninguna esquina. Además de contar
+con loza y no con cúpula debido que requiere de una detallada elaboración.
+
+2.5.1. Factores humanos
+
+a) Idiosincrasia
+b) Necesidad, la cual puede ser sanitaria, energía y de fertilizantes.
+c) Recursos disponibles de tipo
+
+económicos, materiales de construcción, mano de
+
+obra, utilización del producto, área disponible.
+
+33
+
+BIOGÁS
+
+d) Disponibilidad de materia prima, si se cuentan con desechos agrícolas, desechos
+pecuarios, desechos domésticos, desechos urbanos, desechos industriales.
+
+2.5.2. Factores biológicos
+
+a) Enfermedades y plagas tanto humanas como pecuarias y agrícolas
+
+2.5.3. Factores físicos
+
+a) Localización, la ubicación si es en zona urbana, rural o semi-urbana y la geografía
+aspectos como la latitud, longitud y altitud.
+b) Climáticos dentro de estos aspectos están las temperaturas máximas y mínimas, la
+precipitación pluvial, la humedad ambiental, la intensidad solar, los vientos su intensidad
+y dirección.
+c) Vías de acceso.
+d) Topografía, teniendo en cuenta el declive del suelo: si es plano, ondulado, o
+quebrado.
+e) Suelos con sus características como la textura, estructura, nivel freático y capacidad
+agrológica.
+
+34
+
+BIOGÁS
+2.5.4. Factores utilitarios
+
+a) Función principal, si se construye de manera experimental, demostrativa o
+productiva.
+b) Usos, si el uso es de tipo sanitario, energético, fertilizante, integral.
+c) Organizativo si el biodigestor se va a construir a escala domestica, para grupo
+familiar, comunitario o empresas.
+d) Capacidad, si es pequeño de 3 a 12 m3 / digestor; si es mediano de 12 a 45 m3
+digestor y si es grande de 45 a 100 m3 / digestor.16
+e) Operación de la instalación contemplando aspectos como el funcionamiento de el
+pretratamiento, la mezcla, la carga, y controles de PH, obstrucciones de líquidos,
+sólidos y gases: las descargas de efluentes tanto liquidas como gaseosas y de lodos; el
+almacenamiento de los líquidos, sólidos y gases; la aplicación de líquidos por bombeo,
+por tanques regadores o arrastre por riego; los sólidos que están disueltos en el agua y
+los sólidos en masa y por ultimo los gases utilizados para la cocción, iluminación e
+indirectamente en los motores.
+
+Con el objetivo de disminuir el tamaño de los digestores se han utilizado los productos
+orgánicos que brindan mayor cantidad de biogás por unidad de volumen; algunos de
+ellos son: la excreta animal, la cachaza de la caña de azúcar, los residuales de
+
+16
+
+Noyola, R.A. Apuntes del curso “Diseño de reactores anaeróbicos”. Instituto de Ingeniería. UNAM,
+2001.
+
+35
+
+BIOGÁS
+mataderos, destilerías y fábricas de levadura, la pulpa y la cáscara del café, así como la
+materia seca vegetal.17
+
+2.6. Proceso de construcción
+
+A continuación se describirá el proceso de construcción de un biodigestor de domo
+flotante. Puede ser circular o rectangular, aunque se recomienda más el de tipo circular
+considerando que las características de este nos permiten un mejor aprovechamiento
+de la biomasa al no quedarse esta estancada en ninguna esquina.
+
+2.6.1. Selección del lugar, trazado y excavación
+
+a.- La planta de biogás se instalará cerca del lugar que nos subministrara la materia
+prima y alejada de mantos acuíferos y tuberías de agua. Además de estar ubicada en
+un sitio donde reciba el sol durante la mayor parte del día, evitando las zonas con tráfico
+continuo de personas o animales.
+b.- Demarcar el foso para el digestor t para los tanques de carga y de descarga.
+c.- Excavar simultáneamente el foso para el digestor y las zanjas para la colocación de
+los ductos de carga y descarga.
+
+17
+
+Biodigestores. Una alternativa a la autosuficiencia energética y de biofertilizantes.
+
+36
+
+BIOGÁS
+Fig. 2.6.1. (1). Trazado de un biodigestor.
+
+Fuentee: Plantas de biogás: diseño, construcción
+y operación. Instituto de Investigaciones Tecnológicas. Bogotá, Colombia, 1972.
+
+Se traza un círculo en la tierra de 2.15 m de diámetro y se cava un hoyo de 2 m de
+profundidad.
+Fig. 2.6.1. (2). Excavación
+
+Fuente: Energías renovables, de Francisco
+Jarabo Friedrich, España, 2000.
+
+37
+
+BIOGÁS
+2.6.2. Construcción del digestor
+
+El piso se construye sobre una base firme y compacta sobre la cual se coloca una
+parrilla de varilla junto con una cadena armada de la cual nacerán los castillos que
+soportarán la estructura del digestor, se cuela la loza del piso con una mezcla de
+cemento y arena. Una vez realizado el paso anterior se comenzara el desplante de las
+paredes que irán formadas de tabique, pegadas con cemento y llevarán un aplanado
+fino por una mezcla de cemento y arena.18
+Fig. 2.6.2. (1). Armado de parrilla.
+
+Fuente: Energías renovables,
+de Francisco Jarabo Friedrich, España, 2000.
+
+Si la tierra es compacta, no será necesario construir el tanque principal del digestor con
+mampostería o tabique, bastará un cilindro de malla de gallinero, de 1.55 m de diámetro
+y 2.2 m de altura, con 3 castillos (de donde saldrán los topes para la campana). Se
+pueden construir afuera y luego colocarse en el hoyo.
+
+18
+
+38
+
+BIOGÁS
+Fig. 2.6.2. (2). Detalle de construcción de los muros de tabique.
+
+Fuente:Plantas de biogás: diseño, construcción y operación. Instituto de Investigaciones Tecnológicas.
+Bogotá, Colombia, 1972.
+
+2.6.3. Construcción de los tanques de carga y descarga
+Los tanques de carga y descarga se construyen de tabique pegados con cemento sobre
+una base de concreto simple y aplanados con una mezcla de cemento y arena en
+proporción de 1:3 con .7 lt de agua por kilogramo de cemento y conectados al digestor
+por un tubo de PVC sanitario.
+
+Fig. 2.6.3. (1) Tanques de carga y descarga.
+
+Fuente: Energías renovables, de
+Francisco Jarabo Friedrich, España, 2000.
+
+39
+
+BIOGÁS
+
+El tanque de alimentación se construye con tabique sobre una losa encima del suelo. El
+tanque de descarga debe quedar enterrado.
+Fig. 2.6.3. (2). Construcción de la cámara.
+
+Fuente: www.proteger.org.ar/archivos/Biodigestor
+Fig. 2.6.3. (3). Construcción de la cámara, revocando las paredes.
+
+Fuente: www.proteger.org.ar/archivos/Biodigestor
+
+40
+
+BIOGÁS
+
+Fig. 2.6.3. ( 4). Construcción del tanque de alimentación.
+
+Fuente: www.proteger.org.ar/archivos/Biodigestor
+
+Fig. 2.6.3. (5). Construcción de biodigestor.
+
+Fuente: Energías renovables,
+de Francisco Jarabo Friedrich, España, 2000.
+
+41
+
+BIOGÁS
+
+Se excavan 2 zanjas a lados opuestos del tanque principal de 1.2 metros de longitud,
+donde se colocaran los ductos que comunican los tanques de alimentación y descarga
+con el tanque principal.
+
+2.6.4. Sellado e impermeabilizado del tanque.
+Fig. 2.6.4. (1). Sellado del tanque.
+
+Fuente: Energías renovables, de
+Francisco Jarabo Friedrich, España, 2000.
+
+Una vez aplanado el tanque del digestor se procederá a recubrir con un sellador acrílico
+e impermeabilizarlo con pintura epóxica.
+
+42
+
+BIOGÁS
+Fig. 2.6.4. (2). Impermeabilizado del tanque.
+
+Fuente: Energías renovables, de Francisco Jarabo Friedrich, España, 2000.
+
+2.6.5. Construcción y colocación de la campana
+La campana puede ser realizada de fibra de vidrio y de lámina de acero galvanizado y
+recubierta con pintura anticorrosiva.
+Fig. 2.6.5. (1). Pintado de campana.
+
+Imagen tomada de Energías renovables, de Francisco Jarabo Friedrich, España, 2000.
+
+43
+
+BIOGÁS
+
+CAPITULO 3. Operación de un biodigestor y usos del biogás.
+
+3.1. Descripción del proceso
+
+3.1.1. Molienda.
+Es recomendable moler el estiércol fresco que se va a utilizar para la digestión, ya que
+al disminuir el tamaño de los sólidos se está aumentando el área de contacto con los
+microorganismos encargados de iniciar el proceso. En caso de que no se cuente con un
+equipo para la molienda, esta etapa puede pasar inadvertida. Tomando en cuenta lo
+anterior, el siguiente paso es vaciar el estiércol en un recipiente adecuado para el
+acondicionamiento o bien se puede hacer directamente en el digestor.
+
+3.1.2. Acondicionamiento.
+Esta etapa es la más importante del proceso para obtener una solución (agua-excreta)
+que garantice la producción de biogás. Para ello se realizan los pasos siguientes:
+a) Recolección de la excreta se hará manualmente directamente del establo y se
+almacenará en un tanque mezclador por uno o dos días dependiendo del modo de
+operación, aunque es recomendable dejarlo 2 días para permitir que todo el aire se
+elimine durante esta estancia en el tanque.
+b) Adicionar la cantidad necesaria de agua para obtener una concentración aproximada
+del 8% en peso de sólidos totales.
+
+44
+
+BIOGÁS
+
+3.1.3. Carga del digestor.
+La carga del digestor se hará por gravedad ya que el estiércol sea adicionado
+directamente del establo.
+
+3.1.4. Descarga.
+El efluente se debe descargar de la manera adecuada para evitar que entre aire en el
+biodigestor. Los lodos se pueden aplicar como fertilizante y el sobrenadante se puede
+utilizar como agua de riego. El componente líquido se puede utilizar además para el
+acondicionamiento de la solución de alimentación y el efluente sólido puede ser tratado
+para separar las proteínas que contiene las cuales pueden utilizarse como componente
+alimenticio para el ganado y los sólidos restantes para el acondicionamiento del suelo
+del cultivo.
+
+3.2. Operación propuesta del sistema de digestión.
+La operación del digestor resulta ser muy sencilla, como se muestra a continuación en
+base al diagrama del sistema de la figura.
+
+a.- Verificar que las válvulas estén cerradas.
+b.- Abrir la válvula 2 de descarga del biogás con el fin de purgar el equipo.
+c.- Abrir la válvula 1 de alimentación.
+d.- Alimentar al digestor.
+
+45
+
+BIOGÁS
+
+e.- Cerrar las válvulas de descarga del biogás y la alimentación, después de haber
+cargado toda la alimentación.
+f.- Purgar diariamente el biogás producido por la válvula de descarga de biogás con el
+propósito de eliminar la más mínima presencia de aire, así como algo de vapor de agua
+y de CO2 que se hayan formado.
+g.- Verificar a la salida si hay combustión de biogás.
+h.- Cargar al digestor la excreta que se vaya produciendo y retirar aproximadamente la
+misma cantidad de lodo digerido mediante la válvula 4 para mantener un régimen
+semicontinuo de operación.
+i.- Retirar también el sobrenadante del digestor mediante la válvula 3.
+
+Fig. 3.2. (1). Operación del sistema de digestión. Imagen del autor.
+
+46
+
+BIOGÁS
+3.3. Modo de operación.
+
+En un principio se alimentará del digestor la excreta recolectada y se iniciará una
+operación en serie del sistema, pero si la cantidad de excreta aumenta por el aumento
+de ganado, entonces se pretende operar un sistema en paralelo con dos tanques, cada
+tanque funcionando por separado.
+
+3.3.1. Producción de gas y composición
+La producción de gas funciona como indicador, tanto de la condición de cultivo, como
+de la eficiencia del desempeño de un digestor. La producción de gas normalmente se
+expresa en términos de volumen de gas producido por unidad de masa de sólidos
+totales y sólidos orgánicos introducidos.
+El volumen esperado de gas por unidad de materia orgánica es función del tiempo de
+retención y otras características operacionales, así como de la naturaleza de los
+desechos.
+La velocidad de producción de gas que se usa como parámetro de la digestión de un
+desperdicio dado es aquella que es característica del cultivo una vez que ha alcanzado
+el “régimen permanente.” La producción de gas es un parámetro particularmente útil,
+pues es fácil reconocer, además de que da una respuesta inmediata a una condición
+adversa.
+La producción de gas, cuando se usa como parámetro, no se debe interpretar como
+completamente independiente de la composición de gas. El gas de interés en la
+
+47
+
+BIOGÁS
+composición es el metano. Generalmente cuando mayor sea la concentración de
+carbohidratos en los desperdicios, más se acercara a 1:1 la relación metano: bioxido de
+carbono
+
+3.4. Usos del biogás
+
+La gran variedad de biomasas existentes unida al desarrollo de distintas tecnologías de
+transformación de ésta en energía (Combustión directa, Pirólisis, Gasificación,
+Fermentación, Digestión anaeróbica,...) permiten plantear una gran cantidad de posibles
+aplicaciones entre las que destacan la producción de energía térmica, electricidad.
+Fig. 3.4. (1). Usos del Biogas.
+
+Fuente: www.energianatural.com.ar
+
+48
+
+BIOGÁS
+Fig. 3.4. (2). Usos del biogas.
+
+Fuente: www.textoscientificos.com/energia/biogas/usos
+
+3.4.1. Producción de Energía Térmica
+
+Aprovechamiento convencional de la biomasa natural y residual. Los sistemas de
+combustión directa son aplicados para generar calor, el cual puede ser utilizado
+directamente, como por ejemplo, para la cocción de alimentos.
+
+3.4.2. Producción de Energía Eléctrica
+
+Obtenida minoritariamente a partir de biomasa residual (restos de cosecha y poda) y
+3principalmente a partir de cultivos energéticos leñosos, de crecimiento rápido (Chopo,
+Sauce, Eucalipto, Robinia, Coníferas, Acacia, Plátano,...) y herbáceos (Cardo lleno,
+Miscanto, Caña de Provenza, Euforbias, Chumberas,...). También se utiliza el biogás
+
+49
+
+BIOGÁS
+resultante de la fermentación de ciertos residuos (lodos de depuradora, Residuos
+Sólidos Urbanos…) para generar electricidad.
+
+El rendimiento neto de la generación de electricidad en las plantas de biomasa es bajo,
+del orden del 20% referido a su poder calorífico inferior.8 Ello se debe
+fundamentalmente el pequeño tamaño de la planta de producción. La caldera tiene un
+rendimiento moderado al quemar un combustible de alto contenido en humedad, y su
+consumo en servicios auxiliares es alto, por encima del 8% de la producción total de
+electricidad en salida de alternador.
+
+Una posibilidad de incrementar el rendimiento energético en el uso de la biomasa es la
+cogeneración de calor y electricidad. La condensación del vapor supone una
+evacuación de calor cercano a la mitad de la energía contenida en la biomasa; la
+recuperación de parte de ese calor de condensación en forma de vapor de baja
+temperatura o agua caliente, para usos industriales o domésticos, supone un aumento
+de la eficiencia energética. Para ello se puede disponer de una turbina de
+contrapresión o bien hacer una extracción de vapor con volumen significativo en la
+zona de baja presión de la turbina. Se instalan los intercambiadores de calor
+adecuados y se pueden obtener rendimientos globales de entre un 40 y un 60%.
+
+La gasificación es una alternativa con mejores rendimientos que la combustión en
+calderas. El empleo de motores diesel o de turbinas de gas para quemar el gas
+producido puede elevar el rendimiento a valores por encima del 30%, sin embargo ésta
+es una opción poco extendida. 8
+
+50
+
+BIOGÁS
+3.4.3. Producción de Biocombustibles.
+
+Existe la posibilidad, ya legislada, de alimentar los motores de gasolina con
+bioalcoholes (obtenidos a partir de Remolacha, Maíz, Sorgo dulce, Caña de azúcar,
+Patata, Pataca) y los motores diesel con bioaceites (obtenidos a partir de Colza,
+Girasol, Soja).
+
+3.4.4. Producción de gases combustibles
+
+Es una aplicación poco utilizada actualmente que consiste en la descomposición de la
+biomasa en un digestor para obtener un gas, cuyo compuesto combustible es
+básicamente metano, pero también contienen nitrógeno, vapor de agua y compuestos
+orgánicos. El proceso es adecuado para tratar biomasa de elevado contenido en
+humedad y poco interesante en otras aplicaciones, bien por su calidad o por la poca
+cantidad disponible.
+
+El gas obtenido es de bajo poder calorífico, pero útil en aplicaciones térmicas en el
+propio entorno ganadero o agrícola, suministrando luz y calor. En el caso de
+instalaciones de mayor tamaño, se puede llegar a colocar motores diesel de hasta
+varios cientos de kilovatios de potencia para la generación de electricidad; existen ya
+ejemplos industriales de ello. La producción de gas se puede controlar adecuándola a
+la demanda; incluso puede hacerse que durante varias horas el digestor se mantenga
+
+51
+
+BIOGÁS
+embotellado, sin producir gas, durante los períodos en los que no exista consumo
+energético.
+
+Otra posibilidad para la producción de gas es el empleo de un gasificador, que inyecta
+aire u oxígeno y vapor de agua. Opera a elevada temperatura, entre 800 y 1200º C,
+con lo cual la cinética de las reacciones es más alta. El gas contiene CO, H2, pequeñas
+concentraciones de metano, nitrógeno y vapor de agua. 8 Tiene un poder calorífico
+medio. Existen varias alternativas de gasificación; el lecho fijo sirve para tratar
+pequeñas cantidades de biomasa, mientras que los de lecho fluido tratan mayores
+cantidades, siendo éstos utilizados para la generación de electricidad.
+
+Al problema operativo de la gasificación, se une el de la producción de alquitranes y
+otros compuestos orgánicos pesados. Esto hace posible la combustión del gas en
+equipos industriales, calderas y hornos o en motores diesel para generación eléctrica,
+pero dificulta la extensión a turbinas de gas en sistemas eléctricos de alta eficiencia. La
+alternativa es purificar el gas, pero es caro.
+
+3.5. Producción de abono orgánico
+
+En el proceso de la digestión anaeróbica y la producción del biogás deja como residuo
+un lodo compuesto por el material no atacado por las bacterias y por material no
+atacado por éstas. Este lodo, conocido, conocido también como el efluente, constituye
+un fertilizante orgánico de muy buena calidad.
+
+52
+
+BIOGÁS
+Como el proceso solo remueve los gases generados en el lodo deben conservarse los
+nutrientes originales contenidos en la materia prima. Estos quedan en forma más
+concentrada, y pueden ser absorbidos más fácilmente, mejorando las características
+fertilizantes del material.
+
+La aplicación del afluente al suelo le trae beneficios similares a los que se alcanzan con
+cualquier materia orgánica. Es decir, que actúa como mejorador de las características
+físicas, facilitando la aireación, aumentando la capacidad de retención de humedad, la
+infiltración de agua y la capacidad de intercambio catiónico.
+
+Se ha encontrado, por ejemplo, que la aplicación del efluente de biodigestores que
+operan con estiércol de res, en ensayos comparativos con uso directo del estiércol, ha
+mejorado los rendimientos agrícolas del maíz, en un 28%. Ello se debe en parte a la
+mayor facilidad de absorción de los nutrientes, y a la mayor riqueza del afluente:
+Contiene 1.5% de nitrógeno contra 0.75% del estiércol, y 0.7% de K20 contra 0.4% de la
+materia prima. Esta situación hace que el afluente sea más efectivo que muchos de los
+abonos orgánicos químicos utilizados normalmente. 19
+
+19
+
+Manilla Pérez Efraín. Diseño de un biorreactor para la producción de biogás a partir de desechos
+agrícolas. México, 2000.
+
+53
+
+BIOGÁS
+
+3.5.1. Sustancias orgánicas en los fertilizantes
+
+Así como hay sustitutos inorgánicos para los nutrientes nitrógeno, potasio y fósforo de
+un fertilizante orgánico, no existe sustituto artificial para otras sustancias como proteína,
+celulosa, lignina, etc. Todas ellas contribuyen a incrementar la permeabilidad e
+higroscopia, mientras previenen la erosión y mejoran las condiciones generales de la
+agricultura. Las sustancias orgánicas además constituyen la base para el desarrollo de
+los microorganismos responsables de convertir los nutrientes del suelo en una forma
+que pueda fácilmente ser incorporada por las plantas.
+
+3.5.2. Nutrientes y Organismos del Suelo
+
+Debido a la descomposición y agotamiento de parte de su contenido orgánico, los lodos
+digeridos proporcionan nutrientes de acción rápida que fácilmente entran en la solución
+del suelo, quedando inmediatamente disponibles para las plantas. Simultáneamente
+sirven como nutrientes primarios para el desarrollo de los organismos del suelo, como
+la sustitución de los microorganismos perdidos a través de la exposición al aire durante
+el esparcimiento del lodo sobre los campos.
+
+54
+
+BIOGÁS
+
+3.5.3. .Reducción de la Erosión del Suelo.
+
+La materia húmica y los ácidos húmicos presentes en los lodos contribuyen a una
+humificación más rápida que a su ves ayuda a reducir la velocidad de erosión (debido a
+lluvia o dispersión en seco), incrementando el suministro de nutriente, la higroscopía,
+etc. El contenido de humus es especialmente importante en los suelos tropicales con
+bajo en humus. La cantidad de humus estable formada con lodos digeridos es el doble
+de la que se puede lograr con estiércol. Además se ha demostrado que la actividad de
+los gusanos de tierra se estimula más al fertilizar con lodos que fertilizando con estiércol
+de establo.
+
+3.5.4. Reducción del deslave de Nitrógeno
+Al ser comparado con fertilizantes con alto contenido de nitratos y nitritos más solubles
+en agua (estiércol, composta), el elevado contenido de amonio del lodo digerido ayuda
+a reducir la velocidad con la que se deslava el nitrógeno.
+
+3.5.5. Efectos sobre los cultivos.
+
+Se sabe que generalmente la producción de los cultivos es mas alta después de una
+fertilización con lodos digeridos la mayoría de los cultivos como papa, rábano,
+zanahoria, col, cebolla, ajo, etc. y muchos tipos de frutas (naranja, manzana, guayaba,
+
+55
+
+BIOGÁS
+
+mango, etc.), caña de azúcar, arroz, parecen reaccionar favorablemente a la
+fertilización con lodos.
+En contraste los cultivos como trigo, oleaginosas, algodón y tabaco reaccionan menos
+favorablemente. Los lodos son un buen fertilizante para pasturas y prados. Los datos
+disponibles tienen grandes variaciones, pues el efecto fertilizante no solo es específico
+de cada planta, sino también depende del clima y tipo de suelo. Por lo tanto, no se
+puede ofrecer información definitiva, tampoco, por la misma razón, es posible ofrecer
+una comparación económica del costo de los fertilizantes químicos contra el de los
+lodos del biogás.
+El único hecho indiscutible es que los de biogás son mejores desde el punto de vista
+ecológico.
+
+56
+
+BIOGÁS
+CONCLUSIONES:
+
+El biogás resulta un combustible barato y útil sobre todo en comunidades alejadas de
+los de los grandes centros urbanos.
+
+El uso de la biomasa aporta beneficios que no son solo energéticos, su transformación
+se convierte en beneficiosa y necesaria para el entorno. Es un sistema idóneo de
+eliminación de residuos, con la subsiguiente mejora del ambiente rural, urbano e
+industrial. Puede ser además, un modo de equilibrar determinados excedentes
+agrícolas. En el sector rural, la principal forma de contaminación es el estiércol, que
+genera malos olores y polución con nitratos al agua de consumo. La opción del uso del
+estiércol permite responder a una demanda de la sociedad, las actividades agrícolaganaderas deben ser más respetuosas del medio ambiente, y en particular deben
+promover la reducción de posibles fuentes de contaminación.
+
+La eficiencia de esta tecnología en la resolución de problemas en materia del medio
+ambiente, especialmente su funcionalidad en este caso, será el medio de difusión más
+eficaz, para que en el corto o mediano plazo, se generalice la implantación de esta
+sencilla tecnología.
+
+El sector energético nacional ha sido y seguirá siendo pilar de nuestro desarrollo
+presente y futuro. Su expansión constante y modernización en algunas de sus partes,
+
+57
+
+BIOGÁS
+
+han permitido generar una oferta sólida y diversificada de energéticos, que además
+aporta importantes recursos públicos para la satisfacción de apremiantes necesidades
+sociales y de infraestructura.
+
+Es evidente que la inversión que se tendrá que realizar para arrancar como una
+posibilidad real la tecnología del biogás en México, es grande, sin embargo los
+beneficios también son muy grandes e importantes, por lo tanto, se justifica.
+
+Es importante aprovechar el conocimiento de las experiencias que han tenido otros
+países en este sentido,
+
+para no cometer los mismos errores y, sobre todo, para
+
+consolidar a la tecnología del biogás como un importante sector para la sociedad.
+
+RECOMENDACIONES.
+
+Los materiales de construcción que se proponen son el ladrillo y recubierta de cemento,
+materiales fáciles de conseguir.
+
+La operación de los equipos como se plantea, es fácil una vez que se conoce el
+sistema, por lo tanto sólo se necesita de una pequeña capacitación a la gente que vaya
+a operar estos equipos en las zonas destinadas para ello.
+
+58
+
+BIOGÁS
+GLOSARIO
+
+Alquitranes Materiales orgánicos que pueden encontrarse en la naturaleza u obtenerse
+de la destilación del carbón o del refinado del petróleo. Los alquitranes tienen
+aplicaciones industriales. En su composición existen sustancias tóxicas, incluidos
+carcinógenos.
+
+Bacteria Microorganismos compuestos generalmente de proteínas y ácidos nucleicos.
+Tienen funciones beneficiosas muy importantes, algunas de las cuales son la
+fabricación de etanol, antibióticos por fermentación, fijación del nitrógeno al suelo,
+tratamiento de aguas residuales por procesos de lodos activados, etc. Pero también son
+causa de numerosas fermentaciones, putrefacción y producen graves enfermedades.
+
+Biogás El biogás, es un gas que se genera artificialmente, en dispositivos específicos,
+mediante la acción de unos seres vivos (bacterias metanogénicas), en ausencia de aire,
+(esto es un ambiente anaeróbico). Cuando materia orgánica se descompone en
+ausencia de aire, actua este tipo de bacterias, generando biogás.
+
+Biocombustible: es el término con el cual se denomina a cualquier tipo de combustible
+que derive de la biomasa – organismos recientemente vivos o sus desechos
+metabólicos, tales como el estiércol de la vaca. Es una fuente renovable de energía, a
+diferencia de otros recursos naturales como el petróleo, carbón y los combustibles
+nucleares.
+
+59
+
+BIOGÁS
+Biodegradable Sustancia que puede ser descompuesta con cierta rapidez por
+organismos vivientes, los más importantes de los cuales son bacterias aerobias.
+Sustancia que se descompone o desintegra con relativa rapidez en compuestos simples
+por alguna forma de vida como: bacterias, hongos, gusanos e insectos. Lo contrario
+corresponde a sustancias no degradables, como plásticos, latas, vidrios que no se
+descomponen o desintegran, o lo hacen muy lentamente.
+Biogasificación fermentación de metano, producción de metano o digestión
+anaeróbica
+
+Biomasa Conjunto de la materia biológicamente renovable (madera, celulosa, lignina,
+almidón y quitina); por extensión, la energía que proviene de la fermentación o la
+combustión de la masa orgánica. En la combustión se usa leña y carbón. En la
+fermentación, un buen ejemplo son los biodigestores del bagazo de caña de azúcar,
+donde se produce un gas que se utiliza para la producción de energía eléctrica.
+Biosíntesis Formación de compuestos orgánicos realizado por los organismos vivos a
+partir de compuestos sencillos.
+
+Combustible Un combustible es cualquier sustancia que reacciona con el oxígeno de
+forma violenta, con producción de calor, llamas y gases. Supone la liberación de una
+energía de su forma potencial a una forma utilizable (por ser una reacción química, se
+conoce como energía química). En general se trata de algo susceptible de quemarse,
+pero hay excepciones que se explican a continuación.
+
+60
+
+BIOGÁS
+
+Combustión Reacción química en la que un material (combustible) se combina con el
+oxígeno, con una consecuente emisión de energía en forma de calor y formación de
+subproductos.
+Degradabilidad Capacidad de descomposición química o biológica de los compuestos
+orgánicos por acción del metabolismo de microorganismos.
+
+Etanol El compuesto químico etanol es un líquido incoloro e inflamable con un punto de
+ebullición de 78 ºC. Se mezcla con agua en cualquier proporción y da una mezcla
+azeotrópica con un contenido de aprox. el 96 % de etanol.
+
+Fertilizantes son productos químicos naturales o industrializados que se administran a
+las plantas con la intención de optimizar su crecimiento y desarrollo de su perfil ó
+potencial genético; se aplican generalmente al suelo para que se diluyan en la solución
+y puedan ser ingresados al sistema vegetal vía raíces; pero también pueden aplicarse
+de forma líquida vía foliar para ser absorbidos a través de los estomas.
+
+Aportan los tres principales nutrientes necesarios para el desarrollo de las plantas en
+diversas proporciones (nitrógeno, fósforo y potasio), nutrientes secundarios (calcio,
+azufre y magnesio) y, a veces micro nutrientes, de importancia también para la
+alimentación de la planta (boro, manganeso, hierro, cinc, cobre y molibdeno.
+
+61
+
+BIOGÁS
+
+Gasificación La gasificación es un proceso térmico que permite la conversión de un
+combustible sólido, tal como la biomasa en un combustible gaseoso, mediante un
+proceso de oxidación parcial.
+
+Gasógenos Son las instalaciones en la que se realizan la pirólisis y la gasificación de la
+biomasa.
+
+Hidrocarburos Compuestos orgánicos formados por carbono e hidrógeno. Los átomos
+de C pueden formar largas cadenas. Así, por ejemplo, el hidrocarburo más sencillo es el
+CH4 (metano). La gasolina C8H18 está formada principalmente por diferentes isómeros
+del octano.
+
+Hidrólisis La hidrólisis o hidrolisis es una reacción en la que se rompe un enlace
+covalente entre dos subunidades por medio de la adición del equivalente a una
+molécula de agua; se agrega un átomo de hidrógeno a una subunidad y un grupo
+hidroxilo a la otra.
+
+Metano Es el hidrocarburo más simple, producto de la descomposición anaeróbica.
+Componente, entre otros, del gas natural y del biogas. Es junto con el dióxido de
+carbono y los óxidos de nitrógeno el principal causante del efecto invernadero. Fórmula
+CH 4
+
+62
+
+BIOGÁS
+
+Metanol El compuesto químico metanol (también conocido como alcohol metílico o
+alcohol de madera) es el alcohol más sencillo, y es un líquido ligero, volátil, incoloro,
+inflamable y tóxico que se emplea como anticongelante, disolvente y combustible.
+
+Pirólisis La pirólisis se puede definir como la descomposición térmica de un material en
+ausencia de oxígeno o cualquier otro reactante. Esta descomposición se produce a
+través de una serie compleja de reacciones químicas y de procesos de transferencia de
+materia y calor. La pirólisis también aparece como paso previo a la gasificación y la
+combustión.
+Polifenoles Antioxidantes naturales presentes en el aceite de oliva que lo preservan de
+alteraciones oxidativas, incrementando su estabilidad.
+
+Reservorio cavidad que sirve como almacén
+
+Simbiosis Dos organismos que no pueden vivir uno sin el otro, se hacen organismos
+dependientes. Esta simbiosis hace que cada uno no pueda desarrollarse de manera
+autónoma. Está usado en el sentido peyorativo. Dependen uno del otro, no es por
+naturaleza, sino por la incapacidad de asumirse solo.
+
+Sustrato El sustrato es la parte del biotopo donde determinados seres vivos realizan
+sus funciones vitales (nutrición, reproducción, relación).
+
+63
+
+Bibliografía
+Biodigestores. Una alternativa a la autosuficiencia energética y de biofertilizantes,
+México tercer milenio,1998.
+Calvillo Unna Jorge, La casa Ecológica, México tercer milenio 1999.
+Manilla Pérez, Efraín. Diseño de un biorreactor para la producción de biogás a partir
+de desechos agrícolas. México, 2000.
+Energías renovables, de Francisco Jarabo Friedrich, España, 2000.
+López Villanueva, Berenice. Proyecto para la construcción de una planta de biogás a
+partir de desechos orgánicos en el Distrito Federal. México, 2001.
+Lucena Bonny, Antonio. Energías alternativas y tradicionales: sus problemas
+ambientales. España, 1998.
+Noyola, R.A. Apuntes del curso “Diseño de reactores anaeróbicos”. Instituto de
+Ingeniería. UNAM, 2001.
+Plantas de biogás. Diseño, construcción y operación. Instituto de Investigaciones
+Tecnológicas. Bogotá, Colombia, 1972.
+
+Cibergrafìa
+http://www.cubasolar.cu/biblioteca/energia/Energia22/HTML/articulo04.htm
+http://www.conae.gob.mx
+http://web.worldbank.org/WBSITE/EXTERNAL/BANCOMUNDIAL/EXTSPPAISES/LA
+CINSPANISHEXT/MEXICOINSPANISHEXT/0,,contentMDK:20899871~pagePK:1411
+37~piPK:141127~theSitePK:500870,00.html
+http://web.worldbank.org/WBSITE/EXTERNAL/BANCOMUNDIAL/EXTSPPAISES/LA
+CINSPANISHEXT/MEXICOINSPANISHEXT/0,,contentMDK:html
+http://www2.udec.cl/jhuenuma/galeon/ingenieros.htm
+http://www.energianatural.com.ar/biogas02.html
+http:/www.proteger.org.ar/archivos/Biodigestor
+http:/www.textoscientificos.com/energia/biogas/usos
+
+

@@ -24,6 +24,15 @@ export interface BasicSimulationConfig {
 export interface EnvironmentalSimulationConfig {
   /** Temperatura (°C) */
   temperature: number
+  /** pH (0-14) */
+  ph?: number
+}
+
+export interface SubstrateSimulationConfig {
+  /** Relación C/N */
+  cn_ratio?: number
+  /** Material molido o triturado */
+  milled?: boolean
 }
 
 export interface PhysicalSimulationConfig {
@@ -48,6 +57,7 @@ export interface SimulationConfig {
   environmental: EnvironmentalSimulationConfig
   physical: PhysicalSimulationConfig
   biological: BiologicalSimulationConfig
+  substrate?: SubstrateSimulationConfig
 }
 
 /**
@@ -151,6 +161,41 @@ export function legacyInputsFromConfig(config: SimulationConfig): LegacySimulati
     totalSolidsPercent: tsFraction * 100,
     volatileSolidsPercent: vsFraction,
     potentialBiogas: potential
+  }
+}
+
+/**
+ * Completa inputs opcionales para Advisor sin alterar la simulación.
+ * Defaults (solo si faltan/no son finitos): temp=35, ph=7.2, cn_ratio=25, milled=false.
+ */
+export function normalizeCoreInputFactsV1(config: SimulationConfig): SimulationConfig {
+  const environmental: EnvironmentalSimulationConfig = {
+    ...config.environmental
+  }
+  const substrate: SubstrateSimulationConfig = {
+    ...(config.substrate ?? {})
+  }
+
+  if (!Number.isFinite(environmental.temperature)) {
+    environmental.temperature = 35
+  }
+
+  if (!Number.isFinite(environmental.ph)) {
+    environmental.ph = 7.2
+  }
+
+  if (!Number.isFinite(substrate.cn_ratio)) {
+    substrate.cn_ratio = 25
+  }
+
+  if (typeof substrate.milled !== 'boolean') {
+    substrate.milled = false
+  }
+
+  return {
+    ...config,
+    environmental,
+    substrate
   }
 }
 

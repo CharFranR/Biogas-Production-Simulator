@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { ResultCard, Button, InputCard, Container, AreaChart } from '@biogas-simulator/ui'
 import { useSimulation } from '../utilities/useSimulation'
 import { exportToExcel, exportToCSV, createDownloadBlob, downloadFile, type SimulationData } from '@biogas-simulator/core'
+import { evaluateAdvisor, type AdvisorMatch } from '@biogas-simulator/advisor'
+import AdvisorPanel from '../components/AdvisorPanel.vue'
 
 const iconTrending = "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
 const iconMonitoing = "M22 12h-4l-3 9L9 3l-3 9H2"
@@ -20,9 +23,19 @@ const {
   runSimulation,
   seriesAccum,
   seriesDaily,
+  simulationData,
   outputs,
   formattedOutputs
 } = useSimulation()
+
+const advisorMatches = ref<AdvisorMatch[]>([])
+
+function runSimulationWithAdvisor() {
+  const data = runSimulation()
+  if (data) {
+    advisorMatches.value = evaluateAdvisor(data)
+  }
+}
 
 function deriveAccumPct(accum: number[]) {
   if (!Array.isArray(accum) || accum.length === 0) return []
@@ -74,28 +87,30 @@ function exportToExcelFile() {
     return
   }
 
-  const simulationData: SimulationData = {
-    inputs: config,
-    outputs: {
-      monod: outputs.monod,
-      potentialProduction: outputs.potentialProduction,
-      TotalSolids: outputs.TotalSolids,
-      VolatileSolids: outputs.VolatileSolids
-    },
-    timeSeries: {
-      time: Array.from({ length: seriesAccum.value.length }, (_, i) => i + 1),
-      accumulated: seriesAccum.value,
-      daily: seriesDaily.value
-    },
-    metadata: {
-      simulationName: resolvedMaterial.value.name || 'Simulación Biogás',
-      createdAt: new Date().toISOString(),
-      version: '1.0'
+  const data: SimulationData =
+    simulationData.value ??
+    {
+      inputs: config,
+      outputs: {
+        monod: outputs.monod,
+        potentialProduction: outputs.potentialProduction,
+        TotalSolids: outputs.TotalSolids,
+        VolatileSolids: outputs.VolatileSolids
+      },
+      timeSeries: {
+        time: Array.from({ length: seriesAccum.value.length }, (_, i) => i + 1),
+        accumulated: seriesAccum.value,
+        daily: seriesDaily.value
+      },
+      metadata: {
+        simulationName: resolvedMaterial.value.name || 'Simulación Biogás',
+        createdAt: new Date().toISOString(),
+        version: '1.0'
+      }
     }
-  }
 
   try {
-    const excelData = exportToExcel(simulationData)
+    const excelData = exportToExcel(data)
     const blob = createDownloadBlob(excelData, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     downloadFile(blob, `simulacion_biogas_${new Date().toISOString().split('T')[0]}.xlsx`)
   } catch (error) {
@@ -110,28 +125,30 @@ function exportToCSVFile() {
     return
   }
 
-  const simulationData: SimulationData = {
-    inputs: config,
-    outputs: {
-      monod: outputs.monod,
-      potentialProduction: outputs.potentialProduction,
-      TotalSolids: outputs.TotalSolids,
-      VolatileSolids: outputs.VolatileSolids
-    },
-    timeSeries: {
-      time: Array.from({ length: seriesAccum.value.length }, (_, i) => i + 1),
-      accumulated: seriesAccum.value,
-      daily: seriesDaily.value
-    },
-    metadata: {
-      simulationName: resolvedMaterial.value.name || 'Simulación Biogás',
-      createdAt: new Date().toISOString(),
-      version: '1.0'
+  const data: SimulationData =
+    simulationData.value ??
+    {
+      inputs: config,
+      outputs: {
+        monod: outputs.monod,
+        potentialProduction: outputs.potentialProduction,
+        TotalSolids: outputs.TotalSolids,
+        VolatileSolids: outputs.VolatileSolids
+      },
+      timeSeries: {
+        time: Array.from({ length: seriesAccum.value.length }, (_, i) => i + 1),
+        accumulated: seriesAccum.value,
+        daily: seriesDaily.value
+      },
+      metadata: {
+        simulationName: resolvedMaterial.value.name || 'Simulación Biogás',
+        createdAt: new Date().toISOString(),
+        version: '1.0'
+      }
     }
-  }
 
   try {
-    const csvData = exportToCSV(simulationData)
+    const csvData = exportToCSV(data)
     const blob = createDownloadBlob(csvData, 'text/csv')
     downloadFile(blob, `simulacion_biogas_${new Date().toISOString().split('T')[0]}.csv`)
   } catch (error) {
@@ -259,7 +276,7 @@ function exportToCSVFile() {
           </div>
 
             <div class="mt-6 space-y-2">
-              <Button @click="runSimulation" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
+              <Button @click="runSimulationWithAdvisor" buttonName="Ejecutar Simulación" :iconPath="iconPlay"></Button>
               <div class="grid grid-cols-2 gap-2">
                 <Button @click="exportToExcelFile" buttonName="Exportar Excel" :iconPath="iconExcel"></Button>
                 <Button @click="exportToCSVFile" buttonName="Exportar CSV" :iconPath="iconCSV"></Button>
@@ -288,6 +305,8 @@ function exportToCSVFile() {
               />
             </Container>
           </div>
+
+          <AdvisorPanel class="mt-4" :matches="advisorMatches" />
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <ResultCard label="Producción Potencial" :value="formattedOutputs.potentialProduction" unit="m³" :iconPath="iconTrending"></ResultCard>
