@@ -1,17 +1,27 @@
 export interface SimulationOutputs {
+  /**
+   * Keep this structural type compatible with `@biogas-simulator/core`.
+   * We only type the fields the advisor actually reads; extra fields can exist
+   * at runtime, but we don't model them here to preserve assignability.
+   */
   potentialProduction?: number
-  [key: string]: unknown
+  TotalSolids?: number
+  VolatileSolids?: number
 }
 
 export interface TimeSeriesData {
   time?: number[]
   accumulated?: number[]
   daily?: number[]
-  [key: string]: unknown
 }
 
 export interface SimulationData {
-  inputs?: Record<string, unknown>
+  /**
+   * Keep this structural/adapter type very permissive.
+   * In the app we pass either a SimulationConfig or a legacy inputs object.
+   * The advisor flattener handles `unknown` safely.
+   */
+  inputs?: unknown
   outputs?: SimulationOutputs
   timeSeries?: TimeSeriesData
   metadata?: Record<string, unknown>

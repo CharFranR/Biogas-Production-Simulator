@@ -44,7 +44,8 @@ function mean(values: number[]): number {
 function lastFinite(values: number[]): number | null {
   for (let i = values.length - 1; i >= 0; i -= 1) {
     const value = values[i]
-    if (Number.isFinite(value)) return value
+    // Consumers may enable `noUncheckedIndexedAccess`, so `values[i]` can be undefined.
+    if (value !== undefined && Number.isFinite(value)) return value
   }
   return null
 }
@@ -64,7 +65,7 @@ function resolveTotalAccum(accumulated: number[]): number {
 
 function resolveTimeValue(time: number[], index: number): number {
   const candidate = time[index]
-  if (Number.isFinite(candidate)) return candidate
+  if (candidate !== undefined && Number.isFinite(candidate)) return candidate
   return index + 1
 }
 
@@ -73,7 +74,7 @@ function dailyPeak(daily: number[]): { peak: number; index: number | null } {
   let index: number | null = null
   for (let i = 0; i < daily.length; i += 1) {
     const value = daily[i]
-    if (!isFiniteNumber(value)) continue
+    if (value === undefined || !isFiniteNumber(value)) continue
     if (value > peak) {
       peak = value
       index = i
@@ -92,7 +93,7 @@ function findReachPctDay(
   if (!Number.isFinite(target) || target <= 0) return null
   for (let i = 0; i < accumulated.length; i += 1) {
     const value = accumulated[i]
-    if (!Number.isFinite(value)) continue
+    if (value === undefined || !Number.isFinite(value)) continue
     if (value >= target) return resolveTimeValue(time, i)
   }
   return null
@@ -114,7 +115,7 @@ function computePlateauDays(
 
   if (window.length === 0) return 0
   return window.reduce((count, value) => {
-    if (!isFiniteNumber(value)) return count
+    if (value === undefined || !isFiniteNumber(value)) return count
     return value <= threshold ? count + 1 : count
   }, 0)
 }

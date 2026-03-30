@@ -6,7 +6,10 @@
     "baseUrl": ".",
     "paths": {
       "@biogas-simulator/core": ["../../packages/core/src/index.ts"],
-      "@biogas-simulator/core/*": ["../../packages/core/src/*"]
+      "@biogas-simulator/core/*": ["../../packages/core/src/*"],
+
+      "@biogas-simulator/advisor": ["../../packages/advisor/src/index.ts"],
+      "@biogas-simulator/advisor/*": ["../../packages/advisor/src/*"]
     },
 
     /* Linting */

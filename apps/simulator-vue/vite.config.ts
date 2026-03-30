@@ -14,6 +14,8 @@ export default defineConfig({
     alias: {
       // Use core source directly (monorepo) so app can consume new domain APIs
       '@biogas-simulator/core': path.resolve(__dirname, '../../packages/core/src'),
+      // Use advisor source directly (monorepo) for TS + bundling
+      '@biogas-simulator/advisor': path.resolve(__dirname, '../../packages/advisor/src'),
       buffer: 'buffer'
     }
   },
