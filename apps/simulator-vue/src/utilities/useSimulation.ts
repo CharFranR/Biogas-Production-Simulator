@@ -6,6 +6,7 @@ import {
   SimulationParams,
   createDefaultSimulationConfig,
   getMaterialPreset,
+  normalizeCoreInputFactsV1,
   type SimulationData,
   type MaterialCustomConfig,
   type MaterialSelectionConfig,
@@ -139,7 +140,7 @@ export function useSimulation() {
     outputs.VolatileSolids = result.VolatileSolids
 
     const data: SimulationData = {
-      inputs: config,
+      inputs: normalizeCoreInputFactsV1(config),
       outputs: {
         monod: outputs.monod,
         potentialProduction: outputs.potentialProduction,
