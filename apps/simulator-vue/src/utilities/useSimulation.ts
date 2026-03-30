@@ -140,6 +140,7 @@ export function useSimulation() {
     outputs.VolatileSolids = result.VolatileSolids
 
     const data: SimulationData = {
+      // Normalización cubierta por tests unitarios en core.
       inputs: normalizeCoreInputFactsV1(config),
       outputs: {
         monod: outputs.monod,

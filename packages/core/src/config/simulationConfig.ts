@@ -164,6 +164,10 @@ export function legacyInputsFromConfig(config: SimulationConfig): LegacySimulati
   }
 }
 
+/**
+ * Completa inputs opcionales para Advisor sin alterar la simulación.
+ * Defaults (solo si faltan/no son finitos): temp=35, ph=7.2, cn_ratio=25, milled=false.
+ */
 export function normalizeCoreInputFactsV1(config: SimulationConfig): SimulationConfig {
   const environmental: EnvironmentalSimulationConfig = {
     ...config.environmental
